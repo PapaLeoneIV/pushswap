@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "libft.h": "c",
+        "pushswap.h": "c"
+    },
+    "C_Cpp.default.includePath": [
+        ".",
+        "libft",
+        "libft/prinft",
+        "${default}"
+    ]
+}

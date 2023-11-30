@@ -1,0 +1,45 @@
+NAMEA = libpushswap.a
+NAME = push_swap
+LIBFT_DIR = libft
+DLL_LIST_DIR = dll_list
+PRINTF_DIR = printf
+HELPERS_DIR = ./helpers
+EVERY_INCLUDES=-I. -I$(LIBFT_DIR) -I$(LIBFT_DIR)/$(PRINTF_DIR) -I./$(HELPERS_DIR)
+
+RM = rm -f
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
+COMPILE = $(CC) $(CFLAGS) -g 
+ARCHIVE = ar rcs
+
+SRC = 	$(HELPERS_DIR)/ft_normalizzazione_dati.c \
+		$(HELPERS_DIR)/ft_check_for_dupl.c \
+    #   $(HELPERS_DIR)/error_fn.c
+
+OBJ = $(SRC:.c=.o)
+
+all: $(NAMEA)
+
+%.o: %.c
+	@$(COMPILE) -c $< -o $@ $(EVERY_INCLUDES)
+
+libft:
+	@$(MAKE) -C $(LIBFT_DIR)
+
+
+$(NAMEA): libft $(OBJ)
+	@mv libft/libft.a ./$(NAMEA)
+	@$(ARCHIVE) $(NAMEA) $(OBJ)
+	@$(COMPILE) $(EVERY_INCLUDES) main.c -L. -lpushswap -o $(NAME)
+
+clean:
+	@$(MAKE) -C $(LIBFT_DIR) clean
+	@$(RM) $(OBJ) $(NAMEA)
+
+fclean: clean
+	@$(MAKE) -C $(LIBFT_DIR) fclean
+	@$(RM) $(NAME) $(NAMEA)
+
+re: fclean all
+
+.PHONY: all clean fclean re libft
