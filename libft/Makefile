@@ -50,8 +50,9 @@ SRC = ./ft_isalnum.c \
 			$(HASH_DIR)/ft_create_hash_map.c \
 			$(HASH_DIR)/ft_free_hash_map.c \
 			$(HASH_DIR)/ft_get_frequency.c \
-			$(HASH_DIR)/ft_hash_function.c \
+			$(HASH_DIR)/ft_hash_fn.c \
 			$(HASH_DIR)/ft_insert_in_hash_map.c \
+			$(HASH_DIR)/ft_check_for_dupl.c \
 			$(DLL_LIST_DIR)/ft_dll_addhead.c \
 			$(DLL_LIST_DIR)/ft_dll_addtail.c \
 			$(DLL_LIST_DIR)/ft_dll_insert_head.c \

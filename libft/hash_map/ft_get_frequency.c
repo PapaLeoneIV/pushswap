@@ -2,7 +2,7 @@
 
 int ft_get_frequency(hash_map* map, int key)
 {
-    int index = ft_hash_function(key, map->size);
+    int index = ft_hash_fn(key, map->size);
     item* current = map->array[index];
 
     while (current != NULL) {

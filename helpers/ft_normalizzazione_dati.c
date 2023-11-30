@@ -7,9 +7,11 @@ int *ft_cmtx_to_arri_coverter(char **mtx)
 	int i;
 	int len;
 	int *arr;
+	int tmp;
 
 	i = 0;
 	len = 0;
+	tmp = 0;
 	if(!mtx || !mtx[len])
 		return (NULL);
 	while(mtx[len])
@@ -25,7 +27,9 @@ int *ft_cmtx_to_arri_coverter(char **mtx)
 		else
 			error_fn();
 	}
-	ft_check_for_dupl(arr, len);
+	tmp = ft_check_for_dupl(arr, len);
+	if(tmp > 1)
+		error_fn();
 	return (arr);
 }
 	/**
@@ -56,10 +60,12 @@ int *ft_manage_multiple_input(char **av)
 	int *arr;
 	int len;
 	int i;
+	int tmp;
 
 	count = 0;
 	len = 0;
 	i = 1;
+	tmp = 0;
 	while(av[len] != NULL)
 		len++;
 	arr = (int *)ft_calloc(len + 1 , sizeof(int));
@@ -68,13 +74,15 @@ int *ft_manage_multiple_input(char **av)
 		if(ft_isnumber(av[i]))
 		{
 			arr[count] = ft_atoi(av[i]);
-			i++;
 			count++;
 		}
 		else
 			error_fn();
+		i++;
 	}
-	ft_check_for_dupl(arr, len);
+	tmp = ft_check_for_dupl(arr, len);
+	if(tmp == 1)
+		error_fn();
 	return (arr);
 }
 int *ft_normalizzazione_dati(int ac ,char **av)

@@ -13,7 +13,6 @@ COMPILE = $(CC) $(CFLAGS) -g
 ARCHIVE = ar rcs
 
 SRC = 	$(HELPERS_DIR)/ft_normalizzazione_dati.c \
-		$(HELPERS_DIR)/ft_check_for_dupl.c \
     #   $(HELPERS_DIR)/error_fn.c
 
 OBJ = $(SRC:.c=.o)

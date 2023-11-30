@@ -94,9 +94,10 @@ void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
+int ft_check_for_dupl(int *arr, int size);
 void		ft_insert_in_hash_map(hash_map* map, int key);
 hash_map	*ft_create_hash_map(int size) ;
-int			ft_hash_function(int key, int size);
+int			ft_hash_fn(int key, int size);
 void		ft_free_hash_map(hash_map* map);
 int			ft_get_frequency(hash_map* map, int key);
 
