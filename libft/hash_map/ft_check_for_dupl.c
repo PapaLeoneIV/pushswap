@@ -10,7 +10,6 @@ int ft_check_for_dupl(int *arr, int size)
     i = 0;
     res = 0;
     map = ft_create_hash_map(size);
-
     while(i < size)
     {
         ft_insert_in_hash_map(map, arr[i]);
@@ -21,9 +20,13 @@ int ft_check_for_dupl(int *arr, int size)
     {
         res = ft_get_frequency(map, arr[i]);
         if(res > 1)
+        {
+            ft_free_hash_map(map);
             return 1;
+        }  
         i++;
     }
+    ft_free_hash_map(map);
     return 0;
 }
 

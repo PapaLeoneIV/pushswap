@@ -23,11 +23,12 @@ int main(int ac, char **av)
 		b = NULL;
 		a = NULL;
 		dati_norm = ft_normalizzazione_dati(ac ,av);
-		 while(i < ac - 1)
+		 while(i < 4)
 		{
 			ft_printf("dati : %i\n",dati_norm[i]);
 			i++;
 		} 
+		free(dati_norm);
 	
 	// a = push_dati_into_stack(dati_norm, &a);
 	return 0;

@@ -13,7 +13,7 @@ COMPILE = $(CC) $(CFLAGS) -g
 ARCHIVE = ar rcs
 
 SRC = 	$(HELPERS_DIR)/ft_normalizzazione_dati.c \
-    #   $(HELPERS_DIR)/error_fn.c
+    	$(HELPERS_DIR)/ft_insertion_valid_input.c \
 
 OBJ = $(SRC:.c=.o)
 
