@@ -2,26 +2,6 @@
 #include "ft_printf.h"
 #include "pushswap.h"
 
-int *ft_cmtx_to_arri_coverter(char **mtx)
-{
-	int i;
-	int len;
-	int *arr;
-	int tmp;
-
-	i = 0;
-	len = 0;
-	tmp = 0;
-	if(!mtx || !mtx[len])
-		return (NULL);
-	while(mtx[len])
-		len++;
-	arr = ft_insertion_valid_input(mtx, len);
-	return (arr);
-}
-	/**
-	 * devo capire se fare il free della matrice qui o se farlo nello scope di dove chiamo la funzione 
-	*/
 int *ft_manage_string_input(char **av)
 {
 	int *arr;
@@ -29,8 +9,12 @@ int *ft_manage_string_input(char **av)
 	int i;
 
 	i = 0;
+	if(av[1][0] == '\0')
+		error_fn();
 	mtx = ft_split(av[1], ' ');
 	arr = ft_cmtx_to_arri_coverter(mtx);
+	if(!arr)
+		error_fn();
 	while(arr && arr[i])
 	{
 		free(mtx[i]);
@@ -40,9 +24,6 @@ int *ft_manage_string_input(char **av)
 	free(mtx);
 	return (arr);
 }
-
-
-
 
 int *ft_manage_multiple_input(char **av)
 {
@@ -56,7 +37,7 @@ int *ft_manage_multiple_input(char **av)
 	i = 1;
 	while(av[len] != NULL)
 		len++;
-	arr = ft_insertion_valid_input(av, len);
+	arr = ft_insertion_valid_input(av, len, i);
 	return (arr);
 }
 int *ft_normalizzazione_dati(int ac ,char **av)

@@ -11,7 +11,9 @@ int *ft_normalizzazione_dati(int ac ,char **av);
 int *ft_manage_multiple_input(char **av);
 int *ft_manage_string_input(char **av);
 int *ft_cmtx_to_arri_coverter(char **mtx);
-int *ft_insertion_valid_input(char **av, int len);
+int *ft_insertion_valid_input(char **av, int len, int i);
+int *ft_cmtx_to_arri_coverter(char **mtx);
+
 
 
 #endif

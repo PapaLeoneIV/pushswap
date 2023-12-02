@@ -14,6 +14,7 @@ ARCHIVE = ar rcs
 
 SRC = 	$(HELPERS_DIR)/ft_normalizzazione_dati.c \
     	$(HELPERS_DIR)/ft_insertion_valid_input.c \
+		$(HELPERS_DIR)/ft_cmtx_to_arri_coverter.c \
 
 OBJ = $(SRC:.c=.o)
 

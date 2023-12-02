@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 #include "pushswap.h"
 #include "ft_printf.h"
+#include "../libft.h"
 
 int main(int ac, char **av)
 {
@@ -23,11 +24,13 @@ int main(int ac, char **av)
 		b = NULL;
 		a = NULL;
 		dati_norm = ft_normalizzazione_dati(ac ,av);
-		 while(i < 4)
+		//= ft_insert_data_into_dll(arr, ac - 1);
+
+		while(i < 4)
 		{
-			ft_printf("dati : %i\n",dati_norm[i]);
+			printf("Dati : %i\n", dati_norm[i]);
 			i++;
-		} 
+		}
 		free(dati_norm);
 	
 	// a = push_dati_into_stack(dati_norm, &a);

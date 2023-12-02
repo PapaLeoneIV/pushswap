@@ -1,12 +1,10 @@
 #include"../libft.h"
 #include"pushswap.h"
 
-
-int *ft_insertion_valid_input(char **av, int len)
+int *ft_insertion_valid_input(char **av, int len, int i)
 {
 	int *arr;
     int count;
-	int i = 0;
 
     count = 0;
 	arr = (int *)ft_calloc(len + 1 , sizeof(int));
@@ -31,3 +29,4 @@ int *ft_insertion_valid_input(char **av, int len)
 	}
 	return (arr);
 }
+
