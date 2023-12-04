@@ -28,14 +28,19 @@ int main(int ac, char **av)
 
 
 
+
+
+
+
+		
 		ft_dll_clear(&a, free);
 		free(dati_norm);
 		return 0;
-/* 
+
 		while(a != NULL)
 		{
 			printf("%i\n", *(int *)a->val);
 			a = a->next;
-		} */
+		} 
 }
 
