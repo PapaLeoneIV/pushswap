@@ -4,6 +4,7 @@ void ft_free_hash_map(hash_map* map)
 {
     int i;
     item* current; 
+    item* temp;
 
     i = 0; 
     while(i < map->size)
@@ -11,7 +12,7 @@ void ft_free_hash_map(hash_map* map)
         current = map->array[i];
         while (current != NULL) 
         {
-            item* temp = current;
+            temp = current;
             current = current->next;
             free(temp);
         }

@@ -24,16 +24,18 @@ int main(int ac, char **av)
 		b = NULL;
 		a = NULL;
 		dati_norm = ft_normalizzazione_dati(ac ,av);
-		//= ft_insert_data_into_dll(arr, ac - 1);
+		a = ft_dll_initi(dati_norm, ac - 1);
 
-		while(i < 4)
-		{
-			printf("Dati : %i\n", dati_norm[i]);
-			i++;
-		}
+
+
+		ft_dll_clear(&a, free);
 		free(dati_norm);
-	
-	// a = push_dati_into_stack(dati_norm, &a);
-	return 0;
+		return 0;
+/* 
+		while(a != NULL)
+		{
+			printf("%i\n", *(int *)a->val);
+			a = a->next;
+		} */
 }
 

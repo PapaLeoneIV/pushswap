@@ -88,32 +88,33 @@ char	**ft_split(char const *s, char c)
 	}
 	return (res);
 }
+/* 
+ static void	ft_print_res(char const *s)
+ {
+ 	int		len;
 
-//  static void	ft_print_res(char const *s)
-//  {
-//  	int		len;
+ 	len = 0;
+ 	while (s[len])
+ 		len++;
+ 	write(1, s, len);
+ 	write(1, "\n", 1);
+ }
+ int main()
+ { 
+	char *str = "    abcde fghil    ";
+	char c = ' ';
+	char **res;
+	res = ft_split(str, c);
+	int i = 0;
 
-//  	len = 0;
-//  	while (s[len])
-//  		len++;
-//  	write(1, s, len);
-//  	write(1, "\n", 1);
-//  }
-//  int main()
-//  { 
-// 	char *str = "    abcde fghil    ";
-// 	char c = ' ';
-// 	char **res;
-// 	res = ft_split(str, c);
-// 	int i = 0;
+	 while (res[i] != NULL)
+	 {
+	 	ft_print_res(res[i]);
+	 	free(res[i]);
+	 	i++;
+	 }
+	 	free(res);
 
-// 	 while (res[i] != NULL)
-// 	 {
-// 	 	ft_print_res(res[i]);
-// 	 	free(res[i]);
-// 	 	i++;
-// 	 }
-// 	 	free(res);
-
-// 	return 0;
-//  }
+	return 0;
+ }
+ */

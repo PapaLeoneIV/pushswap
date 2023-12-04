@@ -107,6 +107,7 @@ dll_list	*ft_dll_new(void *val);
 dll_list	*ft_dll_return_head(dll_list *lst);
 dll_list	*ft_dll_return_tail(dll_list *lst);
 int	ft_dll_size(dll_list *dll);
+dll_list    *ft_dll_initi(int *arr, int len);
 void	ft_dll_clear(dll_list **lst, void (*del)(void *));
 
 
