@@ -53,14 +53,13 @@ SRC = ./ft_isalnum.c \
 			$(HASH_DIR)/ft_hash_fn.c \
 			$(HASH_DIR)/ft_insert_in_hash_map.c \
 			$(HASH_DIR)/ft_check_for_dupl.c \
-			$(DLL_LIST_DIR)/ft_dll_addhead.c \
-			$(DLL_LIST_DIR)/ft_dll_addtail.c \
 			$(DLL_LIST_DIR)/ft_dll_insert_head.c \
 			$(DLL_LIST_DIR)/ft_dll_insert_tail.c \
 			$(DLL_LIST_DIR)/ft_dll_new.c \
 			$(DLL_LIST_DIR)/ft_dll_return_head.c \
 			$(DLL_LIST_DIR)/ft_dll_return_tail.c \
 			$(DLL_LIST_DIR)/ft_dll_size.c \
+			$(DLL_LIST_DIR)/ft_dll_clear.c \
 
 SRC_BONUS =  ./ft_lstnew.c \
 			./ft_lstadd_front.c \

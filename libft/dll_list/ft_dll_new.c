@@ -1,5 +1,5 @@
 #include "../libft.h"
-#include "ft_printf.h"
+//#include "ft_printf.h"
 
 dll_list	*ft_dll_new(void *val)
 {
@@ -14,7 +14,7 @@ dll_list	*ft_dll_new(void *val)
 	return (new);
 }
 
-
+/* 
 
 int main()
 {
@@ -25,4 +25,4 @@ int main()
 	first = ft_dll_new((char *)"stringa!");
 	ft_printf("%s\n", first->val);
 
-}
+} */
