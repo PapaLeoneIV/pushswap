@@ -13,7 +13,7 @@
 #include "ft_printf.h"
 #include "../libft.h"
 
-int main(int ac, char **av)
+ int main(int ac, char **av)
 {
 		int i;
 		int *dati_norm;
@@ -25,16 +25,18 @@ int main(int ac, char **av)
 		a = NULL;
 		dati_norm = ft_normalizzazione_dati(ac ,av);
 		a = ft_dll_initi(dati_norm, ac - 1);
-		
+        sa(a);
+        a = ft_dll_return_head(a);
 
-
-
-
-
-
-		
+		while(a != NULL)
+		{
+			printf("%i\n", *(int *)a->val);
+			a = a->next;
+		} 
 		ft_dll_clear(&a, free);
 		free(dati_norm);
-		return (0);
-}
+		return 0;
+
+
+} 
 

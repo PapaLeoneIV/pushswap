@@ -29,7 +29,7 @@ dll_list    *ft_dll_initi(int *arr, int len)
 }
 
 
-int main()
+/* int main()
 {
 	dll_list *start;
 	int arr[5] = {1, 2 , 3, 4, -99};
@@ -45,4 +45,4 @@ int main()
 
 
 
-}
+} */

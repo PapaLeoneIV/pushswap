@@ -1,12 +1,20 @@
 {
     "files.associations": {
         "libft.h": "c",
-        "pushswap.h": "c"
+        "pushswap.h": "c",
+        "ft_printf.h": "c"
     },
     "C_Cpp.default.includePath": [
         ".",
         "libft",
         "libft/prinft",
         "${default}"
+    ],
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/nfs/homes/rileone/Desktop/42/push_swap",
+            "binaryPath": "/nfs/homes/rileone/Desktop/42/push_swap/push_swap",
+            "binaryArgs": []
+        }
     ]
 }

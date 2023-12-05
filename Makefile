@@ -4,7 +4,8 @@ LIBFT_DIR = libft
 DLL_LIST_DIR = dll_list
 PRINTF_DIR = printf
 HELPERS_DIR = ./helpers
-EVERY_INCLUDES=-I. -I$(LIBFT_DIR) -I$(LIBFT_DIR)/$(PRINTF_DIR) -I./$(HELPERS_DIR)
+STACK_MOVES_DIR = ./stack_moves
+EVERY_INCLUDES=-I. -I$(LIBFT_DIR) -I$(LIBFT_DIR)/$(PRINTF_DIR) -I./$(HELPERS_DIR) -I./$(STACK_MOVES_DIR)
 
 RM = rm -f
 CC = cc
@@ -15,6 +16,9 @@ ARCHIVE = ar rcs
 SRC = 	$(HELPERS_DIR)/ft_normalizzazione_dati.c \
     	$(HELPERS_DIR)/ft_insertion_valid_input.c \
 		$(HELPERS_DIR)/ft_cmtx_to_arri_coverter.c \
+		$(STACK_MOVES_DIR)/sa.c \
+		$(STACK_MOVES_DIR)/sb.c \
+
 
 OBJ = $(SRC:.c=.o)
 
