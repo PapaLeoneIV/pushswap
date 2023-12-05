@@ -27,7 +27,7 @@ dll_list    *ft_dll_initi(int *arr, int len)
 	}
 	return (head);
 }
-/* 
+
 
 int main()
 {
@@ -35,13 +35,14 @@ int main()
 	int arr[5] = {1, 2 , 3, 4, -99};
 	start = ft_dll_initi(arr, 5);
 	int i = 0;
- 	while(i < 5)
+ 	while(start->next != NULL)
 	{
 		printf("%i\n", *(int *)start->val);
 		start = start->next;
 		i++;
 	} 
+    start = ft_dll_return_head(start);
 
 
 
-} */
+}
