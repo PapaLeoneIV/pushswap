@@ -19,6 +19,8 @@ SRC = 	$(HELPERS_DIR)/ft_normalizzazione_dati.c \
 		$(STACK_MOVES_DIR)/sa.c \
 		$(STACK_MOVES_DIR)/sb.c \
 		$(STACK_MOVES_DIR)/ss.c \
+		$(STACK_MOVES_DIR)/pa.c \
+		$(STACK_MOVES_DIR)/pb.c \
 
 
 OBJ = $(SRC:.c=.o)
