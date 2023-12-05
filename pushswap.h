@@ -16,6 +16,8 @@ int *ft_cmtx_to_arri_coverter(char **mtx);
 
 void sa(dll_list *stack_a);
 void sb(dll_list *stack_b);
+void ss(dll_list *stack_a, dll_list *stack_b);
+
 
 
 

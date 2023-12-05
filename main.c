@@ -12,7 +12,7 @@
 #include "pushswap.h"
 #include "ft_printf.h"
 #include "../libft.h"
-
+/* 
  int main(int ac, char **av)
 {
 		int i;
@@ -28,15 +28,10 @@
         sa(a);
         a = ft_dll_return_head(a);
 
-		while(a != NULL)
-		{
-			printf("%i\n", *(int *)a->val);
-			a = a->next;
-		} 
 		ft_dll_clear(&a, free);
 		free(dati_norm);
 		return 0;
 
 
-} 
+}  */
 
