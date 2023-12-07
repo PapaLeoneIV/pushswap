@@ -1,15 +1,32 @@
 #include "../libft.h"
 
-dll_list	*ft_dll_return_head(dll_list *lst)
+void    ft_dll_return_head(dll_list **lst)
 {
-	dll_list	*temp;
-
-	temp = lst;
-	if (!temp)
-		return (NULL);
-	while (temp->prev != NULL)
+	while((*lst)->prev)
 	{
-		temp = temp->prev;
+		*lst = (*lst)->prev;
 	}
-	return (temp);
-}
+} 
+
+
+
+ 
+/*  int main()
+{
+	int b[4] = {1, 2, 3, 4};
+	dll_list *a = ft_dll_initi(b, 4);
+
+	while(a != NULL)
+	{
+		printf("%i\n", *(int *)a->val);
+		if(a->next == NULL)
+			break;
+		a = a->next;
+	}
+	ft_dll_return_head(&a);
+	while(a != NULL)
+	{
+		printf("%i\n", *(int *)a->val);
+		a = a->next;
+	}
+} */

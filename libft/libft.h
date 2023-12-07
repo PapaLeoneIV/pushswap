@@ -103,11 +103,13 @@ int			ft_get_frequency(hash_map* map, int key);
 void ft_dll_insert_head(dll_list **head, dll_list *new);
 void ft_dll_insert_tail(dll_list **head, dll_list *new);
 dll_list	*ft_dll_new(void *val);
-dll_list	*ft_dll_return_head(dll_list *lst);
-dll_list	*ft_dll_return_tail(dll_list *lst);
+void ft_dll_return_head(dll_list **lst);
+void    ft_dll_return_tail(dll_list **lst);
 int	ft_dll_size(dll_list *dll);
 dll_list    *ft_dll_initi(int *arr, int len);
 void	ft_dll_clear(dll_list **lst, void (*del)(void *));
+dll_list    *ft_dll_initi_to_zero(int len);
+
 
 
 #endif

@@ -7,7 +7,8 @@ void sb(dll_list *stack_b)
     dll_list *second_node;
     dll_list *head;
 
-    head = ft_dll_return_head(stack_b);
+    ft_dll_return_head(&stack_b);
+    head = stack_b;
     second_node = head->next;
     head->next = second_node->next;
     head->prev = second_node;

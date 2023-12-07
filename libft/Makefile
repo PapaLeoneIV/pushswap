@@ -61,6 +61,7 @@ SRC = ./ft_isalnum.c \
 			$(DLL_LIST_DIR)/ft_dll_size.c \
 			$(DLL_LIST_DIR)/ft_dll_clear.c \
 			$(DLL_LIST_DIR)/ft_dll_initi.c \
+			$(DLL_LIST_DIR)/ft_dll_init_to_zero.c \
 
 SRC_BONUS =  ./ft_lstnew.c \
 			./ft_lstadd_front.c \

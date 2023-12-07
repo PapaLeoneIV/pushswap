@@ -9,7 +9,8 @@ void sa(dll_list *stack_a)
 	int length;
 
     length = ft_dll_size(stack_a); 
-	head = ft_dll_return_head(stack_a);
+	ft_dll_return_head(&stack_a);
+    head = stack_a;
 	second_node = head->next;
 	head->next = second_node->next;
 	head->prev = second_node;
