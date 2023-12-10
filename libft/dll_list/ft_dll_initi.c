@@ -9,11 +9,13 @@ dll_list    *ft_dll_initi(int *arr, int len)
 
 	i = 0;
 	head = NULL;
+	if(len == 0 || !arr)
+		return NULL;
 	while(i < len)
 	{
 		val = malloc(sizeof(int));
 		*val = arr[i];
-		if (!val) 
+		if (val == NULL) 
 		{
 			ft_dll_return_head(&head);
 			ft_dll_clear(&head, free);

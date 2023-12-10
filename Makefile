@@ -16,6 +16,7 @@ ARCHIVE = ar rcs
 SRC = 	$(HELPERS_DIR)/ft_normalizzazione_dati.c \
     	$(HELPERS_DIR)/ft_insertion_valid_input.c \
 		$(HELPERS_DIR)/ft_cmtx_to_arri_coverter.c \
+		$(HELPERS_DIR)/ft_get_input_length.c \
 		$(STACK_MOVES_DIR)/sa.c \
 		$(STACK_MOVES_DIR)/sb.c \
 		$(STACK_MOVES_DIR)/ss.c \

@@ -23,6 +23,14 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+typedef struct dll_list
+{
+	void *val;
+	struct dll_list *prev;
+	struct dll_list *next;
+
+} dll_list;
+
 typedef struct item {
 	int key;
 	int value;
@@ -35,16 +43,7 @@ typedef struct hash_map {
 	item** array;
 } hash_map;
 
-
-typedef struct dll_list
-{
-	void *val;
-	struct dll_list *prev;
-	struct dll_list *next;
-
-} dll_list;
-
-void error_fn();
+void	error_fn();
 void	ft_putnbr(int n);
 void	ft_putstr(char *s);
 void	ft_putchr(char c);
@@ -93,22 +92,22 @@ void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-int ft_check_for_dupl(int *arr, int size);
-void		ft_insert_in_hash_map(hash_map* map, int key);
-hash_map	*ft_create_hash_map(int size) ;
-int			ft_hash_fn(int key, int size);
-void		ft_free_hash_map(hash_map* map);
-int			ft_get_frequency(hash_map* map, int key);
+int 	ft_check_for_dupl(int *arr, int size);
+void	ft_insert_in_hash_map(hash_map* map, int key);
+hash_map*ft_create_hash_map(int size) ;
+int		ft_hash_fn(int key, int size);
+void	ft_free_hash_map(hash_map* map);
+int		ft_get_frequency(hash_map* map, int key);
 
-void ft_dll_insert_head(dll_list **head, dll_list *new);
-void ft_dll_insert_tail(dll_list **head, dll_list *new);
-dll_list	*ft_dll_new(void *val);
-void ft_dll_return_head(dll_list **lst);
-void    ft_dll_return_tail(dll_list **lst);
-int	ft_dll_size(dll_list *dll);
-dll_list    *ft_dll_initi(int *arr, int len);
+void	ft_dll_insert_head(dll_list **head, dll_list *new);
+void	ft_dll_insert_tail(dll_list **head, dll_list *new);
+dll_list*ft_dll_new(void *val);
+void	ft_dll_return_head(dll_list **lst);
+void	ft_dll_return_tail(dll_list **lst);
+int		ft_dll_size(dll_list *dll);
+dll_list*ft_dll_initi(int *arr, int len);
 void	ft_dll_clear(dll_list **lst, void (*del)(void *));
-dll_list    *ft_dll_initi_to_zero(int len);
+dll_list*ft_dll_initi_to_zero(int len);
 
 
 

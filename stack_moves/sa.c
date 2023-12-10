@@ -7,8 +7,10 @@ void sa(dll_list *stack_a)
 	dll_list *second_node;
 	dll_list *head;
 
+	if(ft_dll_size(stack_a) <= 1)
+		return ;
 	ft_dll_return_head(&stack_a);
-    head = stack_a;
+	head = stack_a;
 	second_node = head->next;
 	head->next = second_node->next;
 	head->prev = second_node;
@@ -19,8 +21,8 @@ void sa(dll_list *stack_a)
 int main()
 {
 	dll_list *head;
-	int arr[] = {1, 2 , 3, 4};
-	head = ft_dll_initi(arr, 4);
+	int arr[] = {1};
+	head = ft_dll_initi(arr, 1);
 
 	sa(head);
 	head = ft_dll_return_head(head);

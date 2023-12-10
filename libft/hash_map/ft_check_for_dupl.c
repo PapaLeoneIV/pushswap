@@ -30,13 +30,13 @@ int ft_check_for_dupl(int *arr, int size)
     return 0;
 }
 
-/* 
-int main() 
+
+/* int main() 
 {
-    int array[] = {INT_MIN, 7, 1, 0, 2, 0, INT_MAX};
+    int array[] = {INT_MIN, 7, 1, 3, 2, 0, INT_MAX};
     int size = sizeof(array) / sizeof(array[0]);
 
-    if (ft_check_for_dupl(array, size)) 
+    if (ft_check_for_dupl(array, 10)) 
     {
         printf("L'array contiene duplicati.\n");
     } 
@@ -46,4 +46,4 @@ int main()
     }
 
     return 0;
-}   */
+}  */

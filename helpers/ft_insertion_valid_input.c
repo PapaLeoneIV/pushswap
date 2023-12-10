@@ -7,7 +7,7 @@ int *ft_insertion_valid_input(char **av, int len, int i)
     int count;
 
     count = 0;
-	arr = (int *)ft_calloc(len + 1 , sizeof(int));
+	arr = (int *)ft_calloc(len - 1 , sizeof(int));
 	while(i < len)
 	{
 		if(ft_isnumber(av[i]))
@@ -22,7 +22,7 @@ int *ft_insertion_valid_input(char **av, int len, int i)
 			error_fn();
 		}	
 	}
-	if(ft_check_for_dupl(arr, len) == 1)
+	if(ft_check_for_dupl(arr, len - 1) == 1)
 	{
 		free(arr);
 		error_fn();

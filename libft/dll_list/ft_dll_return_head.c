@@ -2,6 +2,8 @@
 
 void    ft_dll_return_head(dll_list **lst)
 {
+	if(!(*lst) || !lst)
+		return ;
 	while((*lst)->prev)
 	{
 		*lst = (*lst)->prev;

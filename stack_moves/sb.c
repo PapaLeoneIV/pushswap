@@ -7,6 +7,8 @@ void sb(dll_list *stack_b)
     dll_list *second_node;
     dll_list *head;
 
+    if(ft_dll_size(stack_b) <= 1)
+        return ;
     ft_dll_return_head(&stack_b);
     head = stack_b;
     second_node = head->next;
