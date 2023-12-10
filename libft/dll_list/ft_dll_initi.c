@@ -1,6 +1,6 @@
 #include "../libft.h"
 
-dll_list    *ft_dll_initi(int *arr, int len)
+dll_list	*ft_dll_initi(int *arr, int len)
 {
 	dll_list*	head;
 	dll_list*	newnode;

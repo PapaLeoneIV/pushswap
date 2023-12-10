@@ -21,6 +21,8 @@ void sb(dll_list *stack_b);
 void ss(dll_list *stack_a, dll_list *stack_b);
 void pa(dll_list **stack_a, dll_list **stack_b);
 void pb(dll_list **stack_b, dll_list **stack_a);
+void ra(dll_list **stack);
+
 
 
 
