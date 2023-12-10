@@ -12,6 +12,7 @@ void	ft_dll_clear(dll_list **lst, void (*del)(void *))
 	{
 		temp = ptr;
 		ptr = temp->next;
+        free(temp->val);
 		free(temp);
 	}
 	*lst = NULL;

@@ -4,7 +4,6 @@ dll_list    *ft_dll_initi_to_zero(int len)
 {
 	dll_list    *head;
 	dll_list    *newnode;
-	dll_list    *tmp;
 	int* val;
 	int          i;
 
@@ -13,26 +12,19 @@ dll_list    *ft_dll_initi_to_zero(int len)
 	while(i < len)
 	{
 		val = malloc(sizeof(int));
-		if (!val) {
-			while (head != NULL) {
-				ft_dll_return_head(&head);
-				tmp = head->next;
-				free(head);
-				head = tmp;
-			}
-			return NULL;
+		if (!val) 
+		{
+			ft_dll_return_head(&head);
+			ft_dll_clear(&head, free);
+			return(NULL);
 		}
+		*val = 0;
 		newnode = ft_dll_new(val);
 		if(!newnode)
 		{
-			while(head != NULL)
-			{
-				ft_dll_return_head(&head);
-				tmp = head->next;
-				free(head);
-				head = tmp;
-				return (NULL);
-			}
+			ft_dll_return_head(&head);
+			ft_dll_clear(&head, free);
+			return (NULL);
 		}
 		ft_dll_insert_tail(&head, newnode);
 		i++;
