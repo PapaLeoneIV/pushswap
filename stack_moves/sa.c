@@ -17,15 +17,15 @@ void sa(dll_list *stack_a)
 	second_node->prev = NULL;
 	second_node->next = head;
 }
-/* 
-int main()
+ 
+/* int main()
 {
 	dll_list *head;
-	int arr[] = {1};
-	head = ft_dll_initi(arr, 1);
+	int arr[] = {1,2, 3, 4};
+	head = ft_dll_initi(arr, 4);
 
 	sa(head);
-	head = ft_dll_return_head(head);
+	ft_dll_return_head(&head);
 	while(head != NULL)
 	{
 		printf("%i\n", *(int *)head->val);
@@ -33,4 +33,4 @@ int main()
 	}
 
 
-}  */
+}   */

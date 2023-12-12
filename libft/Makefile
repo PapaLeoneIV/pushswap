@@ -4,50 +4,56 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 COMPILE = $(CC) $(CFLAGS) -c -g
 ARCHIVE = ar rc
-HASH_DIR = hash_map
 DLL_LIST_DIR = dll_list
+ERROR_DIR = errors
+HASH_DIR = hash_map
+IS_DIR = is
+MEM_DIR = mem
 PRINTF_DIR = printf
+PUT_DIR = put
+SLL_DIR = sll_list
+STRING_DIR = strings
+TO_DIR = to
 
-
-SRC = ./ft_isalnum.c \
-			./ft_isalpha.c \
-			./ft_isascii.c \
-			./ft_isdigit.c \
-			./ft_isprint.c \
-			./ft_strlen.c \
-			./ft_memset.c \
-			./ft_bzero.c \
-			./ft_memcpy.c \
-			./ft_memmove.c \
-			./ft_strlcpy.c \
-			./ft_substr.c \
-			./ft_strlcat.c \
-			./ft_tolower.c \
-			./ft_toupper.c \
-			./ft_strchr.c \
-			./ft_strrchr.c \
-			./ft_strjoin.c \
-			./ft_strncmp.c \
-			./ft_memchr.c \
-			./ft_memcmp.c \
-			./ft_strnstr.c \
-			./ft_atoi.c \
-			./ft_calloc.c \
-			./ft_itoa.c \
-			./ft_strdup.c \
-			./ft_strtrim.c \
-			./ft_split.c \
-			./ft_strmapi.c \
-			./ft_striteri.c \
-			./ft_putchar_fd.c \
-			./ft_putstr_fd.c \
-			./ft_putendl_fd.c \
-			./ft_putnbr_fd.c \
-			./ft_putchr.c \
-			./ft_putstr.c \
-			./ft_putnbr.c \
-			./ft_isnumber.c \
-			./error_fn.c \
+SRC =		$(ERROR_DIR)/error_fn.c \
+	 		$(TO_DIR)/ft_atoi.c \
+			$(TO_DIR)/ft_itoa.c \
+			$(IS_DIR)/ft_isnumber.c \
+			$(IS_DIR)/ft_isalnum.c \
+			$(IS_DIR)/ft_isalpha.c \
+			$(IS_DIR)/ft_isascii.c \
+			$(IS_DIR)/ft_isdigit.c \
+			$(IS_DIR)/ft_isprint.c \
+			$(STRING_DIR)/ft_split.c \
+			$(STRING_DIR)/ft_strchr.c \
+			$(STRING_DIR)/ft_strdup.c \
+			$(STRING_DIR)/ft_striteri.c \
+			$(STRING_DIR)/ft_strjoin.c \
+			$(STRING_DIR)/ft_strlcat.c \
+			$(STRING_DIR)/ft_strlcpy.c \
+			$(STRING_DIR)/ft_strlen.c \
+			$(STRING_DIR)/ft_strmapi.c \
+			$(STRING_DIR)/ft_strncmp.c \
+			$(STRING_DIR)/ft_strnstr.c \
+			$(STRING_DIR)/ft_strrchr.c \
+			$(STRING_DIR)/ft_strtrim.c \
+			$(STRING_DIR)/ft_substr.c \
+			$(STRING_DIR)/ft_tolower.c \
+			$(STRING_DIR)/ft_toupper.c \
+			$(PUT_DIR)/ft_putchar_fd.c\
+			$(PUT_DIR)/ft_putchr.c \
+			$(PUT_DIR)/ft_putstr.c \
+			$(PUT_DIR)/ft_putendl_fd.c \
+			$(PUT_DIR)/ft_putnbr.c \
+			$(PUT_DIR)/ft_putnbr_fd.c \
+			$(PUT_DIR)/ft_putstr_fd.c \
+			$(MEM_DIR)/ft_calloc.c \
+			$(MEM_DIR)/ft_memchr.c \
+			$(MEM_DIR)/ft_memcmp.c \
+			$(MEM_DIR)/ft_memcpy.c \
+			$(MEM_DIR)/ft_memmove.c \
+			$(MEM_DIR)/ft_memset.c \
+			$(MEM_DIR)/ft_bzero.c \
 			$(HASH_DIR)/ft_create_hash_map.c \
 			$(HASH_DIR)/ft_free_hash_map.c \
 			$(HASH_DIR)/ft_get_frequency.c \
@@ -63,20 +69,18 @@ SRC = ./ft_isalnum.c \
 			$(DLL_LIST_DIR)/ft_dll_clear.c \
 			$(DLL_LIST_DIR)/ft_dll_initi.c \
 			$(DLL_LIST_DIR)/ft_dll_init_to_zero.c \
-
-SRC_BONUS =  ./ft_lstnew.c \
-			./ft_lstadd_front.c \
-			./ft_lstsize.c \
-			./ft_lstlast.c \
-			./ft_lstadd_back.c \
-			./ft_lstdelone.c \
-			./ft_lstclear.c \
-			./ft_lstiter.c \
-			./ft_lstmap.c \
+			$(SLL_DIR)/ft_lstnew.c \
+			$(SLL_DIR)/ft_lstadd_front.c \
+			$(SLL_DIR)/ft_lstsize.c \
+			$(SLL_DIR)/ft_lstlast.c \
+			$(SLL_DIR)/ft_lstadd_back.c \
+			$(SLL_DIR)/ft_lstdelone.c \
+			$(SLL_DIR)/ft_lstclear.c \
+			$(SLL_DIR)/ft_lstiter.c \
+			$(SLL_DIR)/ft_lstmap.c \
 
 
 OBJ = ${SRC:.c=.o}
-OBJ_BONUS = ${SRC_BONUS:.c=.o}
 
 all: printf $(NAME)
 
@@ -87,13 +91,13 @@ all: printf $(NAME)
 printf:
 	@$(MAKE) -C $(PRINTF_DIR)
 
-$(NAME): $(OBJ) $(OBJ_BONUS) printf
+$(NAME): $(OBJ)  printf
 	@mv $(PRINTF_DIR)/libftprintf.a libft.a
 	@$(ARCHIVE) $(NAME) $(OBJ)
 
 clean:
 	@$(MAKE) -C $(PRINTF_DIR) clean
-	@rm -f $(OBJ) $(OBJ_BONUS)
+	@rm -f $(OBJ)
 
 fclean: clean
 	@$(MAKE) -C $(PRINTF_DIR) fclean

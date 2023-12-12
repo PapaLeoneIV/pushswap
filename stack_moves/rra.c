@@ -26,16 +26,16 @@ void rra(dll_list** stack)
         (*stack) = (*stack)->next;
     }
 }
- 
- /* int main(void)
+/* int main(void)
 {
     int arr[] = {1, 2, 3, 4};
-    int arr2[] = {0, 0, 0, 0, 0, 0};
+    int arr2[] = {99, 100, 101, 102, 103, 104};
     dll_list* a = ft_dll_initi(arr, 4);
     dll_list* b = ft_dll_initi(arr2, 6);
 
-    rra(&a);
+    rrr(&a, &b);
     ft_dll_return_head(&a);
+        ft_dll_return_head(&b);
     while(a != NULL)
 	{
 		printf("%i\n", *(int *)a->val);
