@@ -12,7 +12,7 @@
 #include "pushswap.h"
 #include "ft_printf.h"
 #include "../libft.h"
-/*    int main(int ac, char **av)
+/* int main(int ac, char **av)
 {
         int input_length;
 		int *dati_norm;
@@ -39,7 +39,7 @@
 		return 0;
 
 
-}   */
+}  */
 
 /*         while(a != NULL)
         {

@@ -7,7 +7,7 @@ int *ft_insertion_valid_input(char **av, int len, int i)
     int count;
 
     count = 0;
-	arr = (int *)ft_calloc(len - 1 , sizeof(int));
+	arr = (int *)ft_calloc(len , sizeof(int));
 	while(i < len)
 	{
 		if(ft_isnumber(av[i]))

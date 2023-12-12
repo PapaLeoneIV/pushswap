@@ -2,7 +2,7 @@
 #include "ft_printf.h"
 #include "../libft.h"
 
-void ra(dll_list** stack)
+void rb(dll_list** stack)
 {
     int*   tmp;
     int*   head_val;
@@ -25,7 +25,7 @@ void ra(dll_list** stack)
         (*stack) = (*stack)->prev;
     }
 }
- 
+
 /* int main(void)
 {
     int arr[] = {0, 0, 1};

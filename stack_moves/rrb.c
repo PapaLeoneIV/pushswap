@@ -2,38 +2,39 @@
 #include "ft_printf.h"
 #include "../libft.h"
 
-void ra(dll_list** stack)
+void rrb(dll_list** stack)
 {
     int*   tmp;
-    int*   head_val;
+    int*   tail_val;
     
     ft_dll_return_head(stack);
     if(ft_dll_size((*stack)) <= 1)
         return ;
-    head_val = (*stack)->val;
     ft_dll_return_tail(stack);
+    tail_val = (*stack)->val;
+    ft_dll_return_head(stack);
     tmp = (*stack)->val;
-    (*stack)->val = (int *)head_val;
-    (*stack) = (*stack)->prev;
+    (*stack)->val = (int *)tail_val;
+    (*stack) = (*stack)->next;
     while((*stack) != NULL)
     {
-        head_val = (*stack)->val;
+        tail_val = (*stack)->val;
         (*stack)->val = tmp;
-        tmp = head_val;
-        if((*stack)->prev == NULL)
+        tmp = tail_val;
+        if((*stack)->next == NULL)
             break;
-        (*stack) = (*stack)->prev;
+        (*stack) = (*stack)->next;
     }
 }
  
-/* int main(void)
+ /* int main(void)
 {
-    int arr[] = {0, 0, 1};
+    int arr[] = {1, 2, 3, 4};
     int arr2[] = {0, 0, 0, 0, 0, 0};
-    dll_list* a = ft_dll_initi(arr, 3);
+    dll_list* a = ft_dll_initi(arr, 4);
     dll_list* b = ft_dll_initi(arr2, 6);
 
-    ra(&a);
+    rra(&a);
     ft_dll_return_head(&a);
     while(a != NULL)
 	{
@@ -54,4 +55,4 @@ void ra(dll_list** stack)
     ft_dll_clear(&a, free);
     ft_dll_return_head(&b);
     ft_dll_clear(&b, free);
-} */
+}  */

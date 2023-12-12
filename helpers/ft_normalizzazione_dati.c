@@ -7,15 +7,19 @@ int *ft_manage_string_input(char **av)
 	int *arr;
 	char **mtx;
 	int i;
+    int len;
 
 	i = 0;
+    len = 0;
 	if(av[1][0] == '\0')
 		error_fn();
 	mtx = ft_split(av[1], ' ');
+    while(mtx[len])
+			len++;
 	arr = ft_cmtx_to_arri_coverter(mtx);
 	if(!arr)
 		error_fn();
-	while(arr && arr[i])
+	while(i < len)
 	{
 		free(mtx[i]);
 		mtx[i] = NULL;
