@@ -10,6 +10,7 @@ dll_list	*ft_dll_new(void *val)
 		return (NULL);
 	new->val = (int *)val;
 	new->next = NULL;
+    new->index = 0;
     new->prev = NULL;
 	return (new);
 }

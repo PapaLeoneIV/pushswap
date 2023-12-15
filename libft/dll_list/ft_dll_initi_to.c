@@ -1,6 +1,6 @@
 #include "../libft.h"
 
-dll_list    *ft_dll_initi_to_zero(int len)
+dll_list    *ft_dll_initi_to(int len, int value)
 {
 	dll_list    *head;
 	dll_list    *newnode;
@@ -18,7 +18,7 @@ dll_list    *ft_dll_initi_to_zero(int len)
 			ft_dll_clear(&head, free);
 			return(NULL);
 		}
-		*val = 0;
+		*val = value;
 		newnode = ft_dll_new(val);
 		if(!newnode)
 		{
@@ -30,9 +30,9 @@ dll_list    *ft_dll_initi_to_zero(int len)
 		i++;
 	}
 	return (head);
-}
-/* int main() {
-	dll_list *start = ft_dll_initi_to_zero(5);
+}/* 
+int main() {
+	dll_list *start = ft_dll_initi_to(5, 0);
 	int i = 0;
 	while (start != NULL) {
 		printf("%i -> ", *(int *)(start)->val);

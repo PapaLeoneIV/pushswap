@@ -28,6 +28,7 @@ dll_list	*ft_dll_initi(int *arr, int len)
 			ft_dll_clear(&head, free);
 			return(NULL);
 		}
+        newnode->index = i;
 		ft_dll_insert_tail(&head, newnode);
 		i++;
 	}

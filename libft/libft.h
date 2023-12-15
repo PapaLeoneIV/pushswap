@@ -26,6 +26,7 @@ typedef struct s_list
 typedef struct dll_list
 {
 	void *val;
+    int index;
 	struct dll_list *prev;
 	struct dll_list *next;
 
@@ -107,7 +108,11 @@ void	ft_dll_return_tail(dll_list **lst);
 int		ft_dll_size(dll_list *dll);
 dll_list*ft_dll_initi(int *arr, int len);
 void	ft_dll_clear(dll_list **lst, void (*del)(void *));
-dll_list*ft_dll_initi_to_zero(int len);
+dll_list* ft_dll_initi_to(int len, int value);
+
+
+int* ft_LIS(int* arr, int len);
+
 
 
 
