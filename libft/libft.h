@@ -17,6 +17,13 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+typedef struct variables
+{
+    int lis_lenght;
+    int arr_size;
+    int max_index;
+} variables;
+
 typedef struct s_list
 {
 	void			*content;
@@ -109,9 +116,11 @@ int		ft_dll_size(dll_list *dll);
 dll_list*ft_dll_initi(int *arr, int len);
 void	ft_dll_clear(dll_list **lst, void (*del)(void *));
 dll_list* ft_dll_initi_to(int len, int value);
+void ft_dll_update_index(dll_list** head);
 
 
 int* ft_LIS(int* arr, int len);
+int* ft_lis_algo(int* arr, variables** var);
 
 
 

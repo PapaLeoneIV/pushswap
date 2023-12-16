@@ -70,6 +70,7 @@ SRC =		$(ERROR_DIR)/error_fn.c \
 			$(DLL_LIST_DIR)/ft_dll_clear.c \
 			$(DLL_LIST_DIR)/ft_dll_initi.c \
 			$(DLL_LIST_DIR)/ft_dll_initi_to.c \
+			$(DLL_LIST_DIR)/ft_dll_update_index.c \
 			$(SLL_DIR)/ft_lstnew.c \
 			$(SLL_DIR)/ft_lstadd_front.c \
 			$(SLL_DIR)/ft_lstsize.c \
@@ -80,6 +81,7 @@ SRC =		$(ERROR_DIR)/error_fn.c \
 			$(SLL_DIR)/ft_lstiter.c \
 			$(SLL_DIR)/ft_lstmap.c \
 			$(ALGO_DIR)/LIS.c \
+			$(ALGO_DIR)/ft_lis_algo.c \
 
 
 OBJ = ${SRC:.c=.o}

@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../libft.h"
+#include "limits.h"
 
 // Funzione per trovare la LIS e restituire un array contenente la sottosequenza
-/* int* LIS(int arr, int n, int* lis_length) {
-    dll_list* lis = ft_dll_initi(arr, n);
-    dll_list* prev_index = ft_dll_initi(arr, n);
+int* LIS(int arr[], int n, int* lis_length) {
+    int* lis = (int*)malloc(n * sizeof(int));
+    int* prev_index = (int*)malloc(n * sizeof(int));
     int i, j, max_index = 0;
 
     // Inizializza gli array LIS e prev_index
@@ -48,10 +48,9 @@
     free(prev_index);
 
     return result;
-} */
-/* 
-int main() {
-    int arr[] = {2, 3, 9, 33, 21, 50, 99, 100};
+}
+/* int main() {
+    int arr[] = {INT_MIN + 200, -1, 9, 33, 21, 50, INT_MAX, 100};
     int n = sizeof(arr) / sizeof(arr[0]);
 
     int lis_length;
