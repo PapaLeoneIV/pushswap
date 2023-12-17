@@ -1,0 +1,5 @@
+1) uno dei bug che ho trovato e che devo migliorare 
+e' nella gestione dei free durante la gestione degl errori, ad esempio quando passo dei valori duplicati durante la compilazione
+2)penso che l errore precedente sia dovuto all allocazione di lis_var struct nel main. Dovrei modificare il mio lis algo in modo che sia self contained
+
+

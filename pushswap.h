@@ -7,6 +7,8 @@
 #include "libft.h"
 #include "ft_printf.h"
 
+
+
 int *ft_normalizzazione_dati(int ac ,char **av);
 int *ft_manage_multiple_input(char **av);
 int *ft_manage_string_input(char **av);

@@ -80,7 +80,6 @@ SRC =		$(ERROR_DIR)/error_fn.c \
 			$(SLL_DIR)/ft_lstclear.c \
 			$(SLL_DIR)/ft_lstiter.c \
 			$(SLL_DIR)/ft_lstmap.c \
-			$(ALGO_DIR)/LIS.c \
 			$(ALGO_DIR)/ft_lis_algo.c \
 
 

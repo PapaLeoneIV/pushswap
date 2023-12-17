@@ -17,12 +17,12 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef struct variables
+typedef struct lis_vars
 {
     int lis_lenght;
     int arr_size;
     int max_index;
-} variables;
+} lis_vars;
 
 typedef struct s_list
 {
@@ -118,9 +118,23 @@ void	ft_dll_clear(dll_list **lst, void (*del)(void *));
 dll_list* ft_dll_initi_to(int len, int value);
 void ft_dll_update_index(dll_list** head);
 
+/**
+ * @brief
+ *  int arr[] = {1, 2, 3, 4};
+    lis_vars* var;
+    var = malloc(sizeof(lis_vars));
+    var->arr_size = sizeof(arr) / sizeof(arr[0]);
+    int* lis_sequence = ft_lis_algo(arr, &var);
 
-int* ft_LIS(int* arr, int len);
-int* ft_lis_algo(int* arr, variables** var);
+
+    prototipo di utilizzo di questa funzione di sorting:
+    -inizializzare una struct chiamata LIS_VARS
+    -impostare la variabile  ARR_SIZE uguale alla LUNGHEZZA dell array
+    -passare alla FUNZIONE l ARRAY da sortare e la STRUCT lis_var;
+    -mentre per la STAMPA bisogna usare la variabile LIS_LENGTH
+*/
+int* ft_lis_algo(int* arr, int length, int* lis_len);
+
 
 
 

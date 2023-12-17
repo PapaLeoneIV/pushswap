@@ -12,13 +12,19 @@ int *ft_manage_string_input(char **av)
 	i = 0;
     len = 0;
 	if(av[1][0] == '\0')
+    {
+        printf("errore in ft_manage_string_input");
 		error_fn();
+    }
 	mtx = ft_split(av[1], ' ');
     while(mtx[len])
 			len++;
 	arr = ft_cmtx_to_arri_coverter(mtx);
 	if(!arr)
+    {
+        printf("errore in ft_manage_string_input");
 		error_fn();
+    }
 	while(i < len)
 	{
 		free(mtx[i]);
