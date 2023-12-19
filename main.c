@@ -12,44 +12,29 @@
 #include "pushswap.h"
 #include "ft_printf.h"
 #include "../libft.h"
-/* int main(int ac, char **av)
+int main(int ac, char **av)
 {
-		int		input_length;
-		int*	dati_norm;
-		int*	lis_arr;
-		dll_list *a;
-		dll_list *b; 
 
-		input_length = ft_get_input_length(ac, av);
-		dati_norm = ft_normalizzazione_dati(ac ,av);
-		a = ft_dll_initi(dati_norm, input_length);
-		b = ft_dll_initi_to(input_length, 0); 
+ 	ft_init_(ac, av);
+	/* stacks* stacks;
+	iarr* input;
+	iarr* lis;
 
-		lis_arr = ft_lis_algo(dati_norm, input_length, );
+	stacks = malloc(sizeof(stacks));
+	input = malloc(sizeof(iarr));
+	lis = malloc(sizeof(iarr));
+
+	input->len = ft_get_input_length(ac, av);
+	input->arr = ft_normalizzazione_dati(ac ,av);
+
+    stacks->a = ft_dll_initi(input->arr, input->len);
+	stacks->b = ft_dll_initi_to(input->len, 0);
 	
+	lis->arr = ft_lis_algo_list(input->arr, input->len, &lis->len);
+    ft_quick_sort(input->arr, 0, input->len - 1);
+	
+	ft_move_non_lis(stacks, lis, input);
 
- 		while(a != NULL)
-		{
-			printf("%i\n", *(int *)a->val);
-			if(a->next == NULL)
-				break;
-			a = a->next;
-		} 
-		int i = 0;
-		while(i < var->lis_lenght)
-		{
-			ft_printf("lis[%i]: %i\n",i,  lis_arr[i]);
-			i++;
-		}
-		
-		ft_dll_return_head(&b);
-		ft_dll_clear(&b, free);
-		ft_dll_return_head(&a);
-		ft_dll_clear(&a, free);
-		free(dati_norm);
-		free(lis_arr);
-
-		return 0;
-
-
-} */
+  */
+	return 0;
+}

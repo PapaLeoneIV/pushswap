@@ -41,7 +41,6 @@ int *ft_manage_multiple_input(char **av)
 	int *arr;
 	int len;
 	int i;
-
 	count = 0;
 	len = 0;
 	i = 1;
@@ -50,7 +49,7 @@ int *ft_manage_multiple_input(char **av)
 	arr = ft_insertion_valid_input(av, len, i);
 	return (arr);
 }
-int *ft_normalizzazione_dati(int ac ,char **av)
+int*    ft_normalizzazione_dati(int ac ,char **av)
 {
 	int *arr;
 

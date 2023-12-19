@@ -71,6 +71,8 @@ SRC =		$(ERROR_DIR)/error_fn.c \
 			$(DLL_LIST_DIR)/ft_dll_initi.c \
 			$(DLL_LIST_DIR)/ft_dll_initi_to.c \
 			$(DLL_LIST_DIR)/ft_dll_update_index.c \
+			$(DLL_LIST_DIR)/ft_dll_get_node.c \
+			$(DLL_LIST_DIR)/ft_dll_get_value.c \
 			$(SLL_DIR)/ft_lstnew.c \
 			$(SLL_DIR)/ft_lstadd_front.c \
 			$(SLL_DIR)/ft_lstsize.c \
@@ -80,7 +82,8 @@ SRC =		$(ERROR_DIR)/error_fn.c \
 			$(SLL_DIR)/ft_lstclear.c \
 			$(SLL_DIR)/ft_lstiter.c \
 			$(SLL_DIR)/ft_lstmap.c \
-			$(ALGO_DIR)/ft_lis_algo.c \
+			$(ALGO_DIR)/ft_lis_algo_list.c \
+			$(ALGO_DIR)/ft_quick_sort.c \
 
 
 OBJ = ${SRC:.c=.o}
@@ -97,7 +100,7 @@ printf:
 $(NAME): $(OBJ)  printf
 	@mv $(PRINTF_DIR)/libftprintf.a libft.a
 	@$(ARCHIVE) $(NAME) $(OBJ)
-
+	
 clean:
 	@$(MAKE) -C $(PRINTF_DIR) clean
 	@rm -f $(OBJ)
