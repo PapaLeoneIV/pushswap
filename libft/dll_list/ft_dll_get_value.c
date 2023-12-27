@@ -1,32 +1,33 @@
 #include "../libft.h"
 
-int* ft_dll_get_value(dll_list* list, int* index)
+int ft_dll_get_value(dll_list* list, int index)
 {
     int i;
+    dll_list* ptr;
 
     i = 0;
+    ptr = list;
     if(!list)
         printf("errore nel ft_dll_get_value!");
-    while(i < *index)
+    while(i < index)
     {
-        if(list->next == NULL)
-            return NULL;
-        list = list->next;
+        if(ptr == NULL)
+            return (-1);
         i++;
+        ptr = ptr->next;
     }
-    return ((int *)list->val);
+    return (*(int *)(ptr->val));
 }
 
-/* 
-int main()
+
+/* int main()
 {
-    int arr[] = {1, 2, 3, 4};
-    int len = 4;
+    int arr[] = {0, 99, 23, 354, 46};
+    int len = 5;
 
     dll_list* list = ft_dll_initi(arr, len);
-    int* res = ft_dll_get_value(list, 6);
-    if(res)
-        printf("res : %i\n", *res);
+    if(ft_dll_get_value(list, 2) > ft_dll_get_value(list, 0))
+        printf("res : %i\n", 9999);
     else 
-        return 0;
-} */
+        printf("res non esiste");
+}  */

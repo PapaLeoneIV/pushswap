@@ -84,6 +84,7 @@ SRC =		$(ERROR_DIR)/error_fn.c \
 			$(SLL_DIR)/ft_lstmap.c \
 			$(ALGO_DIR)/ft_lis_algo_list.c \
 			$(ALGO_DIR)/ft_quick_sort.c \
+			$(ALGO_DIR)/ft_lis_algo_arr.c \
 
 
 OBJ = ${SRC:.c=.o}

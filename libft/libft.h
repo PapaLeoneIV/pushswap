@@ -19,7 +19,7 @@
 
 typedef struct lis_vars
 {
-    int* lis_lenght;
+    int lis_lenght;
     int arr_size;
     int max_index;
 } lis_vars;
@@ -118,7 +118,7 @@ void	ft_dll_clear(dll_list **lst, void (*del)(void *));
 dll_list* ft_dll_initi_to(int len, int value);
 void ft_dll_update_index(dll_list** head);
 dll_list* ft_dll_get_node(dll_list* list, int index);
-int* ft_dll_get_value(dll_list* list, int* index);
+int ft_dll_get_value(dll_list* list, int index);
 
 
 
@@ -138,8 +138,9 @@ int* ft_dll_get_value(dll_list* list, int* index);
     -mentre per la STAMPA bisogna usare la variabile LIS_LENGTH
 */
 dll_list* ft_lis_algo_list(int* lis_len, dll_list* a);
-void ft_quick_sort(int* arr,int low,int high);
+int* ft_lis_algo_arr(int* arr, int length, int* lis_len);
 
+void ft_quick_sort(int* arr,int low,int high);
 
 
 

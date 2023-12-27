@@ -16,12 +16,17 @@ typedef struct iarr
 
 
 
-typedef struct stacks
+typedef struct s_stacks
 {
     dll_list* a;
     dll_list* b;
     dll_list* lis;
-} stacks;
+    int* input_arr;
+    int input_len;
+    int* sorted_arr;
+    int sorted_arr_len;
+    int lis_len;
+}   t_stacks;
 
 int*    ft_normalizzazione_dati(int ac ,char **av);
 int*    ft_manage_multiple_input(char **av);

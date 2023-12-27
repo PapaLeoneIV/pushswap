@@ -1,4 +1,4 @@
-/* #include <stdio.h>
+ #include <stdio.h>
 #include <stdlib.h>
 #include "limits.h"
 #include "../libft.h"
@@ -95,12 +95,12 @@ int* ft_lis_algo(int* arr, int length, int* lis_len)
     free(len_arr);
     free(index_arr);
     return result;
-} */
+} 
 
 
-
+/* 
  
-/* int main() {
+int main() {
     int arr[] = {0, 2, 34, 23, 1, 43, 53352,25324, 523, 53,532,5123 ,2};
     
     
@@ -118,4 +118,4 @@ int* ft_lis_algo(int* arr, int length, int* lis_len)
     free(lis_sequence);
 
   return 0;
-}  */
+}   */
