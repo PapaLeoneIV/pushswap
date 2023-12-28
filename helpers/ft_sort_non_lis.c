@@ -30,16 +30,16 @@ static void ft_eliminate_lis_elem(t_stacks* stacks, iarr* res)
 
 void ft_sort_non_lis(t_stacks* stacks)
 {
-    iarr u_non_lis;
-    u_non_lis.len = 0;
-    u_non_lis.arr = malloc((stacks->input_arr_len - stacks->lis_len) * sizeof(int));
-    ft_eliminate_lis_elem(stacks, &u_non_lis);
-    ft_quick_sort(u_non_lis.arr, 0, u_non_lis.len - 1);
+    iarr o_non_lis;
+    o_non_lis.len = 0;
+    o_non_lis.arr = malloc((stacks->input_arr_len - stacks->lis_len) * sizeof(int));
+    ft_eliminate_lis_elem(stacks, &o_non_lis);
+    ft_quick_sort(o_non_lis.arr, 0, o_non_lis.len - 1);
     int i = 0; 
-    while(i < u_non_lis.len)
+    while(i < o_non_lis.len)
     {
-        printf("%i\n",u_non_lis.arr[i]);
+        printf("%i\n",o_non_lis.arr[i]);
         i++;
     }
-    free(u_non_lis.arr);
+    free(o_non_lis.arr);
 }
