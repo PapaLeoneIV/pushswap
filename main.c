@@ -19,4 +19,15 @@ int main(int ac, char **av)
 
     stacks = (t_stacks){0};
  	ft_init_(ac, av, &stacks);
+
+
+
+	
+	free(stacks.input_arr);
+    ft_dll_return_head(&(stacks.a));
+    ft_dll_clear(&(stacks.a), free);
+    ft_dll_return_head(&stacks.b);
+    ft_dll_clear(&(stacks.b), free);
+    ft_dll_return_head(&(stacks.lis));
+    ft_dll_clear(&(stacks.lis), free);
 }

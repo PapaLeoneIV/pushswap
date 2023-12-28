@@ -18,5 +18,6 @@
             "binaryPath": "/nfs/homes/rileone/Desktop/42/push_swap/push_swap",
             "binaryArgs": []
         }
-    ]
+    ],
+    "C_Cpp.errorSquiggles": "enabled"
 }

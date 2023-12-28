@@ -47,7 +47,7 @@ void ft_quick_sort(int* arr,int low,int high)
 }
 
 /* int main() {
-    int data[] = {1, 2, 3, 4};
+    int data[] = {4,3,2,1};
     int n = sizeof(data) / sizeof(data[0]);
     printf("Unsorted Array\n");
     printArray(data, n);
