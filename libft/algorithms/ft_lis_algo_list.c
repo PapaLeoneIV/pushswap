@@ -71,6 +71,7 @@ dll_list*    ft_build_lis_arr(dll_list* list,dll_list* len_list,lis_vars* var, d
         tmp = ft_dll_get_node(res, len_counter);
         tmp2 = ft_dll_get_value(list, index_counter); 
         *(int*)tmp->val = tmp2;
+        tmp->index = index_counter;
         index_counter = ft_dll_get_value(index_list, index_counter); 
         len_counter--;
     }

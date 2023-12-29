@@ -99,6 +99,8 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+void ft_print_arri(int* arr, int len);
+
 
 int 	ft_check_for_dupl(int *arr, int size);
 void	ft_insert_in_hash_map(hash_map* map, int key);
@@ -119,6 +121,8 @@ dll_list* ft_dll_initi_to(int len, int value);
 void ft_dll_update_index(dll_list** head);
 dll_list* ft_dll_get_node(dll_list* list, int index);
 int ft_dll_get_value(dll_list* list, int index);
+void ft_dll_printi(dll_list* list);
+
 
 
 

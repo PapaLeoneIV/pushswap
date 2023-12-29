@@ -3,6 +3,7 @@
 #include "../libft.h"
 
 
+
 void    ft_init_(int ac, char** av, t_stacks *stacks)
 {
     stacks->input_arr_len = ft_get_input_length(ac, av);
@@ -13,4 +14,5 @@ void    ft_init_(int ac, char** av, t_stacks *stacks)
     stacks->lis = ft_lis_algo_list(&stacks->lis_len, stacks->a);
     stacks->sorted_arr_len = (stacks->input_arr_len) - (stacks->lis_len);
     ft_sort_non_lis(stacks);
-} 
+
+}

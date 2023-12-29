@@ -9,8 +9,7 @@
     "C_Cpp.default.includePath": [
         ".",
         "libft",
-        "libft/prinft",
-        "${default}"
+        "libft/prinft"
     ],
     "makefile.launchConfigurations": [
         {

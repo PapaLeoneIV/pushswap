@@ -16,9 +16,10 @@ STRING_DIR = strings
 TO_DIR = to
 ALGO_DIR = algorithms
 
+
+
 SRC =		$(ERROR_DIR)/error_fn.c \
-	 		$(TO_DIR)/ft_atoi.c \
-			$(TO_DIR)/ft_itoa.c \
+			$(addprefix ${TO_DIR}/, ft_atoi.c ft_itoa.c)  \
 			$(IS_DIR)/ft_isnumber.c \
 			$(IS_DIR)/ft_isalnum.c \
 			$(IS_DIR)/ft_isalpha.c \
@@ -48,6 +49,7 @@ SRC =		$(ERROR_DIR)/error_fn.c \
 			$(PUT_DIR)/ft_putnbr.c \
 			$(PUT_DIR)/ft_putnbr_fd.c \
 			$(PUT_DIR)/ft_putstr_fd.c \
+			$(PUT_DIR)/ft_print_arri.c \
 			$(MEM_DIR)/ft_calloc.c \
 			$(MEM_DIR)/ft_memchr.c \
 			$(MEM_DIR)/ft_memcmp.c \
@@ -73,6 +75,7 @@ SRC =		$(ERROR_DIR)/error_fn.c \
 			$(DLL_LIST_DIR)/ft_dll_update_index.c \
 			$(DLL_LIST_DIR)/ft_dll_get_node.c \
 			$(DLL_LIST_DIR)/ft_dll_get_value.c \
+			$(DLL_LIST_DIR)/ft_dll_printi.c \
 			$(SLL_DIR)/ft_lstnew.c \
 			$(SLL_DIR)/ft_lstadd_front.c \
 			$(SLL_DIR)/ft_lstsize.c \
