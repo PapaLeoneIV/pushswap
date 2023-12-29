@@ -99,6 +99,8 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+void ft_print_arri(int* arr, int len);
+
 
 int 	ft_check_for_dupl(int *arr, int size);
 void	ft_insert_in_hash_map(hash_map* map, int key);
@@ -117,6 +119,12 @@ dll_list*ft_dll_initi(int *arr, int len);
 void	ft_dll_clear(dll_list **lst, void (*del)(void *));
 dll_list* ft_dll_initi_to(int len, int value);
 void ft_dll_update_index(dll_list** head);
+dll_list* ft_dll_get_node(dll_list* list, int index);
+int ft_dll_get_value(dll_list* list, int index);
+void ft_dll_printi(dll_list* list);
+
+
+
 
 /**
  * @brief
@@ -133,7 +141,10 @@ void ft_dll_update_index(dll_list** head);
     -passare alla FUNZIONE l ARRAY da sortare e la STRUCT lis_var;
     -mentre per la STAMPA bisogna usare la variabile LIS_LENGTH
 */
-int* ft_lis_algo(int* arr, int length, int* lis_len);
+dll_list* ft_lis_algo_list(int* lis_len, dll_list* a);
+int* ft_lis_algo_arr(int* arr, int length, int* lis_len);
+
+void ft_quick_sort(int* arr,int low,int high);
 
 
 

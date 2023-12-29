@@ -18,17 +18,19 @@ SRC = 	$(HELPERS_DIR)/ft_normalizzazione_dati.c \
     	$(HELPERS_DIR)/ft_insertion_valid_input.c \
 		$(HELPERS_DIR)/ft_cmtx_to_arri_coverter.c \
 		$(HELPERS_DIR)/ft_get_input_length.c \
+		$(HELPERS_DIR)/ft_init_.c \
+		$(HELPERS_DIR)/ft_sort_non_lis.c \
 		$(STACK_MOVES_DIR)/sa.c \
 		$(STACK_MOVES_DIR)/sb.c \
 		$(STACK_MOVES_DIR)/ss.c \
 		$(STACK_MOVES_DIR)/pa.c \
 		$(STACK_MOVES_DIR)/pb.c \
-		$(STACK_MOVES_DIR)/ra.c \
 		$(STACK_MOVES_DIR)/rb.c \
 		$(STACK_MOVES_DIR)/rr.c \
 		$(STACK_MOVES_DIR)/rra.c \
 		$(STACK_MOVES_DIR)/rrb.c \
 		$(STACK_MOVES_DIR)/rrr.c \
+
 
 
 OBJ = $(SRC:.c=.o)
@@ -57,5 +59,5 @@ fclean: clean
 
 re: fclean all
 
-.SILENT: 
+#.SILENT: 
 .PHONY: all clean fclean re libft 
