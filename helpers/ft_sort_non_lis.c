@@ -1,7 +1,7 @@
 #include "pushswap.h"
 #include "ft_printf.h"
 #include "../libft.h"
-
+/* 
 static void ft_eliminate_lis_elem(t_stacks* stacks, iarr* res)
 {
     dll_list* ptr;
@@ -54,4 +54,4 @@ void ft_sort_non_lis(t_stacks* stacks)
     ft_quick_sort(o_non_lis.arr, 0, o_non_lis.len - 1);
     ft_insert_o_non_lis(stacks, o_non_lis.arr, o_non_lis.len);
     free(o_non_lis.arr);
-}
+} */
