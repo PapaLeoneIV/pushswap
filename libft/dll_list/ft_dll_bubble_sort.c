@@ -55,11 +55,13 @@ int main()
 static void swap(dll_list *a, dll_list *b) {
     void *temp_val;
     int temp_index;
-
+    /*TODO devo controllare che gli indici vengano scambiati correttamente*/
     temp_val = a->val;
     temp_index = a->index;
+
     a->val = b->val;
     a->index = b->index;
+
     b->val = temp_val;
     b->index = temp_index;
 }

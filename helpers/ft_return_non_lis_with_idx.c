@@ -29,7 +29,6 @@ static void ft_eliminate_lis_elem(t_stacks* stacks)
                 k = malloc(sizeof(int));
                 *k = stacks->input_arr[i];
                 newnode = ft_dll_new(k);
-                newnode->index = i;
                 if(!newnode)
                 {
                     ft_dll_return_head(&(stacks->non_lis));
@@ -37,6 +36,7 @@ static void ft_eliminate_lis_elem(t_stacks* stacks)
                     return;
                 }
                 ft_dll_insert_tail(&(stacks->non_lis), newnode);
+                newnode->index = i;
             }
             ptr = ptr->next;
         }

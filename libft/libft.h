@@ -123,6 +123,8 @@ dll_list* ft_dll_get_node(dll_list* list, int index);
 int ft_dll_get_value(dll_list* list, int index);
 void ft_dll_printi(dll_list* list);
 void ft_dll_bubble_sort(dll_list *head);
+void ft_dll_remove_last(dll_list** stack_b);
+
 
 
 

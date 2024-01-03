@@ -33,6 +33,10 @@ int main(int ac, char **av)
 
     stacks = (t_stacks){0};
  	ft_init_(ac, av, &stacks);
+    sa(stacks.a);
+    pb(&(stacks.b), &(stacks.a));
+      pb(&(stacks.b), &(stacks.a));
+        pb(&(stacks.b), &(stacks.a));
     ft_print_params(&stacks);
     ft_printf("-------------------------");
 
