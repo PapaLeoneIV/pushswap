@@ -19,13 +19,23 @@ SRC = 	$(HELPERS_DIR)/ft_normalizzazione_dati.c \
 		$(HELPERS_DIR)/ft_cmtx_to_arri_coverter.c \
 		$(HELPERS_DIR)/ft_get_input_length.c \
 		$(HELPERS_DIR)/ft_init_.c \
-		$(HELPERS_DIR)/ft_return_non_lis_with_idx.c \
+		$(HELPERS_DIR)/ft_sort_non_lis.c \
+		$(HELPERS_DIR)/ft_move_non_lis.c \
+		$(HELPERS_DIR)/ft_print_params.c \
+		$(HELPERS_DIR)/ft_sort_back.c \
+		$(HELPERS_DIR)/ft_move_from_b_to_a.c \
+		$(HELPERS_DIR)/ft_dll_calcola_mosse.c \
+		$(HELPERS_DIR)/ft_dll_calcola_mosse_b.c \
+		$(HELPERS_DIR)/ft_dll_calcola_mosse_a.c \
+		$(HELPERS_DIR)/ft_move_from_b_to_a.c \
+		$(HELPERS_DIR)/check_if_ordered.c \
 		$(STACK_MOVES_DIR)/sa.c \
 		$(STACK_MOVES_DIR)/sb.c \
 		$(STACK_MOVES_DIR)/ss.c \
 		$(STACK_MOVES_DIR)/pa.c \
 		$(STACK_MOVES_DIR)/pb.c \
 		$(STACK_MOVES_DIR)/rb.c \
+		$(STACK_MOVES_DIR)/ra.c \
 		$(STACK_MOVES_DIR)/rr.c \
 		$(STACK_MOVES_DIR)/rra.c \
 		$(STACK_MOVES_DIR)/rrb.c \

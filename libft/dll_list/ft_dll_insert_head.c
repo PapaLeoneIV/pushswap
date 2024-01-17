@@ -2,10 +2,6 @@
 
 void ft_dll_insert_head(dll_list **head, dll_list *new) 
 {
-    int index_temp;
-
-    index_temp = 0;
-
     if(*head == NULL)
     {
         *head = new;

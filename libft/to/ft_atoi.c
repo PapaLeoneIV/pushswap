@@ -33,5 +33,11 @@ int	ft_atoi(char *nptr)
 		res = res * 10 + *nptr - '0';
 		nptr++;
 	}
+	if(res > 2147483647 || res < -2147483648)
+	{
+		/*TODO devo fare la error function*/
+		write(1, "Error\n", 6);
+		exit(1);
+	}
 	return (res * isnegative);
 }

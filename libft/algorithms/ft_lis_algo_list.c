@@ -100,6 +100,7 @@ dll_list* ft_lis_algo_list(int* lis_len, dll_list* a)
     ft_find_biggest_index(&var, len_list);
     result = ft_build_lis_arr(a, len_list, &var, index_list);   
     *lis_len = var.lis_lenght;
+    ft_dll_update_index(&result);
     ft_dll_clear(&len_list, free);
     ft_dll_clear(&index_list, free);
     return result;

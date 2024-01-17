@@ -1,26 +1,7 @@
 #include "../pushswap.h"
 #include "ft_printf.h"
 #include "../libft.h"
-void ft_dll_remove_last(dll_list** stack_b)
-{
-	dll_list* ptr;
-	dll_list* prev;
-	if(!(*stack_b) || !stack_b)
-		return;
-	ptr = *(stack_b);
-	while(ptr != NULL)
-	{
-		prev = ptr->prev;
-		if(ptr->next == NULL)
-		{
-			prev->next = NULL;
-			free(ptr->val);
-			free(ptr->next);
-			break;
-		}
-		ptr = ptr->next;
-	}
-}
+
 void pb(dll_list **stack_b, dll_list **stack_a)
 {
 	int*		val_a;
@@ -44,7 +25,7 @@ void pb(dll_list **stack_b, dll_list **stack_a)
 	if(!newnode)
 		return;
 	ft_dll_insert_head(&(*stack_b), newnode);
-	ft_dll_remove_last(&(*stack_b));
+	//write(1, "pb\n", 3);
 }
 /* int main()
 {

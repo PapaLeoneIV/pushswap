@@ -7,6 +7,7 @@ void ft_insert_in_hash_map(hash_map* map, int key)
     item* nodo;
 
     riga_hash_map = ft_hash_fn(key, map->size);
+    /**serve a gestire le sovrapposizioni*/
     nodo = map->array[riga_hash_map];
     while (nodo != NULL) {
         if (nodo->key == key) {
@@ -18,7 +19,7 @@ void ft_insert_in_hash_map(hash_map* map, int key)
     item* new_item = (item *)malloc(sizeof(item));
     new_item->key = key;
     new_item->value = 1;
-    new_item->next = map->array[riga_hash_map];
+    new_item->next = NULL;
     map->array[riga_hash_map] = new_item;
 }
 
@@ -28,28 +29,6 @@ void ft_insert_in_hash_map(hash_map* map, int key)
     int i = 0;
     map = ft_create_hash_map(10);
 
-      ft_insert_in_hash_map(map, -19);
-    ft_insert_in_hash_map(map, 2);
-    ft_insert_in_hash_map(map, -19);
-    ft_insert_in_hash_map(map, 1);
-    ft_insert_in_hash_map(map, 1);
-    ft_insert_in_hash_map(map, -99);
-    ft_insert_in_hash_map(map, -100);
-    ft_insert_in_hash_map(map, 4);
-    ft_insert_in_hash_map(map, 23); 
-     ft_insert_in_hash_map(map, INT_MAX);
-    ft_insert_in_hash_map(map, INT_MAX);  
-      ft_insert_in_hash_map(map, INT_MIN);
-    ft_insert_in_hash_map(map, INT_MIN);  
-  ft_insert_in_hash_map(map, 23242);
-    ft_insert_in_hash_map(map, 44324); 
- ft_insert_in_hash_map(map, 1);
-    ft_insert_in_hash_map(map, 2);
-    ft_insert_in_hash_map(map, 3);
-    ft_insert_in_hash_map(map, 4);
-    ft_insert_in_hash_map(map, 5);
-    ft_insert_in_hash_map(map, 6);
-    ft_insert_in_hash_map(map, 1);  
 
     for (i = 0; i < 10; i++) {
         printf("Index %d: ", i);

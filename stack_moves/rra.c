@@ -25,6 +25,7 @@ void rra(dll_list** stack)
             break;
         (*stack) = (*stack)->next;
     }
+//    write(1, "rra\n", 4);
 }
 /* int main(void)
 {

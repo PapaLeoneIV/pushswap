@@ -26,8 +26,6 @@ void pa(dll_list **stack_a, dll_list **stack_b)
 	if(!newnode)
 		return ;
 	ft_dll_insert_head(&(*stack_a), newnode);	
-	ft_dll_remove_last(&(*stack_a));
-
 }
 
  /* int main()

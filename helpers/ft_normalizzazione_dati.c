@@ -37,11 +37,10 @@ int *ft_manage_string_input(char **av)
 
 int *ft_manage_multiple_input(char **av)
 {
-	int count;
 	int *arr;
 	int len;
 	int i;
-	count = 0;
+
 	len = 0;
 	i = 1;
 	while(av[len] != NULL)

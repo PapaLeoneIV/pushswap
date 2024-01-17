@@ -3,6 +3,8 @@
 
 int ft_check_for_dupl(int *arr, int size)
 {
+    /*TODO cercare di capire perche viene creato un nodo con valore 0 alcune volte
+    altrimenti switchare a due while nestati*/
     hash_map *map;
     int i;
     int res;

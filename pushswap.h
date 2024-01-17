@@ -18,11 +18,11 @@ typedef struct s_stacks
     dll_list* a;
     dll_list* b;
     dll_list* lis;
-    dll_list* non_lis;
-    int* input_arr;
+    dll_list* o_non_lis;
     int lis_len;
+    int* input_arr;
     int input_arr_len;
-    int non_lis_len;
+    int o_non_lis_len;
 }   t_stacks;
 
 int*    ft_normalizzazione_dati(int ac ,char **av);
@@ -33,7 +33,21 @@ int*    ft_insertion_valid_input(char **av, int len, int i);
 int*    ft_cmtx_to_arri_coverter(char **mtx);
 int     ft_get_input_length(int ac, char** av);
 void    ft_init_(int ac, char** av, t_stacks *stacks);
-void ft_return_non_lis_with_idx(t_stacks* stacks);
+void    ft_sort_non_lis(t_stacks* stacks);
+void    ft_move_non_lis(t_stacks* stacks);
+void    ft_print_params(t_stacks* stack);
+void    ft_sortback(t_stacks* stack);
+dll_list* ft_dll_calcola_mosse_b(t_stacks* stack);
+dll_list* ft_dll_calcola_mosse_a(t_stacks* stack); 
+int  ft_dll_calcola_mosse(dll_list* a, dll_list* b);
+void check_if_ordered(int *arr, int len);
+
+
+
+
+
+
+
 
 
 

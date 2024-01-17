@@ -5,7 +5,7 @@ dll_list	*ft_dll_new(void *val)
 {
 	dll_list	*new;
 
-	new = malloc(sizeof(dll_list));
+	new = ft_calloc(sizeof(dll_list) , 1);
 	if (!new)
 		return (NULL);
 	new->val = (int *)val;

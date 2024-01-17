@@ -17,11 +17,6 @@ void	ft_putnbr_unsigned_int_pf(int n, int *count)
 	unsigned int	nl;
 
 	nl = (unsigned int)n;
-	if (nl < 0)
-	{
-		nl *= -1;
-		ft_putchar_pf('-', count);
-	}
 	if (nl >= 10)
 	{
 		ft_putnbr_pf((nl / 10), count);
