@@ -19,6 +19,8 @@ typedef struct s_stacks
     dll_list* b;
     dll_list* lis;
     dll_list* o_non_lis;
+    int* mosse;
+    int mosse_len;
     int lis_len;
     int* input_arr;
     int input_arr_len;
@@ -41,6 +43,8 @@ dll_list* ft_dll_calcola_mosse_b(t_stacks* stack);
 dll_list* ft_dll_calcola_mosse_a(t_stacks* stack); 
 int  ft_dll_calcola_mosse(dll_list* a, dll_list* b);
 void check_if_ordered(int *arr, int len);
+void ft_execute_mosse(t_stacks* stack);
+
 
 
 

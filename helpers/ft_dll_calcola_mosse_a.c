@@ -24,13 +24,15 @@ static void ft_insert_mosse_node(dll_list** mosse_a, int val)
 static int ft_handle_mosse_condition_o(dll_list** mosse_a, dll_list* ptr_a, dll_list* ptr_b)
 {
     int len;
-    dll_list* tmp;
+/*     dll_list* tmp; */
 
-    tmp = ptr_a;
+
+    len = ft_dll_get_tail_index(ptr_a);
+/*     tmp = ptr_a;
     ft_dll_return_tail(&ptr_a);
     len = ptr_a->index;
     ft_dll_return_head(&ptr_a);
-    ptr_a = tmp;
+    ptr_a = tmp; */
     if ((ptr_a->index == 0) && (*(int*)ptr_b->val < *(int*)ptr_a->val))
     {
         ft_insert_mosse_node(mosse_a, 0);
@@ -52,15 +54,15 @@ static int ft_handle_mosse_condition_u(dll_list** mosse_a, dll_list* ptr_a, dll_
 {
     int len;
     dll_list* tmp;
+    dll_list* head;
+    
 
-    tmp = ptr_a;
-    ft_dll_return_tail(&ptr_a);
-    len = ptr_a->index;
-    ft_dll_return_head(&ptr_a);
-    ptr_a = tmp;
-    if ((ptr_a->index == 0) && (*(int*)ptr_b->val < *(int*)ptr_a->val))
+    head = ft_dll_get_node(ptr_a, ptr_a->index); 
+    len = ft_dll_get_tail_index(ptr_a);
+    tmp = ft_dll_get_node(ptr_a, len);
+    if ((ptr_a->index == 0) && (*(int*)ptr_b->val < *(int*)ptr_a->val && *(int*)ptr_b->val > *(int*)tmp->val))
     {
-        ft_insert_mosse_node(mosse_a, 0);
+        ft_insert_mosse_node(mosse_a, 0); /***/
         return 1;
     }
     else if (*(int*)ptr_a->val < *(int*)ptr_b->val && *(int*)ptr_b->val < *(int*)ptr_a->next->val)
@@ -68,6 +70,7 @@ static int ft_handle_mosse_condition_u(dll_list** mosse_a, dll_list* ptr_a, dll_
         ft_insert_mosse_node(mosse_a, ptr_a->next->index);
         return 1;
     }
+
     return 0;
 }
 
@@ -101,14 +104,19 @@ static int ft_check_and_insert_mosse(dll_list** mosse_a, dll_list* ptr_a, dll_li
     return 0;
 }
 static void ft_process_mosse_nodes(dll_list** mosse_a, dll_list* ptr_a, dll_list* ptr_b, int pivot_idx)
-{
+{/* 
+    int tail_idx; */
+
     while (ptr_a != NULL)
     {
         if (ft_check_and_insert_mosse(mosse_a, ptr_a, ptr_b, pivot_idx))
             break;
         ptr_a = ptr_a->next;
         if (ptr_a->next == NULL)
+        {
+            ft_insert_mosse_node(mosse_a, 0);
             break;
+        }
     }
 }
 static dll_list* ft_generate_mosse_list_a(t_stacks* stack, int pivot_idx)
@@ -133,22 +141,14 @@ dll_list* ft_dll_calcola_mosse_a(t_stacks* stack)
     dll_list* mosse_a;
     int len;
     int pivot_idx;
-
     mosse_a = NULL;
-    ft_dll_return_tail(&stack->a);
-    len = stack->a->index;
-    ft_dll_return_head(&stack->a);
-
+    len = ft_dll_get_tail_index(stack->a);
     pivot_idx = len / 2 ;
-
-    //ft_find_middle(stack->a);
-
     if(len == 0)
     {
         mosse_a = ft_handle_empty_stack_b(stack->b);
         return mosse_a;
     }
-
     return ft_generate_mosse_list_a(stack, pivot_idx);
 }
 /*     while(ptr_b != NULL)

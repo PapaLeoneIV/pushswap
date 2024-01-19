@@ -14,6 +14,18 @@ void pb(dll_list **stack_b, dll_list **stack_a)
 	if(!val_a)
 		return ;
 	ft_dll_return_head(stack_a);
+	if(ft_dll_size(*stack_a) == 1)
+	{
+		*val_a = *(int* )(*stack_a)->val;
+		free((*stack_a)->val);
+		free((*stack_a));
+		*stack_a = NULL;
+		newnode = ft_dll_new(val_a);
+		if(!newnode)
+			return ;
+		ft_dll_insert_head(&(*stack_a), newnode);
+		return;
+	}
 	tmp = (*stack_a)->next;
 	*val_a = *(int* )(*stack_a)->val;
 	free((*stack_a)->val);

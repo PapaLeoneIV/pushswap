@@ -8,7 +8,7 @@ int ft_dll_get_value(dll_list* list, int index)
     i = 0;
     ptr = list;
     if(!list)
-        printf("errore nel ft_dll_get_value!");
+        write(1, "list is NULL\n", 13);
     while(i < index)
     {
         if(ptr == NULL)

@@ -26,7 +26,7 @@ int *ft_insertion_valid_input(char **av, int len, int offset)
 		}	
 	}
 
-	if(ft_check_for_dupl(arr, len - 1 + flag) == 1)
+	if(ft_check_for_dupl(arr, len - flag) == 1)
 	{
 		free(arr);
         printf("errore in ft_check_for_dupl");

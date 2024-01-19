@@ -23,11 +23,14 @@ static dll_list* ft_create_mosse_list(t_stacks* stack, int pivot_idx)
 
 	
 	mosse = NULL;
-	ft_dll_return_tail(&stack->o_non_lis);
-	tmp =  stack->o_non_lis;
+	/*TODO devo aggiornare e togliere la dipendenza del calcole delle mosse di B ed A da non_lis, ma devo
+	* spostarla su stack di B 
+	*/
+	ft_dll_return_tail(&stack->b);
+	tmp =  stack->b;
 	len = tmp->index;
 	ft_dll_return_head(&tmp);
-	ft_dll_return_head(&stack->o_non_lis);
+	ft_dll_return_head(&stack->b);
 	while (tmp != NULL)
 	{
 		if (tmp->index <= pivot_idx)
@@ -36,7 +39,6 @@ static dll_list* ft_create_mosse_list(t_stacks* stack, int pivot_idx)
 			*tmp1 = tmp->index;
 			new = ft_dll_new(tmp1);
 			ft_dll_insert_tail(&mosse, new);
-			//printf("tmp->indx < pivot_index: %d\n", *(int*)new->val);
 		}
 		else
 		{	

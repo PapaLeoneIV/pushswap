@@ -29,6 +29,7 @@ SRC = 	$(HELPERS_DIR)/ft_normalizzazione_dati.c \
 		$(HELPERS_DIR)/ft_dll_calcola_mosse_a.c \
 		$(HELPERS_DIR)/ft_move_from_b_to_a.c \
 		$(HELPERS_DIR)/check_if_ordered.c \
+		$(HELPERS_DIR)/ft_execute_mosse.c \
 		$(STACK_MOVES_DIR)/sa.c \
 		$(STACK_MOVES_DIR)/sb.c \
 		$(STACK_MOVES_DIR)/ss.c \

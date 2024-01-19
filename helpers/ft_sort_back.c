@@ -3,30 +3,83 @@
 #include "pushswap.h"
 
 
+static int* ft_get_mosse_from_best_idx(int best_idx, dll_list* a, dll_list* b)
+{
+	int* arr;
 
+	arr = ft_calloc(2, sizeof(int));
+	if(arr == NULL)
+		return NULL;
+	arr[0] = ft_dll_get_value(a, best_idx);
+	arr[1] = ft_dll_get_value(b, best_idx);
+	return arr;
+}
 
 void ft_sortback(t_stacks* stack)
 {
 	dll_list* mosse_a;
 	dll_list* mosse_b;
 	int best_idx;
-
+	while(stack->b != NULL)
+	{
 		mosse_b = ft_dll_calcola_mosse_b(stack);
 		mosse_a = ft_dll_calcola_mosse_a(stack);
 		best_idx = ft_dll_calcola_mosse(mosse_a, mosse_b);
-		printf("best index --->%i\n", best_idx);
-		 printf("\nmosse_b: \n");
-		ft_dll_printi(mosse_b);
-		printf("\nmosse_a: \n");
-		ft_dll_printi(mosse_a); 
-		/*mosse_a = ft_dll_calcola_mosse_a(stack);
-		best_idx = ft_dll_calcola_mosse(mosse_a, mosse_b);
-		ft_move_from_b_to_a(stack, best_idx);
-		ptr = ptr->next;
-		*/
-    /* ft_dll_return_head(&(stack->o_non_lis));
-	ft_dll_return_head(&stack->a); */
+		stack->mosse_len = 2;
+		stack->mosse = ft_get_mosse_from_best_idx(best_idx, mosse_a, mosse_b);
+		ft_execute_mosse(stack);
+		//ft_dll_update_index(&stack->a);
+		ft_dll_update_index(&stack->b);
+	}
+	printf("DONE");
 }
+
+/**
+ * ➜  push_swap_vecchio git:(dec-18) ✗ ./push_swap  -9 -8 -43 32 1 421 -50 -55 532
+
+stack->a
+[Lista] : 
+
+        idx->[1]  :  [1]
+        idx->[2]  :  [32]
+        idx->[3]  :  [421]
+        idx->[4]  :  [532]
+        idx->[5]  :  [-50]
+        idx->[6]  :  [-55]
+        idx->[7]  :  [-9]
+        idx->[8]  :  [-8]
+
+stack->b
+[Lista] : 
+        idx->[0]  :  [-10]
+-------------------
+stack->input_arr
+[Arr] : idx->[0]  :  -9
+        idx->[1]  :  -8
+        idx->[2]  :  -43
+        idx->[3]  :  32
+        idx->[4]  :  1
+        idx->[5]  :  421
+        idx->[6]  :  -50
+        idx->[7]  :  -55
+        idx->[8]  :  532
+
+stack->lis
+[Lista] : 
+        idx->[0]  :  [-9]
+        idx->[1]  :  [-8]
+        idx->[2]  :  [32]
+        idx->[3]  :  [421]
+        idx->[4]  :  [532]
+
+stack->o_non_lis
+[Lista] : 
+        idx->[0]  :  [-43]
+        idx->[1]  :  [1]
+        idx->[2]  :  [-50]
+        idx->[3]  :  [-55]
+DONE%   
+*/
 	/** Il calcolo delle mosse
 Se state immaginando una quindicina di funzioni da scrivere dopo questo titolo, probabilmente avete sottostimato il lavoro che avete ancora di fronte.
 
@@ -37,6 +90,8 @@ Cominciamo quindi a fare i nostri calcoli: si prende la stack_b e si calcola la 
 si trova nello stack_a il numero immediatamente maggiore a quello preso in considerazione nello stack_b. Aiutatevi col presupposto che lo stack_a è già ordinato! Trovate la coppia per il quale mov_a[i] < mov_b[j] < mov_a[i + 1] e mettete mov_a[i + 1] in prima posizione. Esempio: se abbiamo da inserire un 5 in uno stack_a uguale a 3 - 8 - 19 - 25, sarà l'8 ad andare in prima posizione.
 si calcola lo stesso valore del passaggio 2, ma riguardante mov_a[i + 1].
 Vi porto un esempio pragmatico più complesso, preso da una simulazione reale in cui avevo 7 numeri sullo stack_b e più di 12 numeri sullo stack_a:
+
+
 
 MOV_A   MOV_B
 4       0

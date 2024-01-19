@@ -64,14 +64,3 @@ void ft_sort_non_lis(t_stacks* stacks)
     ft_insert_u_non_lis(stacks, u_non_lis.arr, u_non_lis.len);
     free(u_non_lis.arr);
 }
-
-    /*TODO modificare quick_sort in modo da funzionare con delle dll {o.o}**
-    * ->una volta fatto:
-        creare una nuova dll usando quick_sort su u_non_lis (mantenendo gl indici gia presenti in u_non_lis !!!!NON AGGIORNARLI)
-        FATTO QUESTO:
-            dovrei avere :
-                    lis dll (con gli indici originali)
-                    u_non_lis (con gli indici originali)
-                    order_non_lis (con gli indici originali)
-
-    */

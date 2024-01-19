@@ -14,7 +14,20 @@ void pa(dll_list **stack_a, dll_list **stack_b)
 	val_b = malloc(sizeof(int));
 	if(!val_b)
 		return ;
+
 	ft_dll_return_head(stack_b);
+	if(ft_dll_size(*stack_b) == 1)
+	{
+		*val_b = *(int* )(*stack_b)->val;
+		free((*stack_b)->val);
+		free((*stack_b));
+		*stack_b = NULL;
+		newnode = ft_dll_new(val_b);
+		if(!newnode)
+			return ;
+		ft_dll_insert_head(&(*stack_a), newnode);
+		return;
+	}
 	tmp = (*stack_b)->next;
 	*val_b = *(int* )(*stack_b)->val;
 	free((*stack_b)->val);
@@ -28,14 +41,14 @@ void pa(dll_list **stack_a, dll_list **stack_b)
 	ft_dll_insert_head(&(*stack_a), newnode);	
 }
 
- /* int main()
+/*  int main()
 {
 	dll_list *a_head;
 	dll_list *b_head;
-	int arr[] = {2, 1 , 3, 5, 6};
-	int arr2[] = {0, 0 , 0};
-	a_head = ft_dll_initi(arr, 5);
-	b_head = ft_dll_initi(arr2, 3);
+	int arr[] = {2, 3, 5, 6};
+	int arr2[] = {1};
+	a_head = ft_dll_initi(arr, 4);
+	b_head = ft_dll_initi(arr2, 1);
 
 
 	pa(&a_head, &b_head);
@@ -60,4 +73,4 @@ void pa(dll_list **stack_a, dll_list **stack_b)
 	ft_dll_return_head(&b_head);
 	ft_dll_clear(&a_head, free);
 	ft_dll_clear(&b_head, free);
-} 	 */
+} 	  */

@@ -4,5 +4,5 @@
 void error_fn()
 {
 	write(2, "Error\n", 6);
-	exit(0);
+	exit(1);
 }
