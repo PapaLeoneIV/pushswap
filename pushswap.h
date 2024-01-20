@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include "libft.h"
 #include "ft_printf.h"
+#include "limits.h"
 
 typedef struct iarr
 {
@@ -19,6 +20,9 @@ typedef struct s_stacks
     dll_list* b;
     dll_list* lis;
     dll_list* o_non_lis;
+    int pivotindex;
+    int* minmax;
+    int minmax_len;
     int* mosse;
     int mosse_len;
     int lis_len;

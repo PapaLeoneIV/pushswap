@@ -38,7 +38,8 @@ void pa(dll_list **stack_a, dll_list **stack_b)
 	newnode = ft_dll_new(val_b);
 	if(!newnode)
 		return ;
-	ft_dll_insert_head(&(*stack_a), newnode);	
+	ft_dll_insert_head(&(*stack_a), newnode);
+	write(1, "pa\n", 3);	
 }
 
 /*  int main()

@@ -24,6 +24,7 @@ void rb(dll_list** stack)
             break;
         (*stack) = (*stack)->prev;
     }
+    write(1, "rb\n", 3);
 }
 
 /* int main(void)

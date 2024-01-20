@@ -1,7 +1,6 @@
 ﻿#include "libft.h"
 #include "ft_printf.h"
-#include "pushswap.h"
-
+#include "pushswap.h" 
 
 static int* ft_get_mosse_from_best_idx(int best_idx, dll_list* a, dll_list* b)
 {
@@ -15,20 +14,48 @@ static int* ft_get_mosse_from_best_idx(int best_idx, dll_list* a, dll_list* b)
 	return arr;
 }
 
-void ft_sortback(t_stacks* stack)
+static int* ft_findminmax(dll_list* stack_a)
 {
-	dll_list* mosse_a;
+        int* minmax;
+        int min;
+        int max;
+        dll_list* ptr;
+
+        ptr = stack_a;
+        min = INT_MAX;
+        max = INT_MIN;
+        while(ptr != NULL)
+        {
+                if(*(int*)ptr->val < min)
+                        min = *(int*)ptr->val;
+                if(*(int*)ptr->val > max)
+                        max = *(int*)ptr->val;
+                ptr = ptr->next;
+        }
+        minmax = ft_calloc(2, sizeof(int));
+        if(minmax == NULL)
+                return NULL;
+        minmax[0] = min;
+        minmax[1] = max;
+        return minmax;
+}
+
+void ft_sortback(t_stacks* stack)
+{       
+        int best_idx;
+        dll_list* mosse_a;
 	dll_list* mosse_b;
-	int best_idx;
 	while(stack->b != NULL)
 	{
 		mosse_b = ft_dll_calcola_mosse_b(stack);
+                stack->minmax = ft_findminmax(stack->a);
+                stack->minmax_len = 2;
 		mosse_a = ft_dll_calcola_mosse_a(stack);
 		best_idx = ft_dll_calcola_mosse(mosse_a, mosse_b);
 		stack->mosse_len = 2;
 		stack->mosse = ft_get_mosse_from_best_idx(best_idx, mosse_a, mosse_b);
 		ft_execute_mosse(stack);
-		//ft_dll_update_index(&stack->a);
+		ft_dll_update_index(&stack->a);
 		ft_dll_update_index(&stack->b);
 	}
 	printf("DONE");

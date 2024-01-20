@@ -25,6 +25,8 @@ void rrb(dll_list** stack)
             break;
         (*stack) = (*stack)->next;
     }
+    ft_dll_return_head(stack);
+    write(1, "rrb\n", 4);
 }
  
  /* int main(void)

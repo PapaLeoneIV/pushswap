@@ -16,7 +16,7 @@ void sb(dll_list *stack_b)
     head->prev = second_node;
     second_node->prev = NULL;
     second_node->next = head;
-    
+    write(1, "sb\n", 3);   
 }
 /* 
 int main()

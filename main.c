@@ -22,7 +22,6 @@ int main(int ac, char **av)
     ft_sort_non_lis(&stacks);
     ft_move_non_lis(&stacks);
     ft_sortback(&stacks);
-    ft_print_params(&stacks);
 	
 	free(stacks.input_arr);
     ft_dll_return_head(&(stacks.a));

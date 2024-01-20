@@ -13,6 +13,7 @@ void ft_execute_mosse(t_stacks* stack)
             if(stack->mosse[0] > 0 && stack->mosse[1] > 0)
             {
                 rr(&stack->a, &stack->b);
+                write(1, "rr\n", 3);
 				stack->mosse[0]--;
                 stack->mosse[1]--;
             }
@@ -35,6 +36,7 @@ void ft_execute_mosse(t_stacks* stack)
             if(stack->mosse[0] < 0 && stack->mosse[1] < 0)
             {
                 rrr(&stack->a, &stack->b);
+                write(1, "rrr\n", 4);
 				stack->mosse[0]++;
                 stack->mosse[1]++;
             }
