@@ -25,7 +25,6 @@ int *ft_insertion_valid_input(char **av, int len, int offset)
 			error_fn();
 		}	
 	}
-
 	if(ft_check_for_dupl(arr, len - flag) == 1)
 	{
 		free(arr);

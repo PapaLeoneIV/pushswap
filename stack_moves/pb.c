@@ -37,7 +37,6 @@ void pb(dll_list **stack_b, dll_list **stack_a)
 	if(!newnode)
 		return;
 	ft_dll_insert_head(&(*stack_b), newnode);
-	write(1, "pb\n", 3);
 }
 /* int main()
 {

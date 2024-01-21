@@ -39,9 +39,8 @@ static int ft_calcola_n_mosse(int a, int b)
     else if(a >= 0 && b == 0)
         return a;
     else if (a == 0 && b >= 0)
-        return b;
-    return 0;    
-
+        return b;  
+    return 0;
 }
 
 
@@ -53,7 +52,7 @@ int  ft_dll_calcola_mosse(dll_list* a, dll_list* b)
     int min_mosse;
     int n_mosse;
 
-    min_mosse = 0;
+    min_mosse = INT_MAX;
     ptr_a = a;
     ptr_b = b;
     while(ptr_b != NULL )

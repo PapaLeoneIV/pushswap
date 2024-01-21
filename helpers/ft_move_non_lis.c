@@ -18,12 +18,14 @@ void ft_move_non_lis(t_stacks* stacks)
 			if (*(int*)ptr->val == *(int*)stacks->a->val)
 			{		
 				pb(&stacks->b, &stacks->a);
+				write(1, "pb\n", 3);
 				ptr = ptr->next;
 				num_nlis_pushed++;
 			}
 			else
 			{
 				ra(&stacks->a);
+				write(1, "ra\n", 3);
 				j++;
 			}
 
@@ -35,6 +37,7 @@ void ft_move_non_lis(t_stacks* stacks)
  	while(num_nlis_pushed < j)
 	{
 		rra(&stacks->a);
+		write(1, "rra\n", 4);
 		num_nlis_pushed++;
 	} 
 

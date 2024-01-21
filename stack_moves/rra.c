@@ -26,7 +26,6 @@ void rra(dll_list** stack)
         (*stack) = (*stack)->next;
     }
     ft_dll_return_head(stack);
-    write(1, "rra\n", 4);
 }
 /* int main(void)
 {
