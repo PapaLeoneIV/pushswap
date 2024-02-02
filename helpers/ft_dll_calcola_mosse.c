@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_dll_calcola_mosse.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/01 15:52:30 by rileone           #+#    #+#             */
+/*   Updated: 2024/02/01 15:52:34 by rileone          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "pushswap.h"
 /* 	|	mov_b +		|	mov_b -
 --------|-----------------------|-----------------------
@@ -26,20 +38,14 @@ static int ft_max(int a, int b)
 
 static int ft_calcola_n_mosse(int a, int b)
 {
-    if(a == 0 && b == 0)
-        return 0;
-    if(a > 0 && b > 0)
+    if(a >= 0 && b >= 0)
         return (ft_max(a, b));
-    else if(a < 0 && b < 0)
-        return (ft_min(a, b) * -1);
     else if(a >= 0 && b < 0)
         return (a + (b * -1));
     else if(a < 0 && b >= 0)
         return ((a * -1) + b);
-    else if(a >= 0 && b == 0)
-        return a;
-    else if (a == 0 && b >= 0)
-        return b;  
+    else if(a < 0 && b < 0)
+        return (ft_min(a, b) * -1);
     return 0;
 }
 

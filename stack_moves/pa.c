@@ -1,7 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pa.c                                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/01 15:53:01 by rileone           #+#    #+#             */
+/*   Updated: 2024/02/01 15:53:06 by rileone          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
  #include "../pushswap.h"
 #include "ft_printf.h"
 #include "../libft.h"
 #include "limits.h"
+static void ft_insert_helper(dll_list **stack_a, dll_list **stack_b, int* val_b, dll_list* newnode)
+{
+	*val_b = *(int* )(*stack_b)->val;
+		free((*stack_b)->val);
+		free((*stack_b));
+		*stack_b = NULL;
+		newnode = ft_dll_new(val_b);
+		if(!newnode)
+			return ;
+		ft_dll_insert_head(stack_a, newnode);
+}
+
 
 void pa(dll_list **stack_a, dll_list **stack_b)
 {
@@ -9,23 +33,14 @@ void pa(dll_list **stack_a, dll_list **stack_b)
 	dll_list*	newnode;
 	dll_list*	tmp;
 
+	newnode = NULL;
 	if(ft_dll_size(*stack_b) == 0)
 		return ;
 	val_b = malloc(sizeof(int));
-	if(!val_b)
-		return ;
-
 	ft_dll_return_head(stack_b);
 	if(ft_dll_size(*stack_b) == 1)
 	{
-		*val_b = *(int* )(*stack_b)->val;
-		free((*stack_b)->val);
-		free((*stack_b));
-		*stack_b = NULL;
-		newnode = ft_dll_new(val_b);
-		if(!newnode)
-			return ;
-		ft_dll_insert_head(&(*stack_a), newnode);
+		ft_insert_helper(stack_a, stack_b, val_b, newnode);
 		return;
 	}
 	tmp = (*stack_b)->next;
@@ -36,9 +51,7 @@ void pa(dll_list **stack_a, dll_list **stack_b)
 	ft_dll_return_head(&tmp);
 	(*stack_b) = tmp;
 	newnode = ft_dll_new(val_b);
-	if(!newnode)
-		return ;
-	ft_dll_insert_head(&(*stack_a), newnode);
+	ft_dll_insert_head(stack_a, newnode);
 }
 
 /*  int main()

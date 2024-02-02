@@ -1,14 +1,26 @@
-#include"pushswap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_if_ordered.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/01 15:52:30 by rileone           #+#    #+#             */
+/*   Updated: 2024/02/01 15:52:33 by rileone          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "pushswap.h"
 
 void check_if_ordered(int *arr, int len)
 {
     int i;
 
     i = 0;
-    while(i < len - 1)
+    while (i < len - 1)
     {
-        if(arr[i] > arr[i + 1])
-            return ;
+        if (arr[i] > arr[i + 1])
+            return;
         i++;
     }
     exit(0);

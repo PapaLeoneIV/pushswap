@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "pushswap.h"
-#include "ft_printf.h"
-#include "../libft.h"
 int ft_find_min(dll_list* a)
 {
     int min;
@@ -65,14 +63,13 @@ void ft_rotate_until_ordered(t_stacks* stack)
 int main(int ac, char **av)
 {
 	t_stacks stacks;
-
     stacks = (t_stacks){0};
  	ft_init_(ac, av, &stacks);
     ft_sort_non_lis(&stacks);
     ft_move_non_lis(&stacks);
     ft_sortback(&stacks);
-     ft_rotate_until_ordered(&stacks); 
-//ft_print_params(&stacks);
+    ft_rotate_until_ordered(&stacks); 
+    ft_print_params(&stacks);
 	
 	free(stacks.input_arr);
     ft_dll_return_head(&(stacks.a));
@@ -81,4 +78,6 @@ int main(int ac, char **av)
     ft_dll_clear(&(stacks.b), free);
     ft_dll_return_head(&(stacks.lis));
     ft_dll_clear(&(stacks.lis), free);
-} 
+    ft_dll_return_head(&(stacks.o_non_lis));
+    ft_dll_clear(&(stacks.o_non_lis), free);
+}

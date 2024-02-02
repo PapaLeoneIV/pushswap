@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_dll_get_node.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/01 15:47:49 by rileone           #+#    #+#             */
+/*   Updated: 2024/02/01 15:48:01 by rileone          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../libft.h"
 
 dll_list* ft_dll_get_node(dll_list* list, int index)
@@ -9,6 +21,7 @@ dll_list* ft_dll_get_node(dll_list* list, int index)
     ptr = list;
     if(!list)
         printf("errore nel ft_dll_get_value!");
+    ft_dll_return_head(&ptr);
     while(ptr != NULL)
     {
         if(ptr->index == index)

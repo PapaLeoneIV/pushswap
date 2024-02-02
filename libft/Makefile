@@ -57,6 +57,7 @@ SRC =		$(ERROR_DIR)/error_fn.c \
 			$(MEM_DIR)/ft_memmove.c \
 			$(MEM_DIR)/ft_memset.c \
 			$(MEM_DIR)/ft_bzero.c \
+			$(MEM_DIR)/ft_clear_mtx.c \
 			$(HASH_DIR)/ft_create_hash_map.c \
 			$(HASH_DIR)/ft_free_hash_map.c \
 			$(HASH_DIR)/ft_get_frequency.c \

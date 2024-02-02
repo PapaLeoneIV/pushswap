@@ -1,14 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_get_input_length.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/01 15:52:30 by rileone           #+#    #+#             */
+/*   Updated: 2024/02/01 15:52:34 by rileone          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include "ft_printf.h"
 #include "pushswap.h"
+
+void ft_clear_mtx(char **mtx, int len)
+{
+	int i;
+
+	i = 0;
+	while(i < len)
+	{
+		free(mtx[i]);
+		mtx[i] = NULL;
+		i++;
+	}
+	free(mtx);
+	mtx = NULL;
+
+}
+
 
 int ft_get_input_length(int ac, char** av)
 {
 	char **mtx;
 	int len;
-    int i;
 
-    i = 0;
 	len = 0;
 	if(ac <= 1)
 		error_fn();
@@ -17,18 +44,9 @@ int ft_get_input_length(int ac, char** av)
 		mtx = ft_split(av[1], ' ');
 		while(mtx && mtx[len])
 			len++;
-        while(i < len)
-	    {
-		    free(mtx[i]);
-		    mtx[i] = NULL;
-		    i++;
-	    }
-        free(mtx);
-        mtx = NULL;
+		ft_clear_mtx(mtx, len);
 	}
 	else
-	{
 		len = ac - 1;
-	}
 	return (len);
 }

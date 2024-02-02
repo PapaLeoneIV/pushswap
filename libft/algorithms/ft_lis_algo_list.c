@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lis_algo_list.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/01 15:47:49 by rileone           #+#    #+#             */
+/*   Updated: 2024/02/01 15:48:01 by rileone          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "limits.h"
@@ -107,8 +119,7 @@ dll_list* ft_lis_algo_list(int* lis_len, dll_list* a)
 }
 
 
-/* 
-  
+/*
 int main() {
     int lis_length;
 

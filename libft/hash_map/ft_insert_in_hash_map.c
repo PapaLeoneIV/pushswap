@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_insert_in_hash_map.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/01 15:50:55 by rileone           #+#    #+#             */
+/*   Updated: 2024/02/01 15:50:59 by rileone          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../libft.h"
 #include "limits.h"
 
@@ -5,18 +17,21 @@ void ft_insert_in_hash_map(hash_map* map, int key)
 {
     int riga_hash_map;
     item* nodo;
+    item* new_item ;
 
     riga_hash_map = ft_hash_fn(key, map->size);
     /**serve a gestire le sovrapposizioni*/
     nodo = map->array[riga_hash_map];
-    while (nodo != NULL) {
-        if (nodo->key == key) {
+    while (nodo != NULL) 
+    {
+        if (nodo->key == key) 
+        {
             nodo->value++;
             return ;
         }
         nodo = nodo->next;
     }
-    item* new_item = (item *)malloc(sizeof(item));
+    new_item = (item *)malloc(sizeof(item));
     new_item->key = key;
     new_item->value = 1;
     new_item->next = NULL;

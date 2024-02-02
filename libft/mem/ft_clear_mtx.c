@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_clear_mtx.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rileone <rileone@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/20 21:20:06 by rileone          #+#    #+#             */
+/*   Created: 2024/02/01 15:50:55 by rileone           #+#    #+#             */
 /*   Updated: 2024/02/01 15:51:00 by rileone          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-int	ft_isprint(int c)
+void    ft_clear_mtx(char **mtx, int len)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+    int i;
+
+    i = 0;
+    while(i < len)
+    {
+        free(mtx[i]);
+        mtx[i] = NULL;
+        i++;
+    }
+    free(mtx);
+    mtx = NULL;
+
 }
