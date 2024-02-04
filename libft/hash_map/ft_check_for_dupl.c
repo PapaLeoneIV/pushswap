@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_check_for_dupl.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/01 15:50:54 by rileone           #+#    #+#             */
+/*   Updated: 2024/02/01 15:50:59 by rileone          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../libft.h"
 #include "limits.h"
 
@@ -7,16 +19,13 @@ int ft_check_for_dupl(int *arr, int size)
     int i;
     int res;
 
-    i = 0;
+    i = -1;
     res = 0;
     map = ft_create_hash_map(size);
-    while(i < size)
-    {
+    while(++i < size)
         ft_insert_in_hash_map(map, arr[i]);
-        i++;
-    }
-    i = 0;
-    while(i < size)
+    i = -1;
+    while(++i < size)
     {
         res = ft_get_frequency(map, arr[i]);
         if(res > 1)
@@ -24,7 +33,6 @@ int ft_check_for_dupl(int *arr, int size)
             ft_free_hash_map(map);
             return 1;
         }  
-        i++;
     }
     ft_free_hash_map(map);
     return 0;

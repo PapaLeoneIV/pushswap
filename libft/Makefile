@@ -57,6 +57,7 @@ SRC =		$(ERROR_DIR)/error_fn.c \
 			$(MEM_DIR)/ft_memmove.c \
 			$(MEM_DIR)/ft_memset.c \
 			$(MEM_DIR)/ft_bzero.c \
+			$(MEM_DIR)/ft_clear_mtx.c \
 			$(HASH_DIR)/ft_create_hash_map.c \
 			$(HASH_DIR)/ft_free_hash_map.c \
 			$(HASH_DIR)/ft_get_frequency.c \
@@ -76,6 +77,8 @@ SRC =		$(ERROR_DIR)/error_fn.c \
 			$(DLL_LIST_DIR)/ft_dll_get_node.c \
 			$(DLL_LIST_DIR)/ft_dll_get_value.c \
 			$(DLL_LIST_DIR)/ft_dll_printi.c \
+			$(DLL_LIST_DIR)/ft_del_lastnode.c \
+			$(DLL_LIST_DIR)/ft_dll_get_tail_index.c \
 			$(SLL_DIR)/ft_lstnew.c \
 			$(SLL_DIR)/ft_lstadd_front.c \
 			$(SLL_DIR)/ft_lstsize.c \

@@ -1,19 +1,45 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pb.c                                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/01 15:53:01 by rileone           #+#    #+#             */
+/*   Updated: 2024/02/01 15:53:06 by rileone          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../pushswap.h"
 #include "ft_printf.h"
 #include "../libft.h"
-
+static void ft_insert_helper(dll_list **stack_a, int* val_a, dll_list* newnode)
+{
+	*val_a = *(int* )(*stack_a)->val;
+		free((*stack_a)->val);
+		free((*stack_a));
+		*stack_a = NULL;
+		newnode = ft_dll_new(val_a);
+		if(!newnode)
+			return ;
+		ft_dll_insert_head(&(*stack_a), newnode);
+}
 void pb(dll_list **stack_b, dll_list **stack_a)
 {
 	int*		val_a;
 	dll_list*	newnode;
 	dll_list*	tmp;
 
+newnode = NULL;
 	if(ft_dll_size(*stack_a) == 0)
 		return ;
 	val_a = malloc(sizeof(int));
-	if(!val_a)
-		return ;
-	ft_dll_return_head(stack_a);
+		ft_dll_return_head(stack_a);
+	if(ft_dll_size(*stack_a) == 1)
+	{
+		ft_insert_helper(stack_a, val_a, newnode);
+		return;
+	}
 	tmp = (*stack_a)->next;
 	*val_a = *(int* )(*stack_a)->val;
 	free((*stack_a)->val);
@@ -22,9 +48,7 @@ void pb(dll_list **stack_b, dll_list **stack_a)
 	ft_dll_return_head(&tmp);
 	(*stack_a) = tmp; 
 	newnode = ft_dll_new(val_a);
-	if(!newnode)
-		return;
-	ft_dll_insert_head(&(*stack_b), newnode);	
+		ft_dll_insert_head(&(*stack_b), newnode);
 }
 /* int main()
 {

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rb.c                                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/01 15:53:01 by rileone           #+#    #+#             */
+/*   Updated: 2024/02/01 15:53:06 by rileone          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../pushswap.h"
 #include "ft_printf.h"
 #include "../libft.h"
@@ -24,6 +36,7 @@ void rb(dll_list** stack)
             break;
         (*stack) = (*stack)->prev;
     }
+    ft_dll_return_head(stack);
 }
 
 /* int main(void)

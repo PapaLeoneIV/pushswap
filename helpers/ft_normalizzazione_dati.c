@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_normalizzazione_dati.c                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/01 15:52:30 by rileone           #+#    #+#             */
+/*   Updated: 2024/02/01 15:52:34 by rileone          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include "ft_printf.h"
 #include "pushswap.h"
@@ -6,42 +18,27 @@ int *ft_manage_string_input(char **av)
 {
 	int *arr;
 	char **mtx;
-	int i;
     int len;
 
-	i = 0;
     len = 0;
 	if(av[1][0] == '\0')
-    {
-        printf("errore in ft_manage_string_input");
 		error_fn();
-    }
 	mtx = ft_split(av[1], ' ');
     while(mtx[len])
 			len++;
 	arr = ft_cmtx_to_arri_coverter(mtx);
 	if(!arr)
-    {
-        printf("errore in ft_manage_string_input");
 		error_fn();
-    }
-	while(i < len)
-	{
-		free(mtx[i]);
-		mtx[i] = NULL;
-		i++;
-	}	
-	free(mtx);
+	ft_clear_mtx(mtx, len);
 	return (arr);
 }
 
 int *ft_manage_multiple_input(char **av)
 {
-	int count;
 	int *arr;
 	int len;
 	int i;
-	count = 0;
+
 	len = 0;
 	i = 1;
 	while(av[len] != NULL)
