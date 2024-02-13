@@ -12,18 +12,17 @@
 
 #include "libft.h"
 
-void    ft_clear_mtx(char **mtx, int len)
+void	ft_clear_mtx(char **mtx, int len)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while(i < len)
-    {
-        free(mtx[i]);
-        mtx[i] = NULL;
-        i++;
-    }
-    free(mtx);
-    mtx = NULL;
-
+	i = 0;
+	while (i < len)
+	{
+		free(mtx[i]);
+		mtx[i] = NULL;
+		i++;
+	}
+	free(mtx);
+	mtx = NULL;
 }

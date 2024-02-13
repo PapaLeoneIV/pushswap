@@ -12,36 +12,36 @@
 
 #include "../libft.h"
 
-dll_list* ft_dll_get_node(dll_list* list, int index)
+t_dll_list	*ft_dll_get_node(t_dll_list *list, int index)
 {
-    int i;
-    dll_list* ptr;
+	int			i;
+	t_dll_list	*ptr;
 
-    i = 0;
-    ptr = list;
-    if(!list)
-        printf("errore nel ft_dll_get_value!");
-    ft_dll_return_head(&ptr);
-    while(ptr != NULL)
-    {
-        if(ptr->index == index)
-            return (ptr);
-        ptr = ptr->next;
-        i++;
-    }
-    return NULL;
+	i = 0;
+	ptr = list;
+	if (!list)
+		return (NULL);
+	ft_dll_return_head(&ptr);
+	while (ptr != NULL)
+	{
+		if (ptr->index == index)
+			return (ptr);
+		ptr = ptr->next;
+		i++;
+	}
+	return (NULL);
 }
 /* 
 
-int main()
+int	main(void)
 {
     int arr[] = {1, 2, 3, 4};
     int len = 4;
 
-    dll_list* list = ft_dll_initi(arr, len);
-    dll_list* res = ft_dll_get_node(list, -99);
+    t_dll_list* list = ft_dll_initi(arr, len);
+    t_dll_list* res = ft_dll_get_node(list, -99);
     if(res != NULL)
         printf("res : %i\n", *(int*)res->val);
     else 
-        return 0;
+        return (0);
 }  */

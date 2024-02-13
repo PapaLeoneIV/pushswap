@@ -30,16 +30,17 @@ char	*ft_strrchr(const char *s, int c)
 }
 
 /*
-int main()
+int	main(void)
 {
-	char *str1;
-	char chare;
+	char	*str1;
+	char	chare;
+
 	
 	str1 = "caSsa";
 	chare = 'A';
 	printf("risultato : %s \n", ft_strrchr(str1, chare));
 	printf("risultato : %s", strrchr(str1, chare));
-	return 0;
+	return (0);
 	
 	
 }

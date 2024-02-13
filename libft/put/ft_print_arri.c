@@ -10,18 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "ft_printf.h"
+#include "libft.h"
 
-void ft_print_arri(int* arr, int len)
+void	ft_print_arri(int *arr, int len)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    ft_printf("\n[Arr] :");
-    while(arr && i < len)
-    {
-        ft_printf("\tidx->[%i]  :  %i\n", i, arr[i]);
-        i++;
-    }
+	i = 0;
+	ft_printf("\n[Arr] :");
+	while (arr && i < len)
+	{
+		ft_printf("\tidx->[%i]  :  %i\n", i, arr[i]);
+		i++;
+	}
 }

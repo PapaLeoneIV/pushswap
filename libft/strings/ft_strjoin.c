@@ -34,11 +34,14 @@ char	*ft_strjoin(char const *s1, char const *s2)
 }
 
 /*
-int main()
+int	main(void)
 {
-	const char *str = "lorem ipsum";
-    const char *str1 = "dolor sit amet";
+	const char	*str;
+	const char	*str1;
     char *str2;
+
+	str = "lorem ipsum";
+    str1 = "dolor sit amet";
     str2 = ft_strjoin(str, str1);
     printf("questa e' la sottostringa : %s\n", str2);
 }

@@ -31,19 +31,18 @@ static char	*ft_strdup2(const char *s, int i, int length)
 
 static int	count_words(const char *str, char c)
 {
-	int	counter;
+	int	i;
 	int	res;
 
 	res = 0;
-	counter = 0;
+	i = 0;
 	if (!(str))
 		return (0);
-	while (str[counter] != '\0')
+	while (str[i] != '\0')
 	{
-		if (str[counter] != c
-			&& (str[counter + 1] == c || str[counter + 1] == '\0'))
+		if (str[i] != c && (str[i + 1] == c || str[i + 1] == '\0'))
 			res += 1;
-		counter++;
+		i++;
 	}
 	return (res);
 }
@@ -107,14 +106,14 @@ char	**ft_split(char const *s, char c)
 	res = ft_split(str, c);
 	int i = 0;
 
-	 while (res[i] != NULL)
-	 {
-	 	ft_print_res(res[i]);
-	 	free(res[i]);
-	 	i++;
-	 }
-	 	free(res);
+		while (res[i] != NULL)
+		{
+			ft_print_res(res[i]);
+			free(res[i]);
+			i++;
+		}
+			free(res);
 
-	return 0;
+	return (0);
  }
  */

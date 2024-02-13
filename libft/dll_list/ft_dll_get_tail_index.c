@@ -12,12 +12,12 @@
 
 #include "../libft.h"
 
-int ft_dll_get_tail_index(dll_list* list)
+int	ft_dll_get_tail_index(t_dll_list *list)
 {
-    dll_list* ptr;
+	t_dll_list	*ptr;
 
-    ptr = list;
-    while(ptr->next != NULL)
-        ptr = ptr->next;
-    return ptr->index;
+	ptr = list;
+	while (ptr->next != NULL)
+		ptr = ptr->next;
+	return (ptr->index);
 }

@@ -13,31 +13,51 @@
 #include "../libft.h"
 #include "limits.h"
 
-int ft_check_for_dupl(int *arr, int size)
+int	ft_check_for_dupl(int *arr, int size)
 {
-    hash_map *map;
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (i < size - 1)
+	{
+		j = i + 1;
+		while (j < size)
+		{
+			if (arr[i] == arr[j])
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+
+/* int ft_check_for_dupl(int *arr, int size)
+{
+    t_hash_map  *map;
     int i;
     int res;
 
     i = -1;
     res = 0;
-    map = ft_create_hash_map(size);
+    map = ft_create_t_hash_map (size);
     while(++i < size)
-        ft_insert_in_hash_map(map, arr[i]);
+        ft_insert_in_t_hash_map (map, arr[i]);
     i = -1;
     while(++i < size)
     {
         res = ft_get_frequency(map, arr[i]);
         if(res > 1)
         {
-            ft_free_hash_map(map);
-            return 1;
+            ft_free_t_hash_map (map);
+            return (1);
         }  
     }
-    ft_free_hash_map(map);
-    return 0;
-}
-
+    ft_free_t_hash_map (map);
+    return (0);
+} */
 
 /* int main() 
 {
@@ -53,5 +73,5 @@ int ft_check_for_dupl(int *arr, int size)
         printf("L'array non contiene duplicati.\n");
     }
 
-    return 0;
+    return (0);
 }  */

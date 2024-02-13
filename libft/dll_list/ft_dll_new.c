@@ -11,28 +11,29 @@
 /* ************************************************************************** */
 
 #include "../libft.h"
+
 //#include "ft_printf.h"
 
-dll_list	*ft_dll_new(void *val)
+t_dll_list	*ft_dll_new(void *val)
 {
-	dll_list	*new;
+	t_dll_list	*new;
 
-	new = ft_calloc(1, sizeof(dll_list));
+	new = ft_calloc(1, sizeof(t_dll_list));
 	if (!new)
 		return (NULL);
 	new->val = (int *)val;
 	new->next = NULL;
-    new->index = 0;
-    new->prev = NULL;
+	new->index = 0;
+	new->prev = NULL;
 	return (new);
 }
 
 /* 
 
-int main()
+int	main(void)
 {
-	dll_list *head;
-	dll_list *first;
+	t_dll_list *head;
+	t_dll_list *first;
 
 	head = NULL;
 	first = ft_dll_new((char *)"stringa!");

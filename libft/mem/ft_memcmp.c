@@ -29,7 +29,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	return (0);
 }
 /*
-int main()
+int	main(void)
 {
 	if(ft_memcmp("abcdefghij", "abcdefgxyz", 7) < 0)
 		printf("Il risultato e' minore di zero");
@@ -37,6 +37,5 @@ int main()
 		printf("Sono uguali");
 	else 
 		printf("Il risultato e' maggiore di zero");
-
 }
 */

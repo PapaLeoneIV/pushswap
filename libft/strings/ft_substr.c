@@ -15,7 +15,7 @@ static char	*ft_strnull(void)
 {
 	char	*p;
 
-	p = (char *) malloc(sizeof(char));
+	p = (char *)malloc(sizeof(char));
 	*p = 0;
 	return (p);
 }
@@ -32,9 +32,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (start >= slen)
 		return (ft_strnull());
 	if (len < slen)
-		p = (char *) malloc(sizeof(char) * (len + 1));
+		p = (char *)malloc(sizeof(char) * (len + 1));
 	else
-		p = (char *) malloc(sizeof(char) * ((slen - start) + 1));
+		p = (char *)malloc(sizeof(char) * ((slen - start) + 1));
 	if (!p)
 		return (0);
 	i = 0;
@@ -49,11 +49,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (p);
 }
 /*
-int main()
+int	main(void)
 {
-	char *str = "";
+	char	*str;
     char *str1;
-    size_t size = 343434;
+	size_t	size;
+
+	str = "";
+    size = 343434;
     str1 = ft_substr(str, 43, size);
     if(!str1)
     printf("questa e' la sottostringa : %s\n", str1);

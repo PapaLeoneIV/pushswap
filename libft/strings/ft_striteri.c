@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	unsigned int	i;
 
@@ -26,22 +26,20 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 }
 
 /*
-void my_test_func(unsigned int i, char *c)
+void	my_test_func(unsigned int i, char *c)
 {
     printf("Index: %u\n", i);
     *c = ft_toupper(*c);
 }
 
-int main()
+int	main(void)
 {
-    char str[] = "hello, world!";
+	char	str[];
 
+    str[] = "hello, world!";
     printf("Original string: %s\n", str);
-
     ft_striteri(str, my_test_func);
-
     printf("Modified string: %s\n", str);
-
-    return 0;
+    return (0);
 }
 */
