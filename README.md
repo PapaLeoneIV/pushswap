@@ -7,18 +7,56 @@ Mosse Disponibili
 
 Durante l'implementazione del progetto, sono disponibili le seguenti mosse:
 
-Mossa	Comportamento
-sa	Scambia i primi due elementi dello stack a.
-sb	Scambia i primi due elementi dello stack b.
-ss	Esegue sa e sb contemporaneamente.
-pa	Prende il primo elemento dello stack b e lo sposta in cima allo stack a.
-pb	Prende il primo elemento dello stack a e lo sposta in cima allo stack b.
-ra	Sposta tutti gli elementi dello stack a verso l'alto di una posizione.
-rb	Sposta tutti gli elementi dello stack b verso l'alto di una posizione.
-rr	Esegue ra e rb contemporaneamente.
-rra	Sposta tutti gli elementi dello stack a verso il basso di una posizione.
-rrb	Sposta tutti gli elementi dello stack b verso il basso di una posizione.
-rrr	Esegue rra e rrb contemporaneamente.
+
+ <table style="width:100%">
+  <tr>
+    <th>Mossa</th>
+    <th>Comportamento</th>
+  </tr>
+  <tr>
+    <td>sa (swap a)</td>
+    <td style="text-align:right">Scambia i primi due elementi dello stack a. Non fa nulla se ci sono uno o nessun elemento</td>
+  </tr>
+  <tr>
+    <td>sb (swap b)</td>
+    <td style="text-align:right">Scambia i primi due elementi dello stack b. Non fa nulla se ci sono uno o nessun elemento</td>
+  </tr>
+  <tr>
+    <td>ss</td>
+    <td style="text-align:right">Esegue sa e sb contemporaneamente</td>
+  </tr>
+   <td>pa (push a)</td>
+    <td style="text-align:right">Prende il primo elemento dello stack b e lo sposta in cima allo stack a. Non fa nulla se lo stack b è vuoto</td>
+  </tr>
+  <tr>
+    <td>pb (push b)</td>
+    <td style="text-align:right">Prende il primo elemento dello stack a e lo sposta in cima allo stack b. Non fa nulla se lo stack a è vuoto</td>
+  </tr>
+  <tr>
+    <td>ra (rotate a)</td>
+    <td style="text-align:right">Sposta tutti gli elementi dello stack a verso l'alto di una posizione. Il primo elemento diventa l'ultimo</td>
+  </tr>
+  <tr>
+    <td>rb (rotate b)</td>
+    <td style="text-align:right">Sposta tutti gli elementi dello stack b verso l'alto di una posizione. Il primo elemento diventa l'ultimo</td>
+  </tr>
+  <tr>
+    <td>rr</td>
+    <td style="text-align:right">Esegue ra e rb contemporaneamente</td>
+  </tr>
+   <td>rra (reverse rotate a)</td>
+    <td style="text-align:right">Sposta tutti gli elementi dello stack a verso il basso di una posizione. L'ultimo elemento diventa il primo</td>
+  </tr>
+  <tr>
+    <td>rrb (reverse rotate b)</td>
+    <td style="text-align:right">Sposta tutti gli elementi dello stack b verso il basso di una posizione. L'ultimo elemento diventa il primo</td>
+  </tr>
+   <tr>
+    <td>rrr</td>
+    <td style="text-align:right">Esegue rra e rrb contemporaneamente</td>
+  </tr>
+</table>
+
 
 Approccio al Progetto
 
