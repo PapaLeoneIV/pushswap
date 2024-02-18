@@ -16,6 +16,7 @@ static int	*ft_get_mosse_from_best_idx(int best_idx, t_dll_list *a,
 	t_dll_list *b)
 {
 	int	*arr;
+
 	ft_dll_return_head(&a);
 	ft_dll_return_head(&b);
 	ft_dll_update_index(&a);
@@ -36,21 +37,11 @@ void	ft_sortback(t_stacks *stack)
 
 	while (stack->b != NULL)
 	{
-		/* printf("STACK A: ");
-		ft_dll_printi(stack->a);
-		printf("STACK B: ");
-		ft_dll_printi(stack->b); */
 		mosse_b = ft_dll_calcola_mosse_b(stack);
-		/* printf("mosse_b: ");
-		ft_dll_printi(mosse_b);
-		printf("\n"); */
 		stack->minmax = ft_findminmax(stack->a);
 		stack->minmax_len = 2;
 		mosse_a = ft_dll_calcola_mosse_a(stack);
-		/* printf("mosse_a: ");
-		ft_dll_printi(mosse_a);  */
 		best_idx = ft_dll_calcola_mosse(mosse_a, mosse_b);
-		/* printf("best_idx: %d\n", best_idx); */
 		stack->mosse_len = 2;
 		stack->mosse = ft_get_mosse_from_best_idx(best_idx, mosse_a, mosse_b);
 		ft_execute_mosse(stack);

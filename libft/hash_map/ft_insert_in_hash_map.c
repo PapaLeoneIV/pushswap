@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_insert_in_t_hash_map .c                            :+:      :+:    :+:   */
+/*   ft_insert_in_hash_map.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:50:55 by rileone           #+#    #+#             */
-/*   Updated: 2024/02/01 15:50:59 by rileone          ###   ########.fr       */
+/*   Updated: 2024/02/18 17:12:15 by rileone          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "../libft.h"
 #include "limits.h"
 
-void	ft_insert_in_hash_map(t_hash_map  *map, int key)
+void	ft_insert_in_hash_map(t_hash_map *map, int key)
 {
 	int		riga_t_hash_map ;
 	t_item	*nodo;
 	t_item	*new_item;
 
-	riga_t_hash_map  = ft_hash_fn(key, map->size);
-	nodo = map->array[riga_t_hash_map ];
+	riga_t_hash_map = ft_hash_fn(key, map->size);
+	nodo = map->array[riga_t_hash_map];
 	while (nodo != NULL)
 	{
 		if (nodo->key == key)
@@ -34,7 +33,7 @@ void	ft_insert_in_hash_map(t_hash_map  *map, int key)
 	new_item->key = key;
 	new_item->value = 1;
 	new_item->next = NULL;
-	map->array[riga_t_hash_map ] = new_item;
+	map->array[riga_t_hash_map] = new_item;
 }
 
 /* int main() 

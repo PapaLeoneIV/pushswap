@@ -502,7 +502,6 @@ void					ft_free_hash_map(t_hash_map *map);
  */
 int						ft_get_frequency(t_hash_map *map, int key);
 
-
 /**
  * @brief Checks if a doubly linked list is ordered.
  *
@@ -511,7 +510,6 @@ int						ft_get_frequency(t_hash_map *map, int key);
  * @return 1 if the list is ordered, 0 otherwise.
  */
 int						ft_dll_check_if_ordered(t_dll_list *stack);
-
 
 /**
  * @brief Inserts a new node at the head of a doubly linked list.
@@ -625,7 +623,6 @@ int						ft_dll_get_value(t_dll_list *list, int index);
  */
 int						ft_dll_get_node_index(t_dll_list *list, int value);
 
-
 /**
  * @brief Prints the values of a doubly linked list.
  *
@@ -688,14 +685,13 @@ void					ft_quick_sort(int *arr, int low, int high);
  * @param stack_a The stack A.
  * @return int* An array containing the minimum and maximum values.
  */
-int				*ft_findminmax(t_dll_list *stack_a);
-
+int						*ft_findminmax(t_dll_list *stack_a);
 
 /**
  * @brief Find the minimum value in the stack.
  * @param a The stack A.
  * @return int The minimum value.
  */
-int				ft_find_min(t_dll_list *a);
+int						ft_find_min(t_dll_list *a);
 
 #endif
