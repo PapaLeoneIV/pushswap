@@ -9,9 +9,6 @@
 /*   Updated: 2024/02/01 15:52:34 by rileone          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "ft_printf.h"
-#include "libft.h"
 #include "pushswap.h"
 
 static void	ft_process_mosse_nodes(t_dll_list **mosse_a, t_dll_list *ptr_a,

@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_pf.c                                     :+:      :+:    :+:   */
+/*   check_if_ordered.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 12:37:12 by rileone           #+#    #+#             */
-/*   Updated: 2024/02/18 17:12:16 by rileone          ###   ########.fr       */
+/*   Created: 2024/02/01 15:52:30 by rileone           #+#    #+#             */
+/*   Updated: 2024/02/01 15:52:33 by rileone          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "ft_printf.h"
+#include "libft.h"
 
-void	ft_putstr_pf(char *str, int *count)
+int	check_if_ordered(int *arr, int len)
 {
 	int	i;
 
 	i = 0;
-	if (!str)
-		str = "(null)";
-	while (str[i] != '\0')
+	while (i < len - 1)
 	{
-		ft_putchar_pf(str[i], count);
+		if (arr[i] > arr[i + 1])
+			return (0);
 		i++;
 	}
+	return (1);
 }

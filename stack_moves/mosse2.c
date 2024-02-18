@@ -18,6 +18,7 @@ void	rra(t_dll_list **stack, int flag)
 {
 	t_dll_list	*tail;
 	t_dll_list	*head;
+
 	if (ft_dll_size((*stack)) <= 1)
 		return ;
 	head = (*stack);
@@ -30,7 +31,7 @@ void	rra(t_dll_list **stack, int flag)
 	head->prev = tail;
 	ft_dll_return_head(stack);
 	ft_dll_update_index(stack);
-	if(flag == 1)
+	if (flag == 1)
 		write(1, "rra\n", 4);
 }
 
@@ -38,6 +39,7 @@ void	rrb(t_dll_list **stack, int flag)
 {
 	t_dll_list	*tail;
 	t_dll_list	*head;
+
 	if (ft_dll_size((*stack)) <= 1)
 		return ;
 	head = (*stack);
@@ -50,7 +52,7 @@ void	rrb(t_dll_list **stack, int flag)
 	head->prev = tail;
 	ft_dll_return_head(stack);
 	ft_dll_update_index(stack);
-	if(flag == 1)
+	if (flag == 1)
 		write(1, "rrb\n", 4);
 }
 
@@ -65,7 +67,7 @@ void	sa(t_dll_list *stack_a, int flag)
 {
 	t_dll_list	*second_node;
 	t_dll_list	*head;
-	t_dll_list *tmp;
+	t_dll_list	*tmp;
 
 	if (ft_dll_size(stack_a) <= 1)
 		return ;
@@ -73,7 +75,7 @@ void	sa(t_dll_list *stack_a, int flag)
 		return ;
 	head = stack_a;
 	second_node = head->next;
-	if(ft_dll_size(stack_a) == 2)
+	if (ft_dll_size(stack_a) == 2)
 		head->next = NULL;
 	else
 	{
@@ -85,7 +87,7 @@ void	sa(t_dll_list *stack_a, int flag)
 	second_node->prev = NULL;
 	second_node->next = head;
 	stack_a = second_node;
-	if(flag == 1)
+	if (flag == 1)
 		write(1, "sa\n", 3);
 }
 
@@ -93,14 +95,14 @@ void	sb(t_dll_list *stack_b, int flag)
 {
 	t_dll_list	*second_node;
 	t_dll_list	*head;
-	t_dll_list *tmp;
+	t_dll_list	*tmp;
 
 	ft_dll_return_head(&stack_b);
 	if (ft_dll_size(stack_b) <= 1)
 		return ;
 	head = stack_b;
 	second_node = head->next;
-	if(ft_dll_size(stack_b) == 2)
+	if (ft_dll_size(stack_b) == 2)
 		head->next = NULL;
 	else
 	{
@@ -112,6 +114,6 @@ void	sb(t_dll_list *stack_b, int flag)
 	second_node->prev = NULL;
 	second_node->next = head;
 	stack_b = second_node;
-	if(flag == 1)
+	if (flag == 1)
 		write(1, "sb\n", 3);
 }

@@ -18,18 +18,18 @@ void	ss(t_dll_list *stack_a, t_dll_list *stack_b)
 {
 	sa(stack_a, 0);
 	sa(stack_b, 0);
-    write(1, "ss\n", 3);
+	write(1, "ss\n", 3);
 }
 
-void rapara(t_stacks* stacks)
+void	rapara(t_stacks *stacks)
 {
 	ra(&stacks->a, 1);
-    pa(&stacks->a, &stacks->b, 1);
-    ra(&stacks->a, 1);
+	pa(&stacks->a, &stacks->b, 1);
+	ra(&stacks->a, 1);
 }
 
-void rapa(t_stacks* stacks)
+void	rapa(t_stacks *stacks)
 {
-    ra(&stacks->a, 1);
-    pa(&stacks->a, &stacks->b, 1);
+	ra(&stacks->a, 1);
+	pa(&stacks->a, &stacks->b, 1);
 }

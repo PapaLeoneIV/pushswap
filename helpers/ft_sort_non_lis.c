@@ -14,12 +14,6 @@
 #include "ft_printf.h"
 #include "pushswap.h"
 
-static void	clear(t_dll_list *ptr)
-{
-	ft_dll_return_head(&ptr);
-	ft_dll_clear(&ptr, free);
-}
-
 static void	ft_sort_non_lis_helper(t_stacks *stacks, t_dll_list *ptr, int i,
 		int *val)
 {
@@ -29,7 +23,10 @@ static void	ft_sort_non_lis_helper(t_stacks *stacks, t_dll_list *ptr, int i,
 	*val = stacks->input_arr[i];
 	newnode = ft_dll_new(val);
 	if (!newnode)
-		clear(ptr);
+	{
+		ft_dll_return_head(&ptr);
+		ft_dll_clear(&ptr, free);
+	}
 	ft_dll_insert_tail(&stacks->o_non_lis, newnode);
 }
 

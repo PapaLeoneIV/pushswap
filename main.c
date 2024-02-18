@@ -11,46 +11,20 @@
 /* ************************************************************************** */
 #include "pushswap.h"
 
-
-
-void	ft_rotate_until_ordered2(t_stacks *stack)
+static void	minisolver(t_stacks *stacks)
 {
-	int	min_idx;
-	int	pivot;
 	int	len;
 
-	ft_dll_update_index(&stack->a);
-	min_idx = ft_find_min(stack->a);
-	len = ft_dll_size(stack->a);
-	pivot = len / 2;
-	if (min_idx <= pivot)
-	{
-		while (min_idx-- != 0)
-			ra(&stack->a, 1);
-	}
-	else
-	{
-		while (min_idx++ != len)
-			rra(&stack->a, 1);
-	}
-}
-
-static void minisolver(t_stacks *stacks)
-{
-	int len;
-	
 	len = ft_dll_size(stacks->a);
-	if(len == 2)
+	if (len == 2)
 		minisolver2(stacks->a, 'a');
-	else if(len == 3)
+	else if (len == 3)
 		minisolver3(stacks);
-	else if(len == 4)
-		minisolver4(stacks); 
-	else if(len == 5)
+	else if (len == 4)
+		minisolver4(stacks);
+	else if (len == 5)
 		minisolver5(stacks);
-	ft_dll_update_index(&stacks->a);
-} 
-
+}
 
 int	main(int ac, char **av)
 {
@@ -58,15 +32,15 @@ int	main(int ac, char **av)
 
 	stacks = (t_stacks){0};
 	ft_init_(ac, av, &stacks);
-	 if(stacks.input_arr_len < 6)
+	if (stacks.input_arr_len < LIS_INPUT_LIMIT)
 		minisolver(&stacks);
-	 else
+	else
 	{
 		ft_sort_non_lis(&stacks);
 		ft_move_non_lis(&stacks);
 		ft_sortback(&stacks);
 	}
- 	ft_rotate_until_ordered2(&stacks); 
+	ft_rotate_until_ordered(&stacks);
 	ft_free_stacks(stacks);
 	return (0);
 }

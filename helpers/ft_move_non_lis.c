@@ -9,16 +9,7 @@
 /*   Updated: 2024/02/01 15:52:34 by rileone          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "ft_printf.h"
-#include "libft.h"
 #include "pushswap.h"
-
-static void	helper(t_stacks *stacks)
-{
-	ft_dll_return_head(&stacks->o_non_lis);
-	ft_dll_update_index(&stacks->a);
-}
 
 void	ft_move_non_lis(t_stacks *stacks)
 {
@@ -40,5 +31,6 @@ void	ft_move_non_lis(t_stacks *stacks)
 		if (num_nlis_pushed == stacks->o_non_lis_len)
 			break ;
 	}
-	helper(stacks);
+	ft_dll_return_head(&stacks->o_non_lis);
+	ft_dll_update_index(&stacks->a);
 }

@@ -6,7 +6,7 @@
 /*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:47:49 by rileone           #+#    #+#             */
-/*   Updated: 2024/02/01 15:48:01 by rileone          ###   ########.fr       */
+/*   Updated: 2024/02/18 17:12:15 by rileone          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,7 @@ static void	ft_find_biggest_index(t_lis_var *var, int *len_arr)
 	while (i < var->arr_size)
 	{
 		if (len_arr[i] > len_arr[var->max_index])
-		{
 			var->max_index = i;
-		}
 		i++;
 	}
 }
@@ -84,7 +82,7 @@ int	*ft_build_lis_arr(int *arr, int *len_arr, t_lis_var *var, int *index_arr)
 	return (res);
 }
 
-int	*ft_lis_algo(int *arr, int length, int *lis_len)
+int	*ft_lis_algo_arr(int *arr, int length, int *lis_len)
 {
 	int			*len_arr;
 	int			*index_arr;

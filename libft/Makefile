@@ -19,8 +19,8 @@ MATH = math
 
 
 
-SRC =		$(addprefix ${ERROR_DIR}/, error_fn.c)  \
-			$(addprefix ${MATH}/, ft_find_min.c ft_find_minmax.c )  \
+SRC =		$(addprefix ${ERROR_DIR}/, error_fn.c) \
+			$(addprefix ${MATH}/, check_if_ordered.c ft_find_min.c ft_find_minmax.c )  \
 			$(addprefix ${TO_DIR}/, ft_atoi.c ft_itoa.c)  \
 			$(addprefix ${IS_DIR}/, ft_isnumber.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c)  \
 			$(addprefix ${STRING_DIR}/, ft_toupper.c ft_split.c /ft_strchr.c ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c) \
