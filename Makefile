@@ -14,7 +14,11 @@ CFLAGS = -Wall -Wextra -Werror
 COMPILE = $(CC) $(CFLAGS) -g 
 ARCHIVE = ar rcs
 
+<<<<<<< HEAD
 SRC =		$(addprefix $(HELPERS_DIR)/, ft_rotate_until_ordered.c minisolvers.c ft_free_stack.c ft_normalizzazione_dati.c ft_insertion_valid_input.c ft_cmtx_to_arri_coverter.c ft_get_input_length.c ft_init_.c ft_generate_non_lis.c ft_move_non_lis.c ft_sort_back.c ft_dll_calcola_mosse.c ft_dll_calcola_mosse_b.c ft_dll_calcola_mosse_a.c ft_execute_mosse.c mosse_helpers.c) \
+=======
+SRC =		$(addprefix $(HELPERS_DIR)/, ft_rotate_until_ordered.c minisolvers.c ft_free_stack.c ft_normalizzazione_dati.c ft_insertion_valid_input.c ft_cmtx_to_arri_coverter.c ft_get_input_length.c ft_init_.c ft_sort_non_lis.c ft_move_non_lis.c ft_sort_back.c ft_dll_calcola_mosse.c ft_dll_calcola_mosse_b.c ft_dll_calcola_mosse_a.c ft_execute_mosse.c mosse_helpers.c) \
+>>>>>>> dbdd36e419d394ec4b5ee00946e6b8c1e637a916
 			$(addprefix $(STACK_MOVES_DIR)/,mosse.c  mosse2.c mosse3.c ) \
 
 
