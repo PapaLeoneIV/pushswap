@@ -14,7 +14,7 @@
 #include "ft_printf.h"
 #include "pushswap.h"
 
-static void	ft_sort_non_lis_helper(t_stacks *stacks, t_dll_list *ptr, int i,
+static void	ft_generate_non_lis_helper(t_stacks *stacks, t_dll_list *ptr, int i,
 		int *val)
 {
 	t_dll_list	*newnode;
@@ -30,7 +30,7 @@ static void	ft_sort_non_lis_helper(t_stacks *stacks, t_dll_list *ptr, int i,
 	ft_dll_insert_tail(&stacks->o_non_lis, newnode);
 }
 
-void	ft_sort_non_lis(t_stacks *stacks)
+void	ft_generate_non_lis(t_stacks *stacks)
 {
 	t_dll_list	*ptr;
 	int			*val;
@@ -46,7 +46,7 @@ void	ft_sort_non_lis(t_stacks *stacks)
 			if (stacks->input_arr[i] == *(int *)(ptr->val))
 				break ;
 			if (ptr->next == NULL)
-				ft_sort_non_lis_helper(stacks, ptr, i, val);
+				ft_generate_non_lis_helper(stacks, ptr, i, val);
 			ptr = ptr->next;
 		}
 		i++;

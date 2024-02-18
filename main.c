@@ -36,7 +36,7 @@ int	main(int ac, char **av)
 		minisolver(&stacks);
 	else
 	{
-		ft_sort_non_lis(&stacks);
+		ft_generate_non_lis(&stacks);
 		ft_move_non_lis(&stacks);
 		ft_sortback(&stacks);
 	}

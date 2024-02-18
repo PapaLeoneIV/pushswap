@@ -181,7 +181,7 @@ void		ft_init_(int ac, char **av, t_stacks *stacks);
  * @brief Sort the non-LIS (Longest Increasing Subsequence) part of the stack.
  * @param stacks The stacks structure.
  */
-void		ft_sort_non_lis(t_stacks *stacks);
+void		ft_generate_non_lis(t_stacks *stacks);
 
 /**
  * @brief Move the non-LIS (Longest Increasing Subsequence) part of the stack.
