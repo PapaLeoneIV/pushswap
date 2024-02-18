@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_free_stack.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/18 17:15:33 by rileone           #+#    #+#             */
+/*   Updated: 2024/02/18 17:15:39 by rileone          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "pushswap.h"
 
-void ft_free_stacks(t_stacks stack)
+void	ft_free_stacks(t_stacks stack)
 {
 	free(stack.input_arr);
 	ft_dll_return_head(&(stack.a));

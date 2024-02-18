@@ -9,9 +9,6 @@
 /*   Updated: 2024/02/01 15:52:34 by rileone          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "../libft.h"
-#include "ft_printf.h"
 #include "pushswap.h"
 
 void	ft_init_(int ac, char **av, t_stacks *stacks)

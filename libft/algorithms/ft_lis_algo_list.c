@@ -6,7 +6,7 @@
 /*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:47:49 by rileone           #+#    #+#             */
-/*   Updated: 2024/02/01 15:48:01 by rileone          ###   ########.fr       */
+/*   Updated: 2024/02/18 17:12:15 by rileone          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,8 @@ static void	ft_get_indexs_lis(t_dll_list **list, t_dll_list **len_list,
 	}
 }
 
-t_dll_list	*ft_build_lis_arr(t_dll_list *list, t_dll_list *len_list, t_lis_var *var,
-		t_dll_list *index_list)
+t_dll_list	*ft_build_lis_arr(t_dll_list *list, t_dll_list *len_list,
+		t_lis_var *var, t_dll_list *index_list)
 {
 	t_dll_list	*res;
 	t_dll_list	*tmp;

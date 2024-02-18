@@ -17,11 +17,10 @@ void	move_positives(t_stacks *stacks)
 
 	i = 0;
 	while (i < stacks->mosse[0] && i < stacks->mosse[1])
-		{
-			rr(&stacks->a, &stacks->b);
-			i++;
-		}
-	
+	{
+		rr(&stacks->a, &stacks->b);
+		i++;
+	}
 	while (i < stacks->mosse[0] || i < stacks->mosse[1])
 	{
 		if (i < stacks->mosse[0])
@@ -54,7 +53,6 @@ void	move_neg_pos(t_stacks *stacks)
 	i = 0;
 	while (i++ < stacks->mosse[1])
 		rb(&stacks->b, 1);
-		
 }
 
 void	move_negatives(t_stacks *stacks)

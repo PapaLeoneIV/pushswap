@@ -18,5 +18,7 @@
             "binaryArgs": []
         }
     ],
-    "C_Cpp.errorSquiggles": "enabled"
+     "[c]": {
+          "editor.defaultFormatter": "keyhr.42-c-format"
+        }
 }
