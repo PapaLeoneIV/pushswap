@@ -83,13 +83,13 @@ char	*ft_itoa(int n)
 }
 
 /*
-int main(void) {
+int	main(void) {
   int i = 0;
   int tab[5] = {-2147483648, -2147483647, -42, 0, 2147483647};
 
   while (i < 5)
     printf("%s\n", ft_itoa(tab[i++]));
 
-  return 0;
+  return (0);
 }
 */

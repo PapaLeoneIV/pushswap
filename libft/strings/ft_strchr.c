@@ -9,10 +9,9 @@
 /*   Updated: 2024/02/01 15:51:53 by rileone          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <string.h>
-#include <stdio.h>
-
 #include "libft.h"
+#include <stdio.h>
+#include <string.h>
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -28,16 +27,17 @@ char	*ft_strchr(const char *s, int c)
 	return (0);
 }
 /*
-int main()
+int	main(void)
 {
-	char *str1;
-	char chare;
+	char	*str1;
+	char	chare;
+
 	
 	str1 = "sadasdsb";
 	chare = 'b';
 	printf("risultato : %s\n", ft_strchr(str1, chare));
 	printf("risultato : %s", strchr(str1, chare));
-	return 0;
+	return (0);
 	
 	
 }

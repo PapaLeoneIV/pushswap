@@ -12,10 +12,10 @@
 
 #include "../libft.h"
 
-int	ft_dll_size(dll_list *head)
+int	ft_dll_size(t_dll_list *head)
 {
-	int		length;
-	dll_list	*ptr;
+	int			length;
+	t_dll_list	*ptr;
 
 	ptr = head;
 	length = 0;

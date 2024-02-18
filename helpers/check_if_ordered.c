@@ -9,19 +9,18 @@
 /*   Updated: 2024/02/01 15:52:33 by rileone          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "pushswap.h"
 
-void check_if_ordered(int *arr, int len)
+int	check_if_ordered(int *arr, int len)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (i < len - 1)
-    {
-        if (arr[i] > arr[i + 1])
-            return;
-        i++;
-    }
-    exit(0);
+	i = 0;
+	while (i < len - 1)
+	{
+		if (arr[i] > arr[i + 1])
+			return (0);
+		i++;
+	}
+	return (1);
 }

@@ -28,14 +28,17 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (str);
 }
 /*
-int main()
+int	main(void)
 {
-	const char s1[] = "     aaaaaaThis is stringContinue.       ";
-	char const set = " a";
-	char *result = ft_strtrim(s1, &set);
-	printf("The result is %s\n", result);
+	const char	s1[];
+	char const	set;
+	char		*result;
 
-  return 0;
+	s1[] = "     aaaaaaThis is stringContinue.       ";
+	set = " a";
+	result = ft_strtrim(s1, &set);
+	printf("The result is %s\n", result);
+  return (0);
 }
 */
 /*

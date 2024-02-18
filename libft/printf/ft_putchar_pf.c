@@ -14,6 +14,6 @@
 
 void	ft_putchar_pf(char c, int *count)
 {
-	write (1, &c, 1);
+	write(1, &c, 1);
 	(*count)++;
 }

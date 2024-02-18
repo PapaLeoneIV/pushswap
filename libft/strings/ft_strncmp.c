@@ -31,15 +31,17 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	return (0);
 }
 /*
-int main()
+int	main(void)
 {
-	char *s1 = "abcdef";
+	char	*s1;
+	char	*s2;
+	int		len;
+	int		s3;
 
- 	char *s2 = "abcdefghijklmnop";
-
-	int len = ft_strlen("abcdef");
-	int s3 = ft_strncmp(s1,  s2, len);
+	s1 = "abcdef";
+ 	s2 = "abcdefghijklmnop";
+	len = ft_strlen("abcdef");
+	s3 = ft_strncmp(s1,  s2, len);
 	printf("Queto e' il valore ritornato da strcmp : %i\n", s3);
-
 }
 */

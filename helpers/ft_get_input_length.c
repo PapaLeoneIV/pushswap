@@ -10,16 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "ft_printf.h"
+#include "libft.h"
 #include "pushswap.h"
 
-void ft_clear_mtx(char **mtx, int len)
+void	ft_clear_mtx(char **mtx, int len)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(i < len)
+	while (i < len)
 	{
 		free(mtx[i]);
 		mtx[i] = NULL;
@@ -27,22 +27,20 @@ void ft_clear_mtx(char **mtx, int len)
 	}
 	free(mtx);
 	mtx = NULL;
-
 }
 
-
-int ft_get_input_length(int ac, char** av)
+int	ft_get_input_length(int ac, char **av)
 {
-	char **mtx;
-	int len;
+	char	**mtx;
+	int		len;
 
 	len = 0;
-	if(ac <= 1)
+	if (ac <= 1)
 		error_fn();
-	else if(ac == 2)
+	else if (ac == 2)
 	{
 		mtx = ft_split(av[1], ' ');
-		while(mtx && mtx[len])
+		while (mtx && mtx[len])
 			len++;
 		ft_clear_mtx(mtx, len);
 	}

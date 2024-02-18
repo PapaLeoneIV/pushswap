@@ -28,9 +28,11 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	return (NULL);
 }
 /*
-int main()
+int	main(void)
 {
-    int tab[] = {0, 1, 2 ,3 ,4 ,5};
+	int	tab[];
+
+    tab[] = {0, 1, 2 ,3 ,4 ,5};
 	printf("%ls",tab + 2);
 	if(ft_memchr(tab, 2 + 256, 3) == tab + 2)
 		printf("nicenicenicenice");
