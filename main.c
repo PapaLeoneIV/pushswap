@@ -16,6 +16,8 @@ static void	minisolver(t_stacks *stacks)
 	int	len;
 
 	len = ft_dll_size(stacks->a);
+	if (ft_dll_check_if_ordered(stacks->a) == 1)
+		exit(1);
 	if (len == 2)
 		minisolver2(stacks->a, 'a');
 	else if (len == 3)
