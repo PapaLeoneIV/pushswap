@@ -39,6 +39,16 @@ typedef struct s_stacks
 	int			o_non_lis_len;
 }				t_stacks;
 
+
+/**
+ * @brief Frees the memory allocated for the minisolver heap.
+ * 
+ * @param stacks The pointer to the stacks structure.
+ * 
+ * @return void
+ */
+void free_minisolver_heap(t_stacks *stacks);
+
 /**
  * Rotates the stack until it is ordered in ascending order.
  *
