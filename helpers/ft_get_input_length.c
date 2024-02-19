@@ -18,7 +18,7 @@ int	ft_get_input_length(int ac, char **av)
 
 	len = 0;
 	if (ac <= 1)
-		error_fn();
+		exit(1);
 	else if (ac == 2)
 	{
 		mtx = ft_split(av[1], ' ');

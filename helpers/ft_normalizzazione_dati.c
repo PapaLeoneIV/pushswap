@@ -51,8 +51,6 @@ int	*ft_normalizzazione_dati(int ac, char **av)
 {
 	int	*arr;
 
-	if (ac < 2)
-		error_fn();
 	if (ac == 2)
 		arr = ft_manage_string_input(av);
 	else

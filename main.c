@@ -32,6 +32,8 @@ int	main(int ac, char **av)
 {
 	t_stacks	stacks;
 
+	if(ac <= 1)
+		return (0);
 	stacks = (t_stacks){0};
 	ft_init_(ac, av, &stacks);
 	if (stacks.input_arr_len < LIS_INPUT_LIMIT)
