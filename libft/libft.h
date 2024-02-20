@@ -184,7 +184,7 @@ void					*ft_calloc(size_t nmemb, size_t size);
  *
  * @return The converted integer value.
  */
-int						ft_atoi(char *nptr);
+int						ft_atoi(char *nptr, int *arr);
 
 /**
  * @brief Copies a block of memory from source to destination.

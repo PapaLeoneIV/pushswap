@@ -55,7 +55,6 @@ void	minisolver4(t_stacks *stacks)
 {
 	int	*minmax;
 
-	minmax = ft_findminmax(stacks->a);
 	pb(&stacks->b, &stacks->a, 1);
 	minisolver3(stacks);
 	while (stacks->b != NULL)
@@ -65,6 +64,7 @@ void	minisolver4(t_stacks *stacks)
 			&& *(int *)stacks->b->val < *(int *)stacks->a->next->val)
 		{
 			rapa(stacks);
+			free(minmax);
 			break ;
 		}
 		else if (minmax[1] == *(int *)stacks->a->val
@@ -75,6 +75,7 @@ void	minisolver4(t_stacks *stacks)
 			pa(&stacks->a, &stacks->b, 1);
 		else
 			ra(&stacks->a, 1);
+		free(minmax);
 	}
 }
 
@@ -99,6 +100,7 @@ void	minisolver5(t_stacks *stacks)
 				rra(&stacks->a, 1);
 		}
 		pb(&stacks->b, &stacks->a, 1);
+		free(minmax);
 	}
 	minisolver3(stacks);
 	pa(&stacks->a, &stacks->b, 1);

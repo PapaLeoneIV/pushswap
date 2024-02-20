@@ -32,7 +32,7 @@ int	main(int ac, char **av)
 {
 	t_stacks	stacks;
 
-	if(ac <= 1)
+	if (ac <= 1)
 		return (0);
 	stacks = (t_stacks){0};
 	ft_init_(ac, av, &stacks);
@@ -45,6 +45,7 @@ int	main(int ac, char **av)
 		ft_sortback(&stacks);
 	}
 	ft_rotate_until_ordered(&stacks);
+	ft_dll_printi(stacks.a);
 	ft_free_stacks(stacks);
 	return (0);
 }

@@ -28,8 +28,13 @@ int	*ft_manage_string_input(char **av)
 		len++;
 	arr = ft_cmtx_to_arri_coverter(mtx);
 	if (!arr)
+	{
+		ft_clear_mtx(mtx, len);
+		ft_printf("son qui	");
 		error_fn();
-	ft_clear_mtx(mtx, len);
+	}
+	else
+		ft_clear_mtx(mtx, len);
 	return (arr);
 }
 
@@ -44,6 +49,8 @@ int	*ft_manage_multiple_input(char **av)
 	while (av[len] != NULL)
 		len++;
 	arr = ft_insertion_valid_input(av, len, i);
+	if (arr == NULL)
+		error_fn();
 	return (arr);
 }
 

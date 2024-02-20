@@ -25,17 +25,17 @@ int	*ft_insertion_valid_input(char **av, int len, int offset)
 	while (offset < len)
 	{
 		if (ft_isnumber(av[offset]))
-			arr[count++] = ft_atoi(av[offset++]);
+			arr[count++] = ft_atoi(av[offset++], arr);
 		else
 		{
 			free(arr);
-			error_fn();
+			return (NULL);
 		}
 	}
 	if (ft_check_for_dupl(arr, len - flag) == 1)
 	{
 		free(arr);
-		error_fn();
+		return (NULL);
 	}
 	return (arr);
 }

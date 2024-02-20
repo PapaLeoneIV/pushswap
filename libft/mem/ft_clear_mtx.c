@@ -24,5 +24,4 @@ void	ft_clear_mtx(char **mtx, int len)
 		i++;
 	}
 	free(mtx);
-	mtx = NULL;
 }

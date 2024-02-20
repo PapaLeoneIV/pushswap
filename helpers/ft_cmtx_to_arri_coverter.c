@@ -25,5 +25,12 @@ int	*ft_cmtx_to_arri_coverter(char **mtx)
 	while (mtx[len])
 		len++;
 	arr = ft_insertion_valid_input(mtx, len, i);
+	if (arr == NULL)
+	{
+		ft_clear_mtx(mtx, len);
+		error_fn();
+	}
+	else
+		ft_clear_mtx(mtx, len);
 	return (arr);
 }
