@@ -20,6 +20,7 @@ void	ft_dll_clear(t_dll_list **lst, void (*del)(void *))
 	if (!*lst || !lst || !del)
 		return ;
 	ptr = (*lst);
+	ft_dll_return_head(&ptr);
 	while (ptr != NULL)
 	{
 		temp = ptr;

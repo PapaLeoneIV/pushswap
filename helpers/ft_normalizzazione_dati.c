@@ -24,17 +24,20 @@ int	*ft_manage_string_input(char **av)
 	if (av[1][0] == '\0')
 		error_fn();
 	mtx = ft_split(av[1], ' ');
+	if (!mtx)
+	{
+		ft_clear_mtx(mtx, len);
+		error_fn();
+	}
 	while (mtx[len])
 		len++;
 	arr = ft_cmtx_to_arri_coverter(mtx);
 	if (!arr)
 	{
 		ft_clear_mtx(mtx, len);
-		ft_printf("son qui	");
 		error_fn();
 	}
-	else
-		ft_clear_mtx(mtx, len);
+	ft_clear_mtx(mtx, len);
 	return (arr);
 }
 
@@ -50,7 +53,10 @@ int	*ft_manage_multiple_input(char **av)
 		len++;
 	arr = ft_insertion_valid_input(av, len, i);
 	if (arr == NULL)
+	{
+		free(arr);
 		error_fn();
+	}
 	return (arr);
 }
 

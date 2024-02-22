@@ -15,6 +15,7 @@
 
 # include "ft_printf.h"
 # include "libft.h"
+# include "get_next_line_bonus.h"
 # include "limits.h"
 # include <stddef.h>
 # include <stdio.h>
@@ -28,6 +29,8 @@ typedef struct s_stacks
 	t_dll_list	*b;
 	t_dll_list	*lis;
 	t_dll_list	*o_non_lis;
+	t_dll_list	*mosse_a;
+	t_dll_list	*mosse_b;
 	int			pivotindex;
 	int			*minmax;
 	int			minmax_len;
@@ -130,7 +133,7 @@ void		minisolver5(t_stacks *stacks);
  * @param stack The stacks structure to be freed.
  */
 
-void		ft_free_stacks(t_stacks stack);
+void		ft_free_stacks(t_stacks *stack);
 /**
  * @brief Normalize the input data by converting it to an array of integers.
  * @param ac The number of arguments.
@@ -190,7 +193,7 @@ void		ft_init_(int ac, char **av, t_stacks *stacks);
  * @brief Sort the non-LIS (Longest Increasing Subsequence) part of the stack.
  * @param stacks The stacks structure.
  */
-void		ft_generate_non_lis(t_stacks *stacks);
+int			ft_generate_non_lis(t_stacks *stacks);
 
 /**
  * @brief Move the non-LIS (Longest Increasing Subsequence) part of the stack.
@@ -223,7 +226,7 @@ t_dll_list	*ft_dll_calcola_mosse_a(t_stacks *stack);
  * @param mosse_a The list of moves for stack A.
  * @param val The value of the move.
  */
-void		ft_insert_mosse_node(t_dll_list **mosse_a, int val);
+int			ft_insert_mosse_node(t_dll_list **mosse_a, int val);
 
 /**
  * @brief Handle the move condition "o" for the list of moves.

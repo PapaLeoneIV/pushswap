@@ -22,6 +22,11 @@ int	ft_get_input_length(int ac, char **av)
 	else if (ac == 2)
 	{
 		mtx = ft_split(av[1], ' ');
+		if (!mtx)
+		{
+			ft_clear_mtx(mtx, len);
+			exit(1);
+		}
 		while (mtx && mtx[len])
 			len++;
 		ft_clear_mtx(mtx, len);

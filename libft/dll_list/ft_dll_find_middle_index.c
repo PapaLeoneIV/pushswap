@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_cmtx_to_arri_coverter.c                         :+:      :+:    :+:   */
+/*   ft_dll_find_middle_index.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 15:52:30 by rileone           #+#    #+#             */
-/*   Updated: 2024/02/01 15:52:34 by rileone          ###   ########.fr       */
+/*   Created: 2024/02/21 11:36:31 by rileone           #+#    #+#             */
+/*   Updated: 2024/02/21 11:36:34 by rileone          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "../libft.h"
-#include "pushswap.h"
 
-int	*ft_cmtx_to_arri_coverter(char **mtx)
+int	ft_find_middle(t_dll_list *stack)
 {
-	int	i;
-	int	len;
-	int	*arr;
+	int			index;
+	t_dll_list	*tmp;
 
-	i = 0;
-	len = 0;
-	if (!mtx || !mtx[len])
-		return (NULL);
-	while (mtx[len])
-		len++;
-	arr = ft_insertion_valid_input(mtx, len, i);
-	if (arr == NULL)
-		return (NULL);
-	return (arr);
+	tmp = stack;
+	ft_dll_return_tail(&tmp);
+	index = tmp->index / 2;
+	return (index);
 }

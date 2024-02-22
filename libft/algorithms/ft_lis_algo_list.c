@@ -19,7 +19,21 @@ static void	ft_initialize_arrays(t_dll_list **len_arr, t_dll_list **index_arr,
 		int len)
 {
 	(*len_arr) = ft_dll_initi_to(len, 1);
+	if ((*len_arr) == NULL)
+	{
+		ft_dll_clear(len_arr, free);
+		(*len_arr) = NULL;
+		return ;
+	}
 	(*index_arr) = ft_dll_initi_to(len, -1);
+	if ((*index_arr) == NULL)
+	{
+		ft_dll_clear(len_arr, free);
+		(*len_arr) = NULL;
+		ft_dll_clear(index_arr, free);
+		(*index_arr) = NULL;
+		return ;
+	}
 }
 
 static void	ft_find_biggest_index(t_lis_var *var, t_dll_list *len_list)
@@ -69,7 +83,7 @@ static void	ft_get_indexs_lis(t_dll_list **list, t_dll_list **len_list,
 	}
 }
 
-t_dll_list	*ft_build_lis_arr(t_dll_list *list, t_dll_list *len_list,
+t_dll_list	*ft_build_lis_lis(t_dll_list *list, t_dll_list *len_list,
 		t_lis_var *var, t_dll_list *index_list)
 {
 	t_dll_list	*res;
@@ -80,6 +94,8 @@ t_dll_list	*ft_build_lis_arr(t_dll_list *list, t_dll_list *len_list,
 
 	var->lis_lenght = ft_dll_get_value(len_list, var->max_index);
 	res = ft_dll_initi_to(var->lis_lenght, 0);
+	if (res == NULL)
+		return (NULL);
 	index_counter = var->max_index;
 	len_counter = var->lis_lenght - 1;
 	while (index_counter >= 0 && len_counter >= 0)
@@ -109,9 +125,13 @@ t_dll_list	*ft_lis_algo_list(int *lis_len, t_dll_list *a)
 	var.lis_lenght = *lis_len;
 	ft_dll_return_head(&a);
 	ft_initialize_arrays(&len_list, &index_list, var.arr_size);
+	if (len_list == NULL || index_list == NULL)
+		return (NULL);
 	ft_get_indexs_lis(&a, &len_list, &index_list, var.arr_size);
 	ft_find_biggest_index(&var, len_list);
-	result = ft_build_lis_arr(a, len_list, &var, index_list);
+	result = ft_build_lis_lis(a, len_list, &var, index_list);
+	if (result == NULL)
+		return (NULL);
 	*lis_len = var.lis_lenght;
 	ft_dll_update_index(&result);
 	ft_dll_clear(&len_list, free);

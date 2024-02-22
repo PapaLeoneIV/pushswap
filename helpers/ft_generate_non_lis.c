@@ -14,23 +14,23 @@
 #include "ft_printf.h"
 #include "pushswap.h"
 
-static void	ft_generate_non_lis_helper(t_stacks *stacks, t_dll_list *ptr, int i,
+static int	ft_generate_non_lis_helper(t_stacks *stacks, int i,
 		int *val)
 {
 	t_dll_list	*newnode;
 
 	val = ft_calloc(1, sizeof(int));
+	if (val == NULL)
+		return (0);
 	*val = stacks->input_arr[i];
 	newnode = ft_dll_new(val);
-	if (!newnode)
-	{
-		ft_dll_return_head(&ptr);
-		ft_dll_clear(&ptr, free);
-	}
+	if (newnode == NULL)
+		return (0);
 	ft_dll_insert_tail(&stacks->o_non_lis, newnode);
+	return (1);
 }
 
-void	ft_generate_non_lis(t_stacks *stacks)
+int	ft_generate_non_lis(t_stacks *stacks)
 {
 	t_dll_list	*ptr;
 	int			*val;
@@ -46,9 +46,13 @@ void	ft_generate_non_lis(t_stacks *stacks)
 			if (stacks->input_arr[i] == *(int *)(ptr->val))
 				break ;
 			if (ptr->next == NULL)
-				ft_generate_non_lis_helper(stacks, ptr, i, val);
+			{
+				if (!ft_generate_non_lis_helper(stacks, i, val))
+					return (0);
+			}
 			ptr = ptr->next;
 		}
 		i++;
 	}
+	return (1);
 }

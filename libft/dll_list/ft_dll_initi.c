@@ -31,14 +31,13 @@ t_dll_list	*ft_dll_initi(int *arr, int len)
 		return (NULL);
 	while (++i < len)
 	{
-		val = malloc(sizeof(int));
+		val = ft_calloc(1, sizeof(int));
+		if (!val)
+			return (ft_dll_clear2(head), NULL);
 		*val = arr[i];
 		newnode = ft_dll_new(val);
-		if (!newnode || val == NULL)
-		{
-			ft_dll_clear2(head);
-			return (NULL);
-		}
+		if (newnode == NULL)
+			return (ft_dll_clear2(head), NULL);
 		newnode->index = i;
 		ft_dll_insert_tail(&head, newnode);
 	}

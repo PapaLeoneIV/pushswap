@@ -72,16 +72,17 @@ char	**ft_split(char const *s, char c)
 	length = 0;
 	i = 0;
 	len = count_words(s, c);
-	res = (char **)malloc(sizeof(char *) * (len + 1));
-	if (!(res))
+	res = (char **)ft_calloc((len + 1), sizeof(char *));
+	if (!res)
 		return (NULL);
-	res[len] = NULL;
 	while (j < len)
 	{
 		while (s[i] == c && s[i] != '\0')
 			i++;
 		length = ft_countlength(s, i, c);
 		res[j] = ft_strdup2(s, i, length);
+		if (res[j] == NULL)
+			return (ft_clear_mtx(res, len), NULL);
 		j++;
 		i += length;
 	}

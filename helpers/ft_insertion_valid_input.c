@@ -22,6 +22,8 @@ int	*ft_insertion_valid_input(char **av, int len, int offset)
 	flag = offset;
 	count = 0;
 	arr = (int *)ft_calloc(len, sizeof(int));
+	if (!arr)
+		return (NULL);
 	while (offset < len)
 	{
 		if (ft_isnumber(av[offset]))

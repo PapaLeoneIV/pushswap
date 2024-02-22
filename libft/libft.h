@@ -512,6 +512,16 @@ int						ft_get_frequency(t_hash_map *map, int key);
 int						ft_dll_check_if_ordered(t_dll_list *stack);
 
 /**
+ * @brief Finds the middle value in a stack.
+ *
+ * This function calculates and returns the middle value in a given stack.
+ *
+ * @param stack A pointer to the stack structure.
+ * @return The middle value in the stack.
+ */
+int						ft_find_middle(t_dll_list *stack);
+
+/**
  * @brief Inserts a new node at the head of a doubly linked list.
  *
  * @param head The head of the doubly linked list.

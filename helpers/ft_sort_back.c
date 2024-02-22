@@ -29,27 +29,43 @@ static int	*ft_get_mosse_from_best_idx(int best_idx, t_dll_list *a,
 	return (arr);
 }
 
+static void	sort_back_helper(t_stacks *stack)
+{
+	ft_dll_return_head(&stack->a);
+	ft_dll_return_head(&stack->b);
+	ft_dll_update_index(&stack->a);
+	ft_dll_update_index(&stack->b);
+	ft_dll_clear(&stack->mosse_a, free);
+	ft_dll_clear(&stack->mosse_b, free);
+	free(stack->minmax);
+	stack->minmax = NULL;
+	free(stack->mosse);
+	stack->mosse = NULL;
+}
+
 void	ft_sortback(t_stacks *stack)
 {
 	int			best_idx;
-	t_dll_list	*mosse_a;
-	t_dll_list	*mosse_b;
 
 	while (stack->b != NULL)
 	{
-		mosse_b = ft_dll_calcola_mosse_b(stack);
+		stack->mosse_b = ft_dll_calcola_mosse_b(stack);
+		if (stack->mosse_b == NULL)
+			return (ft_free_stacks(stack), error_fn());
 		stack->minmax = ft_findminmax(stack->a);
+		if (stack->minmax == NULL)
+			return (ft_free_stacks(stack), error_fn());
 		stack->minmax_len = 2;
-		mosse_a = ft_dll_calcola_mosse_a(stack);
-		best_idx = ft_dll_calcola_mosse(mosse_a, mosse_b);
+		stack->mosse_a = ft_dll_calcola_mosse_a(stack);
+		if (stack->mosse_a == NULL)
+			return (ft_free_stacks(stack), error_fn());
+		best_idx = ft_dll_calcola_mosse(stack->mosse_a, stack->mosse_b);
 		stack->mosse_len = 2;
-		stack->mosse = ft_get_mosse_from_best_idx(best_idx, mosse_a, mosse_b);
+		stack->mosse = ft_get_mosse_from_best_idx(best_idx,
+				stack->mosse_a, stack->mosse_b);
+		if (stack->mosse == NULL)
+			return (ft_free_stacks(stack), error_fn());
 		ft_execute_mosse(stack);
-		ft_dll_update_index(&stack->a);
-		ft_dll_update_index(&stack->b);
-		ft_dll_clear(&mosse_a, free);
-		ft_dll_clear(&mosse_b, free);
-		free(stack->minmax);
-		free(stack->mosse);
+		sort_back_helper(stack);
 	}
 }

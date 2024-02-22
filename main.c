@@ -32,7 +32,7 @@ int	main(int ac, char **av)
 {
 	t_stacks	stacks;
 
-	if (ac <= 1)
+	if (ac < 2)
 		return (0);
 	stacks = (t_stacks){0};
 	ft_init_(ac, av, &stacks);
@@ -40,11 +40,12 @@ int	main(int ac, char **av)
 		minisolver(&stacks);
 	else
 	{
-		ft_generate_non_lis(&stacks);
+		if (!ft_generate_non_lis(&stacks))
+			return (ft_free_stacks(&stacks), error_fn(), 0);
 		ft_move_non_lis(&stacks);
 		ft_sortback(&stacks);
 	}
 	ft_rotate_until_ordered(&stacks);
-	ft_free_stacks(stacks);
+	ft_free_stacks(&stacks);
 	return (0);
 }

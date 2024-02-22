@@ -29,13 +29,13 @@ t_dll_list	*ft_dll_initi_to(int len, int value)
 	head = NULL;
 	while (i < len)
 	{
-		val = malloc(sizeof(int));
+		val = ft_calloc(1, sizeof(int));
 		if (!val)
-			ft_dll_clear3(head);
+			return (ft_dll_clear3(head), NULL);
 		*val = value;
 		newnode = ft_dll_new(val);
 		if (!newnode)
-			ft_dll_clear3(head);
+			return (ft_dll_clear3(head), NULL);
 		ft_dll_insert_tail(&head, newnode);
 		i++;
 	}

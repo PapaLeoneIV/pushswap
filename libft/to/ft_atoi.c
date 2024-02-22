@@ -35,6 +35,6 @@ int	ft_atoi(char *nptr, int *arr)
 	}
 	res = res * isnegative;
 	if (res > 2147483647 || res < -2147483648)
-		return (free(arr), error_fn(), 0);
+		(free(arr), error_fn());
 	return (res);
 }

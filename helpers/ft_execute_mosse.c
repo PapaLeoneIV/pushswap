@@ -84,7 +84,7 @@ void	ft_execute_mosse(t_stacks *stack)
 		move_positives(stack);
 	else if (stack->mosse[0] >= 0 && stack->mosse[1] <= 0)
 		move_pos_neg(stack);
-	else if (stack->mosse[0] <= 0 && stack->mosse[1] >= 0)
+	else if ((stack->mosse)[0] <= 0 && stack->mosse[1] >= 0)
 		move_neg_pos(stack);
 	else if (stack->mosse[0] <= 0 && stack->mosse[1] <= 0)
 		move_negatives(stack);
