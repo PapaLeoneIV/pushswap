@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_atoi(char *nptr, int *arr)
+int	ft_atoi(char *nptr, int *arr, char **mtx, int len)
 {
 	int		isnegative;
 	long	res;
@@ -35,6 +35,6 @@ int	ft_atoi(char *nptr, int *arr)
 	}
 	res = res * isnegative;
 	if (res > 2147483647 || res < -2147483648)
-		(free(arr), error_fn());
+		(free(arr), ft_clear_mtx(mtx, len), error_fn());
 	return (res);
 }

@@ -26,6 +26,7 @@ static void	minisolver(t_stacks *stacks)
 		minisolver4(stacks);
 	else if (len == 5)
 		minisolver5(stacks);
+	ft_dll_return_head(&stacks->a);
 }
 
 int	main(int ac, char **av)

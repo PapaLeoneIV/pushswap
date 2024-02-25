@@ -42,6 +42,9 @@ typedef struct s_stacks
 	int			o_non_lis_len;
 }				t_stacks;
 
+
+
+
 /**
  * @brief Frees the memory allocated for the minisolver heap.
  * 
@@ -301,13 +304,13 @@ void		ft_execute_mosse(t_stacks *stack);
  * @brief Swap the top two elements of stack A.
  * @param stack_a The stack A.
  */
-void		sa(t_dll_list *stack_a, int flag);
+void		sa(t_dll_list **stack_a, int flag);
 
 /**
  * @brief Swap the top two elements of stack B.
  * @param stack_b The stack B.
  */
-void		sb(t_dll_list *stack_b, int flag);
+void		sb(t_dll_list **stack_b, int flag);
 
 /**
  * @brief Swap the top two elements of both stack A and stack B.

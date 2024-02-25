@@ -18,9 +18,9 @@ static int	ft_execute_instruction(t_stacks *stacks, char *str)
 	else if (!ft_strncmp(str, "pb\n", 3))
 		pb(&stacks->b, &stacks->a, 0);
 	else if (!ft_strncmp(str, "sa\n", 3))
-		sa(stacks->a, 0);
+		sa(&stacks->a, 0);
 	else if (!ft_strncmp(str, "sb\n", 3))
-		sb(stacks->b, 0);
+		sb(&stacks->b, 0);
 	else if (!ft_strncmp(str, "ss\n", 3))
 		ss(stacks->a, stacks->b);
 	else if (!ft_strncmp(str, "ra\n", 3))

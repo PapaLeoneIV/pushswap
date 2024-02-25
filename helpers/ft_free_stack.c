@@ -19,6 +19,7 @@ void	ft_free_stacks(t_stacks *stack)
 	if (stack->minmax != NULL)
 		free(stack->minmax);
 	free(stack->mosse);
+	ft_dll_return_head(&(stack->a));
 	ft_dll_clear(&(stack->a), free);
 	ft_dll_clear(&(stack->b), free);
 	ft_dll_clear(&(stack->lis), free);

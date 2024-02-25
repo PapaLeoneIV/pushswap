@@ -33,21 +33,15 @@ SRC =		$(addprefix ${ERROR_DIR}/, error_fn.c) \
 
 OBJ = ${SRC:.c=.o}
 
-all: gnl printf $(NAME)
+all: $(NAME)
 
 
 %.o: %.c
 	@$(COMPILE) $< -o $@ -I. -Iprintf -Ignl
 
-printf:
+$(NAME): $(OBJ) 
 	@$(MAKE) -C $(PRINTF_DIR)
-
-gnl:
 	@$(MAKE) -C $(GNL_DIR)
-
-$(NAME): gnl printf $(OBJ)  
-	@mv $(PRINTF_DIR)/libftprintf.a libft.a
-	@mv $(GNL_DIR)/libgnl.a libft.a
 	@$(ARCHIVE) $(NAME) $(OBJ)
 	
 clean:
