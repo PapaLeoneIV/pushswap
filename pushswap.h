@@ -42,9 +42,6 @@ typedef struct s_stacks
 	int			o_non_lis_len;
 }				t_stacks;
 
-
-
-
 /**
  * @brief Frees the memory allocated for the minisolver heap.
  * 

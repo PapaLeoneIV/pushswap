@@ -88,7 +88,6 @@ void	sa(t_dll_list **stack_a, int flag)
 	if (flag == 1)
 		write(1, "sa\n", 3);
 	ft_dll_return_head(stack_a);
-
 }
 
 void	sb(t_dll_list **stack_b, int flag)
