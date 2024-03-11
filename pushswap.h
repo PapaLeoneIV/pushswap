@@ -347,7 +347,7 @@ void		rb(t_dll_list **stack, int flag);
  * @param stack_a The stack A.
  * @param stack_b The stack B.
  */
-void		rr(t_dll_list **stack_a, t_dll_list **stack_b);
+void		rr(t_dll_list **stack_a, t_dll_list **stack_b, int flag);
 
 /**
  * @brief Reverse rotate the stack A.
@@ -366,6 +366,6 @@ void		rrb(t_dll_list **stack, int flag);
  * @param stack_a The stack A.
  * @param stack_b The stack B.
  */
-void		rrr(t_dll_list **stack_a, t_dll_list **stack_b);
+void		rrr(t_dll_list **stack_a, t_dll_list **stack_b, int flag);
 
 #endif

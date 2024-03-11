@@ -28,13 +28,13 @@ static int	ft_execute_instruction(t_stacks *stacks, char *str)
 	else if (!ft_strncmp(str, "rb\n", 3))
 		rb(&stacks->b, 0);
 	else if (!ft_strncmp(str, "rr\n", 3))
-		rr(&stacks->a, &stacks->b);
+		rr(&stacks->a, &stacks->b, 0);
 	else if (!ft_strncmp(str, "rra\n", 4))
 		rra(&stacks->a, 0);
 	else if (!ft_strncmp(str, "rrb\n", 4))
 		rrb(&stacks->b, 0);
 	else if (!ft_strncmp(str, "rrr\n", 4))
-		rrr(&stacks->a, &stacks->b);
+		rrr(&stacks->a, &stacks->b, 0);
 	else
 		return (get_next_line(-42), 0);
 	return (ft_dll_return_head(&stacks->a), 1);

@@ -111,9 +111,10 @@ void	rb(t_dll_list **stack, int flag)
 		write(1, "rb\n", 3);
 }
 
-void	rr(t_dll_list **stack_a, t_dll_list **stack_b)
+void	rr(t_dll_list **stack_a, t_dll_list **stack_b, int flag)
 {
 	ra(stack_a, 0);
 	rb(stack_b, 0);
-	write(1, "rr\n", 3);
+	if (flag == 1)
+		write(1, "rr\n", 3);
 }
