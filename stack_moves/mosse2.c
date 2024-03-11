@@ -56,11 +56,12 @@ void	rrb(t_dll_list **stack, int flag)
 		write(1, "rrb\n", 4);
 }
 
-void	rrr(t_dll_list **stack_a, t_dll_list **stack_b)
+void	rrr(t_dll_list **stack_a, t_dll_list **stack_b, int flag)
 {
 	rra(stack_a, 0);
 	rrb(stack_b, 0);
-	write(1, "rrr\n", 4);
+	if (flag == 1)
+		write(1, "rrr\n", 4);
 }
 
 void	sa(t_dll_list **stack_a, int flag)
