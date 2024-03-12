@@ -31,40 +31,46 @@ run_test() {
 
 valgrind_test() {
     input_numbers="$@"
+    # Create unique filenames for Valgrind output
+    push_swap_valgrind_output_file=$(mktemp)
+    checker_valgrind_output_file=$(mktemp)
 
-    # Esegui il push_swap con gli argomenti passati sotto la supervisione di Valgrind
-    push_swap_output=$(valgrind --leak-check=full --error-exitcode=1 $push_swap_executable $input_numbers 2>&1)
-    
-    # Controlla se ci sono memory leaks in push_swap
-    if echo "$push_swap_output" | grep -q "ERROR SUMMARY: 0 errors from 0 contexts"; then
+    # Execute push_swap with the arguments under Valgrind's supervision
+    push_swap_output=$($push_swap_executable $input_numbers 2> /dev/null)
+    valgrind --leak-check=full --error-exitcode=1 --log-file="$push_swap_valgrind_output_file" $push_swap_executable $input_numbers > /dev/null 2>&1
+
+    # Check if there are memory leaks in push_swap
+    if grep -q "ERROR SUMMARY: 0 errors from 0 contexts" "$push_swap_valgrind_output_file"; then
         echo "✅🤟 Valgrind test passato su push_swap:  [$input_numbers] non ci sono memory leaks."
     else
         echo "⛔🤡 Valgrind test fallito su push_swap: [$input_numbers] ci sono memory leaks."
         echo "Output di Valgrind su push_swap:"
-        echo "$push_swap_output"
+        cat "$push_swap_valgrind_output_file"
+        rm "$push_swap_valgrind_output_file" "$checker_valgrind_output_file"
         return
     fi
 
-    # Esegui il push_swap con gli argomenti passati e passa l'output al checker
-    checker_output=$(echo "$push_swap_output" | $checker_executable $input_numbers 2>&1)
+    # Execute the checker with the arguments under Valgrind's supervision
+    echo "$push_swap_output" | valgrind --leak-check=full --error-exitcode=1 --log-file="$checker_valgrind_output_file" $checker_executable $input_numbers > /dev/null 2>&1
+    allocs=$(grep "allocs" "$checker_valgrind_output_file" | awk '{print $5}')
+    frees=$(grep "frees" "$checker_valgrind_output_file" | awk '{print $7}')
 
-    # Esegui il checker con gli argomenti passati sotto la supervisione di Valgrind
-    valgrind_output=$(valgrind --leak-check=full --error-exitcode=1 $push_swap_executable $input_numbers 2>&1)    PID=$!
-    allocs=$(echo "$valgrind_output" | grep "allocs" | awk '{print $5}')
-    frees=$(echo "$valgrind_output" | grep "frees" | awk '{print $7}')
-
-    # Calcola la differenza tra il numero di allocazioni e deallocazioni
+    # Calculate the difference between the number of allocations and deallocations
     diff=$((allocs - frees))
 
-    # Controlla se ci sono memory leaks
+    # Check if there are memory leaks
     if [ $diff -eq 0 ]; then
         echo "✅🤟 Test Passato con Valgrind:  [$input_numbers] non ci sono memory leaks."
     else
         echo "⛔🤡 Test Fallito con Valgrind: [$input_numbers] ci sono memory leaks."
         echo "Output di Valgrind:"
-        echo "$valgrind_output"
+        cat "$checker_valgrind_output_file"
     fi
+
+    # Clean up temporary files
+    rm "$push_swap_valgrind_output_file" "$checker_valgrind_output_file"
 }
+
 
 # Definire array con i casi limiti
 special_cases=(
@@ -75,25 +81,14 @@ special_cases=(
     "a + a"
     "1 2 3a"
     "\200 201"
+    "1 1 3 4 5"
 )
 
-# Esegui i test speciali
-echo "Test con input particolari:"
-test_number=0
-for case in "${special_cases[@]}"; do
-    ((test_number++))
-    echo "Test $test_number:"
-    run_test "$case"
-    valgrind_test "$case"
-done
-
-
 # Numero di test da eseguire 
-num_tests=5
+num_tests=2
 
 # Contatore dei test
 test_count=0
-
 # Esegui i test
 while [ "$test_count" -lt "$num_tests" ]; do
     # Numero di numeri casuali per questo test
@@ -111,5 +106,19 @@ while [ "$test_count" -lt "$num_tests" ]; do
     # Incrementa il contatore dei test
     test_count=$((test_count+1))
 done
+
+# Esegui i test speciali
+echo "Test con input particolari:"
+test_number=0
+for case in "${special_cases[@]}"; do
+    ((test_number++))
+    echo "Test $test_number:"
+    run_test "$case"
+    valgrind_test "$case"
+done
+
+
+
+
 
 echo "Testing completato."

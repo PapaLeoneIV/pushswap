@@ -47,6 +47,7 @@ int	main(int ac, char **av)
 		ft_sortback(&stacks);
 	}
 	ft_rotate_until_ordered(&stacks);
+
 	ft_free_stacks(&stacks);
 	return (0);
 }
