@@ -20,6 +20,7 @@ void	ft_init_(int ac, char **av, t_stacks *stacks)
 	{
 		free(stacks->input_arr);
 		ft_dll_clear(&stacks->a, free);
+		write(1, "OK\n", 3);
 		exit(1);
 	}
 	if (stacks->a == NULL)

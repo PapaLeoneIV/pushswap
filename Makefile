@@ -48,7 +48,7 @@ fclean: clean
 	$(MAKE) -C $(LIBFT_DIR) fclean
 	$(RM) $(NAME) $(NAME_BONUS) $(NAMEA)
 
-re: fclean all
+re: fclean all bonus 
 
 #.SILENT: 
 .PHONY: all clean fclean re libft 

@@ -33,6 +33,7 @@ int	main(int ac, char **av)
 {
 	t_stacks	stacks;
 
+	printf("argc == %d\n", ac);
 	if (ac < 2)
 		return (0);
 	stacks = (t_stacks){0};
@@ -47,7 +48,6 @@ int	main(int ac, char **av)
 		ft_sortback(&stacks);
 	}
 	ft_rotate_until_ordered(&stacks);
-
 	ft_free_stacks(&stacks);
 	return (0);
 }

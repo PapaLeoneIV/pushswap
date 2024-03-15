@@ -36,9 +36,20 @@ static int	ft_execute_instruction(t_stacks *stacks, char *str)
 	else if (!ft_strncmp(str, "rrr\n", 4))
 		rrr(&stacks->a, &stacks->b, 0);
 	else
-		return (get_next_line(-42), 0);
+		return (get_next_line(-42), write(2, "Error\n", 6), 0);
 	return (ft_dll_return_head(&stacks->a), 1);
 }
+
+/* int ft_contain_space(char *str)
+{
+	int i;
+
+	i = 0;
+	while(str && str[i] != NULL)
+	{
+		if ()
+	}
+} */
 
 int	main(int ac, char **av)
 {
