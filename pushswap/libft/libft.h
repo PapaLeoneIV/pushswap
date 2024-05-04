@@ -1,14 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftq.h                                           :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
+/*   By: rileone <rileone@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 22:53:01 by rileone           #+#    #+#             */
-/*   Updated: 2023/10/20 22:53:01 by rileone          ###   ########.fr       */
+/*   Updated: 2024/05/03 20:41:29 by rileone          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
@@ -53,6 +54,12 @@ typedef struct s_hash_map
 	int					n_item;
 	struct s_item		**array;
 }						t_hash_map;
+
+char					*get_next_line(int fd);
+int						ft_gnl_strlen(char *str);
+void					*ft_gnl_calloc(size_t nmemb, size_t size);
+char					*ft_gnl_strjoin(char *s1, char *s2, int bytes);
+char					*ft_gnl_substr(char *s, unsigned int start, int len);
 
 /**
  * @brief Prints an error message.

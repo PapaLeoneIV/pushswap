@@ -3,13 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_execute_mosse.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
+/*   By: rileone <rileone@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:52:30 by rileone           #+#    #+#             */
-/*   Updated: 2024/02/01 15:52:34 by rileone          ###   ########.fr       */
+/*   Updated: 2024/05/03 19:49:45 by rileone          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "pushswap.h"
+
+#include "../libft.h"
+#include "../pushswap.h"
+#include "ft_printf.h"
 
 void	move_positives(t_stacks *stacks)
 {
@@ -18,7 +21,7 @@ void	move_positives(t_stacks *stacks)
 	i = 0;
 	while (i < stacks->mosse[0] && i < stacks->mosse[1])
 	{
-		rr(&stacks->a, &stacks->b);
+		rr(&stacks->a, &stacks->b, 1);
 		i++;
 	}
 	while (i < stacks->mosse[0] || i < stacks->mosse[1])
@@ -59,7 +62,7 @@ void	move_negatives(t_stacks *stacks)
 {
 	while (stacks->mosse[0] < 0 && stacks->mosse[1] < 0)
 	{
-		rrr(&stacks->a, &stacks->b);
+		rrr(&stacks->a, &stacks->b, 1);
 		stacks->mosse[0]++;
 		stacks->mosse[1]++;
 	}

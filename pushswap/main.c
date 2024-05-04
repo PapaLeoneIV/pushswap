@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
+/*   By: rileone <rileone@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 13:55:06 by rileone           #+#    #+#             */
-/*   Updated: 2023/11/22 13:55:07 by rileone          ###   ########.fr       */
+/*   Updated: 2024/05/03 18:42:35 by rileone          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "pushswap.h"
 
 static void	minisolver(t_stacks *stacks)
@@ -32,7 +33,7 @@ int	main(int ac, char **av)
 {
 	t_stacks	stacks;
 
-	if (ac <= 2)
+	if (ac < 2)
 		return (0);
 	stacks = (t_stacks){0};
 	ft_init_(ac, av, &stacks);

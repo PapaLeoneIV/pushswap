@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pushswap.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
+/*   By: rileone <rileone@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 17:59:35 by rileone           #+#    #+#             */
-/*   Updated: 2024/02/10 17:59:40 by rileone          ###   ########.fr       */
+/*   Updated: 2024/05/03 20:32:46 by rileone          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -346,7 +346,7 @@ void		rb(t_dll_list **stack, int flag);
  * @param stack_a The stack A.
  * @param stack_b The stack B.
  */
-void		rr(t_dll_list **stack_a, t_dll_list **stack_b);
+void		rr(t_dll_list **stack_a, t_dll_list **stack_b, int flag);
 
 /**
  * @brief Reverse rotate the stack A.
@@ -365,6 +365,6 @@ void		rrb(t_dll_list **stack, int flag);
  * @param stack_a The stack A.
  * @param stack_b The stack B.
  */
-void		rrr(t_dll_list **stack_a, t_dll_list **stack_b);
+void		rrr(t_dll_list **stack_a, t_dll_list **stack_b, int flag);
 
 #endif

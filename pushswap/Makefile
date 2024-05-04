@@ -22,25 +22,27 @@ OBJ = $(SRC:.c=.o)
 
 all: $(NAMEA)
 
-%.o: %.c
-	@$(COMPILE) -c $< -o $@ $(EVERY_INCLUDES)
-
 libft:
-	@$(MAKE) -C $(LIBFT_DIR)
+	$(MAKE) -C $(LIBFT_DIR)
 
 
 $(NAMEA): libft $(OBJ)
-	@mv libft/libft.a ./$(NAMEA)
-	@$(ARCHIVE) $(NAMEA) $(OBJ)
-	@$(COMPILE) $(EVERY_INCLUDES) main.c -L. -lpushswap -o $(NAME)
+	mv libft/libft.a ./$(NAMEA)
+	$(ARCHIVE) $(NAMEA) $(OBJ)
+	$(COMPILE) $(EVERY_INCLUDES) main.c -L. -lpushswap -o $(NAME)
+
+bonus: libft $(OBJ)
+	mv libft/libft.a ./$(NAMEA)
+	$(ARCHIVE) $(NAMEA) $(OBJ)
+	$(COMPILE) $(EVERY_INCLUDES) checker.c -L. -lpushswap -o checker
 
 clean:
-	@$(MAKE) -C $(LIBFT_DIR) clean
-	@$(RM) $(OBJ) $(NAMEA)
+	$(MAKE) -C $(LIBFT_DIR) clean
+	$(RM) $(OBJ) $(NAMEA)
 
 fclean: clean
-	@$(MAKE) -C $(LIBFT_DIR) fclean
-	@$(RM) $(NAME) $(NAMEA)
+	$(MAKE) -C $(LIBFT_DIR) fclean
+	$(RM) $(NAME) $(NAMEA)
 
 re: fclean all
 

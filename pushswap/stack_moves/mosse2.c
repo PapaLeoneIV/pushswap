@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rra.c                                              :+:      :+:    :+:   */
+/*   mosse2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
+/*   By: rileone <rileone@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:53:01 by rileone           #+#    #+#             */
-/*   Updated: 2024/02/01 15:53:06 by rileone          ###   ########.fr       */
+/*   Updated: 2024/05/03 19:48:09 by rileone          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,12 @@ void	rrb(t_dll_list **stack, int flag)
 		write(1, "rrb\n", 4);
 }
 
-void	rrr(t_dll_list **stack_a, t_dll_list **stack_b)
+void	rrr(t_dll_list **stack_a, t_dll_list **stack_b, int flag)
 {
 	rra(stack_a, 0);
 	rrb(stack_b, 0);
-	write(1, "rrr\n", 4);
+	if (flag == 1)
+		write(1, "rrr\n", 4);
 }
 
 void	sa(t_dll_list *stack_a, int flag)
