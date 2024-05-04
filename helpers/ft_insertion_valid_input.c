@@ -13,7 +13,7 @@
 #include "../libft.h"
 #include "pushswap.h"
 
-int	*ft_insertion_valid_input(char **mtx, int len, int offset)
+int	*ft_insertion_valid_input(char **av, int len, int offset)
 {
 	int	*arr;
 	int	count;
@@ -26,8 +26,8 @@ int	*ft_insertion_valid_input(char **mtx, int len, int offset)
 		return (NULL);
 	while (offset < len)
 	{
-		if (ft_isnumber(mtx[offset]))
-			arr[count++] = ft_atoi(mtx[offset++], arr, mtx, len);
+		if (ft_isnumber(av[offset]))
+			arr[count++] = ft_atoi(av[offset++], arr);
 		else
 		{
 			free(arr);

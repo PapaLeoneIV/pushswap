@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "get_next_line_bonus.h"
 
-int	ft_strlen_gnl(char *str)
+int	ft_gnl_strlen(char *str)
 {
 	int		i;
 
@@ -21,7 +21,7 @@ int	ft_strlen_gnl(char *str)
 	return (i);
 }
 
-void	*ft_calloc_gnl(size_t nmemb, size_t size)
+void	*ft_gnl_calloc(size_t nmemb, size_t size)
 {
 	char	*str;
 	size_t	i;
@@ -38,7 +38,7 @@ void	*ft_calloc_gnl(size_t nmemb, size_t size)
 	return ((void *)str);
 }
 
-char	*ft_strjoin_gnl(char *s1, char *s2, int bytes)
+char	*ft_gnl_strjoin(char *s1, char *s2, int bytes)
 {
 	char	*out;
 	int		len;
@@ -49,8 +49,8 @@ char	*ft_strjoin_gnl(char *s1, char *s2, int bytes)
 	j = 0;
 	if (!s2)
 		return (NULL);
-	len = ft_strlen_gnl(s1) + ft_strlen_gnl(s2);
-	out = (char *)ft_calloc_gnl(sizeof(char), len + 1);
+	len = ft_gnl_strlen(s1) + ft_gnl_strlen(s2);
+	out = (char *)ft_gnl_calloc(sizeof(char), len + 1);
 	if (!(out))
 		return (NULL);
 	while (s1 && s1[i])
@@ -62,7 +62,7 @@ char	*ft_strjoin_gnl(char *s1, char *s2, int bytes)
 	return (out);
 }
 
-char	*ft_substr_gnl(char *s, unsigned int start, int len)
+char	*ft_gnl_substr(char *s, unsigned int start, int len)
 {
 	char	*p;
 	int		i;
@@ -70,11 +70,11 @@ char	*ft_substr_gnl(char *s, unsigned int start, int len)
 
 	if (!s)
 		return (NULL);
-	slen = ft_strlen_gnl(s);
+	slen = ft_gnl_strlen(s);
 	if (len < slen)
-		p = (char *) ft_calloc_gnl(sizeof(char), (len + 1));
+		p = (char *) ft_gnl_calloc(sizeof(char), (len + 1));
 	else
-		p = (char *) ft_calloc_gnl(sizeof(char), ((slen - start) + 1));
+		p = (char *) ft_gnl_calloc(sizeof(char), ((slen - start) + 1));
 	if (!p)
 		return (0);
 	i = 0;
@@ -89,12 +89,12 @@ char	*ft_substr_gnl(char *s, unsigned int start, int len)
 	return (p);
 }
 
-int	ft_strchri_gnl(char *s, int c)
+int	ft_gnl_strchri(char *s, int c)
 {
 	int	i;
 
 	i = 0;
-	while (i <= ft_strlen_gnl(s))
+	while (i <= ft_gnl_strlen(s))
 	{
 		if (s[i] == (unsigned char)c)
 			return (i);

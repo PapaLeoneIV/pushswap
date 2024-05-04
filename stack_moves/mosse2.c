@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rra.c                                              :+:      :+:    :+:   */
+/*   mosse2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
+/*   By: rileone <rileone@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:53:01 by rileone           #+#    #+#             */
-/*   Updated: 2024/02/01 15:53:06 by rileone          ###   ########.fr       */
+/*   Updated: 2024/05/03 19:48:09 by rileone          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,17 +64,19 @@ void	rrr(t_dll_list **stack_a, t_dll_list **stack_b, int flag)
 		write(1, "rrr\n", 4);
 }
 
-void	sa(t_dll_list **stack_a, int flag)
+void	sa(t_dll_list *stack_a, int flag)
 {
 	t_dll_list	*second_node;
 	t_dll_list	*head;
 	t_dll_list	*tmp;
 
-	if (ft_dll_size(*stack_a) <= 1)
+	if (ft_dll_size(stack_a) <= 1)
 		return ;
-	head = (*stack_a);
+	if (ft_dll_size(stack_a) <= 1)
+		return ;
+	head = stack_a;
 	second_node = head->next;
-	if (ft_dll_size((*stack_a)) == 2)
+	if (ft_dll_size(stack_a) == 2)
 		head->next = NULL;
 	else
 	{
@@ -85,24 +87,23 @@ void	sa(t_dll_list **stack_a, int flag)
 	head->prev = second_node;
 	second_node->prev = NULL;
 	second_node->next = head;
-	(*stack_a) = second_node;
+	stack_a = second_node;
 	if (flag == 1)
 		write(1, "sa\n", 3);
-	ft_dll_return_head(stack_a);
 }
 
-void	sb(t_dll_list **stack_b, int flag)
+void	sb(t_dll_list *stack_b, int flag)
 {
 	t_dll_list	*second_node;
 	t_dll_list	*head;
 	t_dll_list	*tmp;
 
-	ft_dll_return_head(stack_b);
-	if (ft_dll_size(*stack_b) <= 1)
+	ft_dll_return_head(&stack_b);
+	if (ft_dll_size(stack_b) <= 1)
 		return ;
-	head = *stack_b;
+	head = stack_b;
 	second_node = head->next;
-	if (ft_dll_size(*stack_b) == 2)
+	if (ft_dll_size(stack_b) == 2)
 		head->next = NULL;
 	else
 	{
@@ -113,8 +114,7 @@ void	sb(t_dll_list **stack_b, int flag)
 	head->prev = second_node;
 	second_node->prev = NULL;
 	second_node->next = head;
-	*stack_b = second_node;
+	stack_b = second_node;
 	if (flag == 1)
 		write(1, "sb\n", 3);
-	ft_dll_return_head(stack_b);
 }

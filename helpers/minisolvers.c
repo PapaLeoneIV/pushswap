@@ -17,9 +17,9 @@ void	minisolver2(t_dll_list *stacks, char x)
 	if (*(int *)stacks->val > *(int *)stacks->next->val)
 	{
 		if (x == 'a')
-			sa(&stacks, 1);
+			sa(stacks, 1);
 		if (x == 'b')
-			sb(&stacks, 1);
+			sb(stacks, 1);
 	}
 }
 
@@ -39,17 +39,16 @@ void	minisolver3(t_stacks *stacks)
 	else if (a > b && a > c && b > c)
 	{
 		ra(&stacks->a, 1);
-		sa(&stacks->a, 1);
+		sa(stacks->a, 1);
 	}
 	else if (a < b && a < c && b > c)
 	{
-		sa(&stacks->a, 1);
+		sa(stacks->a, 1);
 		ra(&stacks->a, 1);
 	}
 	else if (a > b && a < c && b < c)
-		sa(&stacks->a, 1);
+		sa(stacks->a, 1);
 	ft_dll_update_index(&stacks->a);
-	ft_dll_return_head(&stacks->a);
 }
 
 void	minisolver4(t_stacks *stacks)

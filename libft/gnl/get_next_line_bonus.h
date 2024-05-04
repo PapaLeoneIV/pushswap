@@ -39,25 +39,25 @@ char	*get_next_line(int fd);
  *  leggermente piu sicura perche protegge da eventuali parametri NULL
  *  mica come quel bruciato di chsassi <3
 */
-int		ft_strlen_gnl(char *str);
+int		ft_gnl_strlen(char *str);
 
 /**
  * @brief Funzione utilizzata per allocare memoria e riempirla di 0
 */
-void	*ft_calloc_gnl(size_t nmemb, size_t size);
+void	*ft_gnl_calloc(size_t nmemb, size_t size);
 
 /** Funzione StrJoin ma in grado di joinare anche una striga vuota
  * leggermente meno sicura ma utile per lo svolgimento di questo progetto
  * 
 */
-char	*ft_strjoin_gnl(char *s1, char *s2, int bytes);
+char	*ft_gnl_strjoin(char *s1, char *s2, int bytes);
 
 /**
  * @brief Funzione Substr che ritorna la sottostringa desiderata, 
  * una volta forniti un indice di partenza e un indice che
  * rappresenti la lunghezza dei caratteri da tagliare
 */
-char	*ft_substr_gnl(char *s, unsigned int start, int len);
+char	*ft_gnl_substr(char *s, unsigned int start, int len);
 
 /**
  * @brief Funzione simile a strchr ma questa ritorna :
@@ -65,6 +65,6 @@ char	*ft_substr_gnl(char *s, unsigned int start, int len);
  *          presente all interno della riga
  *  - return >= 0 quando invece il char da cercare e' presente
 */
-int		ft_strchri_gnl(char *s, int c);
+int		ft_gnl_strchri(char *s, int c);
 
 #endif

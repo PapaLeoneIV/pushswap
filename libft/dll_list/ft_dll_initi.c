@@ -12,10 +12,10 @@
 
 #include "../libft.h"
 
-static void	ft_dll_clear2(t_dll_list **list)
+static void	ft_dll_clear2(t_dll_list *list)
 {
-	ft_dll_return_head(list);
-	ft_dll_clear(list, free);
+	ft_dll_return_head(&list);
+	ft_dll_clear(&list, free);
 }
 
 t_dll_list	*ft_dll_initi(int *arr, int len)
@@ -33,11 +33,11 @@ t_dll_list	*ft_dll_initi(int *arr, int len)
 	{
 		val = ft_calloc(1, sizeof(int));
 		if (!val)
-			return (ft_dll_clear2(&head), NULL);
+			return (ft_dll_clear2(head), NULL);
 		*val = arr[i];
 		newnode = ft_dll_new(val);
 		if (newnode == NULL)
-			return (ft_dll_clear2(&head), NULL);
+			return (ft_dll_clear2(head), NULL);
 		newnode->index = i;
 		ft_dll_insert_tail(&head, newnode);
 	}

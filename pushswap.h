@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pushswap.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
+/*   By: rileone <rileone@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 17:59:35 by rileone           #+#    #+#             */
-/*   Updated: 2024/02/10 17:59:40 by rileone          ###   ########.fr       */
+/*   Updated: 2024/05/03 20:32:46 by rileone          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "ft_printf.h"
 # include "libft.h"
-# include "get_next_line_bonus.h"
 # include "limits.h"
 # include <stddef.h>
 # include <stdio.h>
@@ -301,13 +300,13 @@ void		ft_execute_mosse(t_stacks *stack);
  * @brief Swap the top two elements of stack A.
  * @param stack_a The stack A.
  */
-void		sa(t_dll_list **stack_a, int flag);
+void		sa(t_dll_list *stack_a, int flag);
 
 /**
  * @brief Swap the top two elements of stack B.
  * @param stack_b The stack B.
  */
-void		sb(t_dll_list **stack_b, int flag);
+void		sb(t_dll_list *stack_b, int flag);
 
 /**
  * @brief Swap the top two elements of both stack A and stack B.
