@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ss.c                                               :+:      :+:    :+:   */
+/*   mosse3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
+/*   By: rileone <rileone@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:53:01 by rileone           #+#    #+#             */
-/*   Updated: 2024/02/01 15:53:06 by rileone          ###   ########.fr       */
+/*   Updated: 2024/05/04 14:10:45 by rileone          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
 #include "../pushswap.h"
-#include "ft_printf.h"
 
 void	ss(t_dll_list *stack_a, t_dll_list *stack_b)
 {

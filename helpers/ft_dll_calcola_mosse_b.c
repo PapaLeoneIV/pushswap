@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_dll_calcola_mosse_b.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
+/*   By: rileone <rileone@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:52:30 by rileone           #+#    #+#             */
-/*   Updated: 2024/02/01 15:52:34 by rileone          ###   ########.fr       */
+/*   Updated: 2024/05/04 13:13:44 by rileone          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "pushswap.h"
+
+#include "../pushswap.h"
 
 static int	ft_ins_from_bot(t_dll_list **mosse,
 	int len, int *tmp1, t_dll_list *tmp)

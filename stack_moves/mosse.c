@@ -6,14 +6,11 @@
 /*   By: rileone <rileone@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:53:01 by rileone           #+#    #+#             */
-/*   Updated: 2024/05/03 19:47:51 by rileone          ###   ########.fr       */
+/*   Updated: 2024/05/04 13:14:13 by rileone          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
 #include "../pushswap.h"
-#include "ft_printf.h"
-#include "limits.h"
 
 void	pa(t_dll_list **stack_a, t_dll_list **stack_b, int flag)
 {

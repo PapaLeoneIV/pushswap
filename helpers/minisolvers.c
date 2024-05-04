@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   minisolvers.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
+/*   By: rileone <rileone@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 17:16:13 by rileone           #+#    #+#             */
-/*   Updated: 2024/02/18 17:16:17 by rileone          ###   ########.fr       */
+/*   Updated: 2024/05/04 13:11:53 by rileone          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "../pushswap.h"
 
 void	minisolver2(t_dll_list *stacks, char x)
 {

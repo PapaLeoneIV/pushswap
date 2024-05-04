@@ -1,18 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_non_lis.c                                  :+:      :+:    :+:   */
+/*   ft_generate_non_lis.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
+/*   By: rileone <rileone@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:52:30 by rileone           #+#    #+#             */
-/*   Updated: 2024/02/01 15:52:34 by rileone          ###   ########.fr       */
+/*   Updated: 2024/05/04 13:13:08 by rileone          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
-#include "ft_printf.h"
-#include "pushswap.h"
+
+#include "../pushswap.h"
 
 static int	ft_generate_non_lis_helper(t_stacks *stacks, int i,
 		int *val)

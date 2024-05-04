@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_dll_calcola_mosse.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
+/*   By: rileone <rileone@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:52:30 by rileone           #+#    #+#             */
-/*   Updated: 2024/02/01 15:52:34 by rileone          ###   ########.fr       */
+/*   Updated: 2024/05/04 13:13:52 by rileone          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "pushswap.h"
+
+#include "../pushswap.h"
 
 static int	ft_min(int a, int b)
 {

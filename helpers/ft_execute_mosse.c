@@ -6,13 +6,12 @@
 /*   By: rileone <rileone@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:52:30 by rileone           #+#    #+#             */
-/*   Updated: 2024/05/03 19:49:45 by rileone          ###   ########.fr       */
+/*   Updated: 2024/05/04 13:13:58 by rileone          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+
 #include "../pushswap.h"
-#include "ft_printf.h"
 
 void	move_positives(t_stacks *stacks)
 {

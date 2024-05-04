@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free_minisolver_heap.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
+/*   By: rileone <rileone@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 12:15:20 by rileone           #+#    #+#             */
-/*   Updated: 2024/02/19 12:15:27 by rileone          ###   ########.fr       */
+/*   Updated: 2024/05/04 13:11:00 by rileone          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "../pushswap.h"
 
 void	free_minisolver_heap(t_stacks *stacks)
 {

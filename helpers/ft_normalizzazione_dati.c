@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_normalizzazione_dati.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
+/*   By: rileone <rileone@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:52:30 by rileone           #+#    #+#             */
-/*   Updated: 2024/02/01 15:52:34 by rileone          ###   ########.fr       */
+/*   Updated: 2024/05/04 13:12:30 by rileone          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "libft.h"
-#include "pushswap.h"
+
+#include "../pushswap.h"
 
 int	*ft_manage_string_input(char **av)
 {

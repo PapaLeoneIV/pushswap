@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_back.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
+/*   By: rileone <rileone@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 16:31:37 by rileone           #+#    #+#             */
-/*   Updated: 2024/02/08 16:31:43 by rileone          ###   ########.fr       */
+/*   Updated: 2024/05/04 13:14:04 by rileone          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "../pushswap.h"
 
 static int	*ft_get_mosse_from_best_idx(int best_idx, t_dll_list *a,
 	t_dll_list *b)

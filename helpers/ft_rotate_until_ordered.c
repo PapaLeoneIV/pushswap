@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rotate_until_ordered.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rileone <riccardo.leone@student.42fir      +#+  +:+       +#+        */
+/*   By: rileone <rileone@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 19:43:15 by rileone           #+#    #+#             */
-/*   Updated: 2024/02/18 19:43:20 by rileone          ###   ########.fr       */
+/*   Updated: 2024/05/04 13:11:44 by rileone          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "pushswap.h"
+
+#include "../pushswap.h"
 
 void	ft_rotate_until_ordered(t_stacks *stack)
 {

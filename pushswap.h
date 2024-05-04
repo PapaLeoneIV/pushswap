@@ -6,15 +6,15 @@
 /*   By: rileone <rileone@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 17:59:35 by rileone           #+#    #+#             */
-/*   Updated: 2024/05/03 20:32:46 by rileone          ###   ########.fr       */
+/*   Updated: 2024/05/04 13:11:28 by rileone          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSHSWAP_H
 # define PUSHSWAP_H
 
-# include "ft_printf.h"
-# include "libft.h"
+# include "./libft/printf/ft_printf.h"
+# include "./libft/libft.h"
 # include "limits.h"
 # include <stddef.h>
 # include <stdio.h>
